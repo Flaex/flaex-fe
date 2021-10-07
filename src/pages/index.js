@@ -1,16 +1,14 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Seo from "../components/seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// markup
 const IndexPage = ({ data }) => {
   /* eslint-disable */
+  let [faicon, faprefix] = useState(0);
 
-  let faicon = null;
-  let faprefix = null;
   // Randomize function
   const shuffle = (array) => {
     let currentIndex = array.length,
@@ -72,7 +70,7 @@ const IndexPage = ({ data }) => {
         </button>
         <div className="video-container">
           <video autoPlay>
-            <source src={data.caras.edges[9].node.media.url} type="video/mp4" />
+            <source src={data.caras.edges[3].node.media.url} type="video/mp4" />
           </video>
         </div>
         <h2>{data.inicio.edges[0].node.flaex.titulo}</h2>
@@ -97,7 +95,6 @@ const IndexPage = ({ data }) => {
               <Link
                 to={skill.descripcion}
                 rel="noopener noreferrer"
-                target="_blank"
                 aria-label={`Ir a ${skill.titulo}`}
               >
                 <FontAwesomeIcon

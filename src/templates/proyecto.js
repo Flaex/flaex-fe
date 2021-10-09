@@ -19,11 +19,10 @@ const Proyecto = ({ data }) => {
         <div>
           {proyecto.imagenes.map((imagen) => (
             <div key={imagen.id}>
-              <GatsbyImage image={getImage(imagen.localFile)} alt="Test text" />              
+              <GatsbyImage image={getImage(imagen.localFile)} alt="Test text" />
             </div>
           ))}
-          {console.log(window.history)}
-        </div>      
+        </div>
       </div>
     </Layout>
   );

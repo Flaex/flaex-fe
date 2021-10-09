@@ -11,6 +11,23 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        articulos: allStrapiArticulos {
+          edges {
+            node {
+              id
+              titulo
+              descripcion
+              slug
+              imagen {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }
         proyectos: allStrapiProyectos {
           edges {
             node {
@@ -33,6 +50,19 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) {
     throw result.errors;
   }
+
+  const articulos = result.data.articulos.edges;
+  const articuloTemplate = require.resolve("./src/templates/articulo.js");
+
+  articulos.forEach((articulo) => {
+    createPage({
+      path: `/blog/${articulo.node.slug}`,
+      component: articuloTemplate,
+      context: {
+        id: articulo.node.id,
+      },
+    });
+  });
 
   const proyectos = result.data.proyectos.edges;
   const proyectoTemplate = require.resolve("./src/templates/proyecto.js");

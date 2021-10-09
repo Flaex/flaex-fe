@@ -17,7 +17,7 @@ const linkStyles = {};
 const Navigation = () => (
   <nav>
     <Link
-      to="/portfolio"
+      to="/portafolio"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
         isPartiallyCurrent
@@ -28,7 +28,7 @@ const Navigation = () => (
     >
       <span>portafolio</span>
     </Link>
-    <Link
+    {/* <Link
       to="/blog"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
@@ -39,14 +39,14 @@ const Navigation = () => (
       aria-label="Ir al portafolio de desarrollo front-end"
     >
       <span>blog</span>
-    </Link>
-    <Link
+    </Link> */}
+    {/* <Link
       to="/contact"
       activeStyle={activeStyles}
       aria-label="Ir a la información de contacto"
     >
       <span>contacto</span>
-    </Link>
+    </Link> */}
   </nav>
 );
 

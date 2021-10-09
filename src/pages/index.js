@@ -80,11 +80,17 @@ const IndexPage = ({ data }) => {
         <ul>
           {data.articulos.edges.map((articulo) => (
             <li key={articulo.node.id}>
-              <GatsbyImage
-                image={getImage(articulo.node.imagen.localFile)}
-                alt="Test text"
-              />
-              <h3>{articulo.node.titulo}</h3>
+              <Link
+                to={`/blog/${articulo.node.slug}`}
+                rel="noopener noreferrer"
+                aria-label={`Ir a ${articulo.node.titulo}`}
+              >
+                <GatsbyImage
+                  image={getImage(articulo.node.imagen.localFile)}
+                  alt="Test text"
+                />
+                <h3>{articulo.node.titulo}</h3>
+              </Link>
             </li>
           ))}
         </ul>
@@ -176,6 +182,7 @@ export const query = graphql`
           id
           titulo
           descripcion
+          slug
           imagen {
             localFile {
               childImageSharp {

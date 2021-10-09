@@ -7,7 +7,7 @@ import Navcat from "../components/navigation-cat";
 
 const Categoria = ({ data }) => {
   const proyectos = data.categoria.proyectos;
-  const categoria = data.categoria
+  const categoria = data.categoria;
   const faIcon = data.categoria.icono;
   /* eslint-disable */
   let [faicon, faprefix] = useState(0);
@@ -67,7 +67,7 @@ export const query = graphql`
               gatsbyImageData
             }
           }
-        }     
+        }
       }
     }
   }

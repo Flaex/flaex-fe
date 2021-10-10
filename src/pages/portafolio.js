@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
-import Seo from "../components/seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Slider from "react-slick";
+
+
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import "../layouts/default.scss";
 
 const PortafolioPage = ({ data }) => {
   /* eslint-disable */
@@ -13,74 +20,152 @@ const PortafolioPage = ({ data }) => {
   const web = data.web.edges;
   const letrasiconos = data.letrasiconos.edges;
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const test = {
+    width: "640px",
+    height: "320px",
+  };
+
   return (
     <Layout>
       <div className="portafolio">
         <h1>Portafolio</h1>
-        <h2>{logotipos[0].node.categoria.titulo}</h2>
-        {logotipos.map((logotipo) => (
-          <div key={logotipo.node.id}>
-            <Link
-              to={`/portafolio/${logotipo.node.categoria.slug}/${logotipo.node.slug}`}
-              rel="noopener noreferrer"
-              aria-label={`Ir a ${logotipo.node.titulo}`}
-              key={logotipo.node.id}
-            >
-              <GatsbyImage
-                image={getImage(logotipo.node.miniatura.localFile)}
-                alt="Test text"
-              />
-            </Link>
+        <div className="portafolio-logotipos">
+          <div>
+            <FontAwesomeIcon
+              icon={[
+                (faprefix = "fas"),
+                (faicon = logotipos[0].node.categoria.icono.replace(/'/g, "")),
+              ]}
+              fixedWidth
+              size="lg"
+            />
+            <h2>{logotipos[0].node.categoria.titulo}</h2>
           </div>
-        ))}
-        <h2>{branding[0].node.categoria.titulo}</h2>
-        {branding.map((brand) => (
-          <div key={brand.node.id}>
-            <Link
-              to={`/portafolio/${brand.node.categoria.slug}/${brand.node.slug}`}
-              rel="noopener noreferrer"
-              aria-label={`Ir a ${brand.node.titulo}`}
-              key={brand.node.id}
-            >
-              <GatsbyImage
-                image={getImage(brand.node.miniatura.localFile)}
-                alt="Test text"
-              />
-            </Link>
+          <Slider {...settings}>
+            {logotipos.map((logotipo) => (
+              <div style={test} key={logotipo.node.id}>
+                <Link
+                  to={`/portafolio/${logotipo.node.categoria.slug}/${logotipo.node.slug}`}
+                  rel="noopener noreferrer"
+                  aria-label={`Ir a ${logotipo.node.titulo}`}
+                >
+                  <GatsbyImage
+                    image={getImage(logotipo.node.miniatura.localFile)}
+                    alt="Test text"
+                  />
+                </Link>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <div className="portafolio-branding">
+          <div>
+            <FontAwesomeIcon
+              icon={[
+                (faprefix = "fas"),
+                (faicon = branding[0].node.categoria.icono.replace(/'/g, "")),
+              ]}
+              fixedWidth
+              size="lg"
+            />
+            <h2>{branding[0].node.categoria.titulo}</h2>
           </div>
-        ))}
-        <h2>{web[0].node.categoria.titulo}</h2>
-        {web.map((item) => (
-          <div key={item.node.id}>
-            <Link
-              to={`/portafolio/${item.node.categoria.slug}/${item.node.slug}`}
-              rel="noopener noreferrer"
-              aria-label={`Ir a ${item.node.titulo}`}
-              key={item.node.id}
-            >
-              <GatsbyImage
-                image={getImage(item.node.miniatura.localFile)}
-                alt="Test text"
-              />
-            </Link>
+          <Slider {...settings}>
+            {branding.map((brand) => (
+              <div key={brand.node.id}>
+                <div style={test} key={brand.node.id}>
+                  <Link
+                    to={`/portafolio/${brand.node.categoria.slug}/${brand.node.slug}`}
+                    rel="noopener noreferrer"
+                    aria-label={`Ir a ${brand.node.titulo}`}
+                    key={brand.node.id}
+                  >
+                    <GatsbyImage
+                      image={getImage(brand.node.miniatura.localFile)}
+                      alt="Test text"
+                    />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        <div>
+          <div>
+            <FontAwesomeIcon
+              icon={[
+                (faprefix = "fas"),
+                (faicon = web[0].node.categoria.icono.replace(/'/g, "")),
+              ]}
+              fixedWidth
+              size="lg"
+            />
+            <h2>{web[0].node.categoria.titulo}</h2>
           </div>
-        ))}
-        <h2>{letrasiconos[0].node.categoria.titulo}</h2>
-        {letrasiconos.map((item) => (
-          <div key={item.node.id}>
-            <Link
-              to={`/portafolio/${item.node.categoria.slug}/${item.node.slug}`}
-              rel="noopener noreferrer"
-              aria-label={`Ir a ${item.node.titulo}`}
-              key={item.node.id}
-            >
-              <GatsbyImage
-                image={getImage(item.node.miniatura.localFile)}
-                alt="Test text"
-              />
-            </Link>
+          <Slider {...settings}>
+            {web.map((item) => (
+              <div key={item.node.id}>
+                <div style={test} key={item.node.id}>
+                  <Link
+                    to={`/portafolio/${item.node.categoria.slug}/${item.node.slug}`}
+                    rel="noopener noreferrer"
+                    aria-label={`Ir a ${item.node.titulo}`}
+                    key={item.node.id}
+                  >
+                    <GatsbyImage
+                      image={getImage(item.node.miniatura.localFile)}
+                      alt="Test text"
+                    />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <div>
+          <div>
+            <FontAwesomeIcon
+              icon={[
+                (faprefix = "fas"),
+                (faicon = letrasiconos[0].node.categoria.icono.replace(
+                  /'/g,
+                  ""
+                )),
+              ]}
+              fixedWidth
+              size="lg"
+            />
+            <h2>{letrasiconos[0].node.categoria.titulo}</h2>
           </div>
-        ))}
+          <Slider {...settings}>
+            {letrasiconos.map((item) => (
+              <div key={item.node.id}>
+                <div style={test} key={item.node.id}>
+                  <Link
+                    to={`/portafolio/${item.node.categoria.slug}/${item.node.slug}`}
+                    rel="noopener noreferrer"
+                    aria-label={`Ir a ${item.node.titulo}`}
+                    key={item.node.id}
+                  >
+                    <GatsbyImage
+                      image={getImage(item.node.miniatura.localFile)}
+                      alt="Test text"
+                    />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </Layout>
   );
@@ -101,6 +186,7 @@ export const query = graphql`
           categoria {
             titulo
             slug
+            icono
           }
           miniatura {
             localFile {
@@ -123,6 +209,7 @@ export const query = graphql`
           categoria {
             titulo
             slug
+            icono
           }
           miniatura {
             localFile {
@@ -145,6 +232,7 @@ export const query = graphql`
           categoria {
             titulo
             slug
+            icono
           }
           miniatura {
             localFile {
@@ -157,26 +245,27 @@ export const query = graphql`
       }
     }
     letrasiconos: allStrapiProyectos(
-        limit: 4
-        filter: { categoria: { slug: { eq: "letras-iconos" } } }
-      ) {
-        edges {
-          node {
-            id
+      limit: 4
+      filter: { categoria: { slug: { eq: "letras-iconos" } } }
+    ) {
+      edges {
+        node {
+          id
+          slug
+          categoria {
+            titulo
             slug
-            categoria {
-              titulo
-              slug
-            }
-            miniatura {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
+            icono
+          }
+          miniatura {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
               }
             }
           }
         }
       }
+    }
   }
 `;

@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
         <button
           className="shuffle-btn"
           type="button"
-          onClick={(event) => randomizer(data.caras.edges)}
+          onClick={() => randomizer(data.caras.edges)}
         >
           ¡cambiar!{" "}
           <span aria-label="emoji" role="img">

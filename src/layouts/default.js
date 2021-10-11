@@ -15,7 +15,6 @@ library.add(fab, fas);
 
 const Layout = ({ children }) => (
   <div className="page">
-
     <div className="menu">
       <Header />
       <Navigation />

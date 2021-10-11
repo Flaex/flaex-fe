@@ -15,7 +15,7 @@ const Footer = () => (
       query footerQuery {
         contacto: allStrapiContacto {
           edges {
-            node {             
+            node {
               plataformas {
                 id
                 titulo

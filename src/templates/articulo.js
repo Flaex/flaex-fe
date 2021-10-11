@@ -2,11 +2,13 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
+import Share from "../components/share";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 const Articulo = ({ data }) => {
   const articulo = data.articulo;
+  const viewUrl = window.location.href;
   return (
     <Layout>
       <div>
@@ -15,6 +17,12 @@ const Articulo = ({ data }) => {
         <GatsbyImage
           image={getImage(articulo.imagen.localFile)}
           alt="Test text"
+        />
+        <Share
+          objeto="articulo"
+          url={viewUrl}
+          titulo={articulo.titulo}
+          imagen={articulo.imagen.url}
         />
         <time>{articulo.fecha}</time>
         <ReactMarkdown
@@ -36,6 +44,7 @@ export const query = graphql`
       titulo
       descripcion
       imagen {
+        url
         localFile {
           childImageSharp {
             gatsbyImageData

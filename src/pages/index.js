@@ -35,7 +35,6 @@ const IndexPage = ({ data }) => {
     return newArray;
   };
 
-  // Change video file element to a new one
   const randomizer = (array) => {
     positonZero(array);
     const videoContainer = document.querySelector(".video-container");
@@ -46,7 +45,6 @@ const IndexPage = ({ data }) => {
     </div>`;
   };
 
-  // Variable for dynamic image
   return (
     <Layout>
       <Seo description={data.inicio.edges[0].node.meta[0].value} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
@@ -9,15 +9,6 @@ const Proyecto = ({ data }) => {
   const proyecto = data.proyecto;
   const viewUrl = window.location.href;
 
-  const openModal = (ar) => {
-    const modal = document.getElementById(`${ar}`);
-    modal.style.display = "block";
-  };
-
-  const closeModal = (ar) => {
-    const modal = document.getElementById(`${ar}`);
-    modal.style.display = "none";
-  };
   return (
     <Layout>
       <div>
@@ -38,7 +29,12 @@ const Proyecto = ({ data }) => {
         <div>
           {proyecto.imagenes.map((imagen) => (
             <div key={imagen.id}>
-              <button onClick={openModal(imagen.id)}>
+              <button
+                onClick={() => {
+                  const modal = document.getElementById(imagen.id);
+                  modal.style.display = "block";
+                }}
+              >
                 <GatsbyImage
                   image={getImage(imagen.localFile)}
                   alt="Test text"
@@ -47,7 +43,10 @@ const Proyecto = ({ data }) => {
               <Modal
                 id={imagen.id}
                 imagen={imagen.localFile}
-                onClose={closeModal(imagen.id)}
+                onClose={() => {
+                  const modal = document.getElementById(imagen.id);
+                  modal.style.display = "none";
+                }}
               />
             </div>
           ))}

@@ -1,12 +1,9 @@
 import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
+import "../layouts/default.scss"
 const Modal = ({ id, onClose, imagen }) => {
-  const estilo = {
-    display: "none",
-  };
   return (
-    <div className="modal" style={estilo} id={id}>
+    <div className="modal estilo" id={id}>
       <div className="modal__content modal__contenido">
         <button className="modal__boton" onClick={onClose}>
           &times;

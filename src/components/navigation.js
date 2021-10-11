@@ -28,8 +28,8 @@ const Navigation = () => (
     >
       <span>portafolio</span>
     </Link>
-    {/* <Link
-      to="/blog"
+    <Link
+      to="/perfil"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
         isPartiallyCurrent
@@ -38,8 +38,8 @@ const Navigation = () => (
       }
       aria-label="Ir al portafolio de desarrollo front-end"
     >
-      <span>blog</span>
-    </Link> */}
+      <span>perfil</span>
+    </Link>
     {/* <Link
       to="/contact"
       activeStyle={activeStyles}

@@ -10,7 +10,7 @@ import "./src/assets/scss/_global.scss";
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
     `Hay nuevo contenido disponible en la aplicación. ` +
-      `¿Deseas actualizar para ver la ultima versión?`
+      `¿Deseas actualizar a la ultima versión?`
   );
   if (answer === true) {
     window.location.reload();

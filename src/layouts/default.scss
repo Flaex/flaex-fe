@@ -1,14 +1,24 @@
-.slick-prev, .slick-next {
-    z-index: 50;
-    &::before {
-        color: black;
-    }
+.slick-prev,
+.slick-next {
+  z-index: 50;
+  &::before {
+    color: black;
+  }
 }
 
 .slick-prev {
-    left: 0;
+  left: 0;
 }
 
 .slick-next {
-    right: 0;
+  right: 0;
+}
+
+.test {
+  width: 640px;
+  height: 320px;
+}
+
+.estilo {
+  display: none;
 }

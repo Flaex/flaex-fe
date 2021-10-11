@@ -27,11 +27,6 @@ const PortafolioPage = ({ data }) => {
     slidesToScroll: 1,
   };
 
-  const test = {
-    width: "640px",
-    height: "320px",
-  };
-
   return (
     <Layout>
       <div className="portafolio">
@@ -50,7 +45,7 @@ const PortafolioPage = ({ data }) => {
           </div>
           <Slider {...settings}>
             {logotipos.map((logotipo) => (
-              <div style={test} key={logotipo.node.id}>
+              <div className="test" key={logotipo.node.id}>
                 <Link
                   to={`/portafolio/${logotipo.node.categoria.slug}/${logotipo.node.slug}`}
                   rel="noopener noreferrer"
@@ -80,7 +75,7 @@ const PortafolioPage = ({ data }) => {
           <Slider {...settings}>
             {branding.map((brand) => (
               <div key={brand.node.id}>
-                <div style={test} key={brand.node.id}>
+                <div className="test" key={brand.node.id}>
                   <Link
                     to={`/portafolio/${brand.node.categoria.slug}/${brand.node.slug}`}
                     rel="noopener noreferrer"
@@ -113,7 +108,7 @@ const PortafolioPage = ({ data }) => {
           <Slider {...settings}>
             {web.map((item) => (
               <div key={item.node.id}>
-                <div style={test} key={item.node.id}>
+                <div className="test" key={item.node.id}>
                   <Link
                     to={`/portafolio/${item.node.categoria.slug}/${item.node.slug}`}
                     rel="noopener noreferrer"
@@ -148,7 +143,7 @@ const PortafolioPage = ({ data }) => {
           <Slider {...settings}>
             {letrasiconos.map((item) => (
               <div key={item.node.id}>
-                <div style={test} key={item.node.id}>
+                <div className="test" key={item.node.id}>
                   <Link
                     to={`/portafolio/${item.node.categoria.slug}/${item.node.slug}`}
                     rel="noopener noreferrer"

@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Tabs from "../components/tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import Seo from "../components/seo";
 
 const PerfilPage = ({ data }) => {
   /* eslint-disable */
   let [faicon, faprefix] = useState(0);
+
+  const array = [
+    data.perfil.edges[0].node.formacion,
+    data.perfil.edges[0].node.experiencia,
+  ];
 
   return (
     <Layout>
@@ -44,87 +46,7 @@ const PerfilPage = ({ data }) => {
             </div>
           ))}
         </div>
-
-        <h2>{data.perfil.edges[0].node.formacion.titulo}</h2>
-        <Tabs>
-          <TabList>
-            <Tab>
-              <FontAwesomeIcon
-                icon={[
-                  (faprefix = "fas"),
-                  (faicon = 'align-left'),
-                ]}
-                fixedWidth
-                size="lg"
-              />
-            </Tab>
-            <Tab>
-            <FontAwesomeIcon
-                icon={[
-                  (faprefix = "fas"),
-                  (faicon = 'table'),
-                ]}
-                fixedWidth
-                size="lg"
-              />
-            </Tab>
-          </TabList>
-          <TabPanel>
-            <ReactMarkdown
-              children={data.perfil.edges[0].node.formacion.texto}
-              remarkPlugins={[remarkGfm]}
-              skipHtml={true}
-            />
-          </TabPanel>
-          <TabPanel>
-            <ReactMarkdown
-              children={data.perfil.edges[0].node.formacion.lista}
-              remarkPlugins={[remarkGfm]}
-              skipHtml={true}
-            />
-          </TabPanel>
-        </Tabs>
-
-        <h2>{data.perfil.edges[0].node.experiencia.titulo}</h2>
-        <Tabs>
-          <TabList>
-            <Tab>
-              <FontAwesomeIcon
-                icon={[
-                  (faprefix = "fas"),
-                  (faicon = 'align-left'),
-                ]}
-                fixedWidth
-                size="lg"
-              />
-            </Tab>
-            <Tab>
-            <FontAwesomeIcon
-                icon={[
-                  (faprefix = "fas"),
-                  (faicon = 'table'),
-                ]}
-                fixedWidth
-                size="lg"
-              />
-            </Tab>
-          </TabList>
-          <TabPanel>
-            <ReactMarkdown
-              children={data.perfil.edges[0].node.experiencia.texto}
-              remarkPlugins={[remarkGfm]}
-              skipHtml={true}
-            />
-          </TabPanel>
-          <TabPanel>
-            <ReactMarkdown
-              children={data.perfil.edges[0].node.experiencia.lista}
-              remarkPlugins={[remarkGfm]}
-              skipHtml={true}
-            />
-          </TabPanel>
-        </Tabs>
-        
+        <Tabs colecciones={array} icons={["align-left", "table"]} />
       </div>
     </Layout>
   );
@@ -173,11 +95,13 @@ export const query = graphql`
             descripcion
           }
           formacion {
+            id
             titulo
             texto
             lista
           }
           experiencia {
+            id
             titulo
             texto
             lista

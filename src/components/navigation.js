@@ -40,13 +40,20 @@ const Navigation = () => (
     >
       <span>perfil</span>
     </Link>
-    {/* <Link
-      to="/contact"
+    <Link
+      to="/blog"
+      activeStyle={activeStyles}
+      aria-label="Ir a la información de contacto"
+    >
+      <span>blog</span>
+    </Link>
+    <Link
+      to="/contacto"
       activeStyle={activeStyles}
       aria-label="Ir a la información de contacto"
     >
       <span>contacto</span>
-    </Link> */}
+    </Link>
   </nav>
 );
 

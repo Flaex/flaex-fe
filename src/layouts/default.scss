@@ -1,3 +1,128 @@
+@use "../assets/scss/normalize" as *;
+@use "../assets/scss/variables" as *;
+@use "../assets/scss/fonts";
+@use "../assets/scss/mixins" as *;
+
+/* ubuntu-condensed-regular - latin */
+
+body {
+  font-family: "Ubuntu Condensed";
+  color: #1a1b1a;
+  @include image-background($image: "bg.jpg");
+  /*   background-image: url("../images/bg.jpg");*/
+  background-repeat: repeat;
+  font-family: "Ubuntu Condensed", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.page {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.7vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+.menu {
+  display: flex;
+  width: 100vw;
+  & > div {
+   margin-right: 0.7vw;
+  }
+}
+
+.header {
+  width: 8.3vw;
+  padding-right: 0.7vw;
+
+  &__tag {
+    margin-top: 0.7vw;
+  }
+
+}
+
+.navigation {
+  display: flex;
+  
+  &__link {
+    margin-right: 0.7vw;
+    @include image-background($image: "btn_bg.png");
+    font-size: 0.95rem;
+    line-height: 1.35;
+    color: #fff;
+    text-decoration: none;
+    color: white;
+    width: 8.3vw;
+    height: 8.3vw;
+
+    /* &:nth-child(2) {
+      transform: rotate(90deg);
+      span {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &:nth-child(3) {
+      transform: rotate(180deg);
+      span {
+        transform: rotate(-180deg);
+      }
+    } */
+  }
+}
+
+.galleryImage {
+  cursor: zoom-in;
+}
+
 .slick-prev,
 .slick-next {
   z-index: 50;

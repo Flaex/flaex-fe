@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
         </button>
         <div className="video-container">
           <video autoPlay>
-            <source src={data.caras.edges[3].node.media.url} type="video/mp4" />
+            {/* <source src={data.caras.edges[3].node.media.url} type="video/mp4" /> */}
           </video>
         </div>
         <h2>{data.inicio.edges[0].node.flaex.titulo}</h2>

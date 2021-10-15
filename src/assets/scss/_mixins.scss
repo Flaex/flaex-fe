@@ -18,8 +18,6 @@
 @mixin image-background($image) {
   background-image: url('../assets/images/#{$image}');
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
 }
 
 // Responsive

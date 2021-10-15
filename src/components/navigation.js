@@ -15,8 +15,9 @@ const linkStyles = {};
 // Main page navigation component
 
 const Navigation = () => (
-  <nav>
+  <nav className="navigation">
     <Link
+    className="navigation__link"
       to="/portafolio"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
@@ -29,6 +30,7 @@ const Navigation = () => (
       <span>portafolio</span>
     </Link>
     <Link
+    className="navigation__link"
       to="/perfil"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
@@ -41,6 +43,7 @@ const Navigation = () => (
       <span>perfil</span>
     </Link>
     <Link
+    className="navigation__link"
       to="/blog"
       activeStyle={activeStyles}
       aria-label="Ir a la información de contacto"
@@ -48,6 +51,7 @@ const Navigation = () => (
       <span>blog</span>
     </Link>
     <Link
+    className="navigation__link"
       to="/contacto"
       activeStyle={activeStyles}
       aria-label="Ir a la información de contacto"

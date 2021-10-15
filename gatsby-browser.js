@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-import "./src/assets/scss/_global.scss";
+/* import "./src/layouts/default.scss"; */
 
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(

@@ -29,27 +29,27 @@ const Footer = () => (
       }
     `}
     render={(data) => (
-      <footer>
+      <footer className="footer">
         <p>flaex.com - {new Date().getFullYear()}</p>
-        <div className="links">
+        <div className="footer__rrss">
           {data.contacto.edges[0].node.plataformas.map((link) => (
-            <div key={link.id}>
-              <a
-                href={link.descripcion}
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label={`Ir a ${link.titulo}`}
-              >
-                <FontAwesomeIcon
-                  icon={[
-                    (faprefix = link.prefix.replace(/'/g, "")),
-                    (faicon = link.icono.replace(/'/g, "")),
-                  ]}
-                  fixedWidth
-                  size="lg"
-                />
-              </a>
-            </div>
+            <a
+              className="footer__link"
+              key={link.id}
+              href={link.descripcion}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label={`Ir a ${link.titulo}`}
+            >
+              <FontAwesomeIcon
+                icon={[
+                  (faprefix = link.prefix.replace(/'/g, "")),
+                  (faicon = link.icono.replace(/'/g, "")),
+                ]}
+                fixedWidth
+                size="1x"
+              />
+            </a>
           ))}
         </div>
       </footer>

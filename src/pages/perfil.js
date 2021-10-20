@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Tabs from "../components/tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
 
 const PerfilPage = ({ data }) => {
@@ -18,35 +20,56 @@ const PerfilPage = ({ data }) => {
   return (
     <Layout>
       <Seo description={data.perfil.edges[0].node.meta[0].value} />
+      <h1 className="hidden">Perfil</h1>
       <div className="perfil">
-        <GatsbyImage
-          image={getImage(data.inicio.edges[0].node.imagen.localFile)}
-          alt="Test text"
-        />
-        <h1 className="about-me">Perfil</h1>
-        <h2>{data.perfil.edges[0].node.intro.titulo}</h2>
-        <p>{data.perfil.edges[0].node.intro.descripcion}</p>
-
-        <h2>{data.perfil.edges[0].node.flaex.titulo}</h2>
-        <p>{data.perfil.edges[0].node.flaex.descripcion}</p>
-
-        <div className="portafolio">
-          <h2>Habilidades</h2>
-          {data.perfil.edges[0].node.habilidades.map((skill) => (
-            <div key={skill.id}>
-              <FontAwesomeIcon
-                icon={[
-                  (faprefix = skill.prefix.replace(/'/g, "")),
-                  (faicon = skill.icono.replace(/'/g, "")),
-                ]}
-                fixedWidth
-                size="lg"
-              />
-              <h3>{skill.titulo}</h3>
+        <section className="col">
+          <div className="intro">
+            <GatsbyImage
+              className="hero__imagen"
+              image={getImage(data.inicio.edges[0].node.imagen.localFile)}
+              alt="Test text"
+            />
+            <h2>{data.perfil.edges[0].node.intro.titulo}</h2>
+            <ReactMarkdown
+              children={data.perfil.edges[0].node.intro.descripcion}
+              remarkPlugins={[remarkGfm]}
+              skipHtml={true}
+            />
+          </div>
+          <div>
+            <h2>{data.perfil.edges[0].node.flaex.titulo}</h2>
+            <ReactMarkdown
+              children={data.perfil.edges[0].node.flaex.descripcion}
+              remarkPlugins={[remarkGfm]}
+              skipHtml={true}
+            />
+          </div>
+          <div className="portafolio">
+            <h2>Habilidades</h2>
+            <div className="skills">
+              {data.perfil.edges[0].node.habilidades.map((skill) => (
+                <div className="skills__item" key={skill.id}>
+                  <div className="skills__link">
+                    <FontAwesomeIcon
+                      icon={[
+                        (faprefix = skill.prefix.replace(/'/g, "")),
+                        (faicon = skill.icono.replace(/'/g, "")),
+                      ]}
+                      fixedWidth
+                      size="2x"
+                    />
+                    <h3 className="skills__title">{skill.titulo}</h3>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <Tabs colecciones={array} icons={["align-left", "table"]} />
+          </div>
+        </section>
+        <section className="col">
+          <div className="tabs">
+            <Tabs colecciones={array} icons={["align-left", "table"]} clase="perfil__tablas" />
+          </div>
+        </section>
       </div>
     </Layout>
   );

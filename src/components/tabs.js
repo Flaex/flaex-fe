@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-const TabComponent = ({ colecciones, icons }) => {
+const TabComponent = ({ colecciones, icons, clase }) => {
   /* eslint-disable */
 
   return (
@@ -15,18 +15,10 @@ const TabComponent = ({ colecciones, icons }) => {
           <h2>{tab.titulo}</h2>
           <TabList>
             <Tab>
-              <FontAwesomeIcon
-                icon={["fas", icons[0]]}
-                fixedWidth
-                size="lg"
-              />
+              <FontAwesomeIcon icon={["fas", icons[0]]} fixedWidth size="lg" />
             </Tab>
             <Tab>
-              <FontAwesomeIcon
-                icon={["fas", icons[1]]}
-                fixedWidth
-                size="lg"
-              />
+              <FontAwesomeIcon icon={["fas", icons[1]]} fixedWidth size="lg" />
             </Tab>
           </TabList>
           <TabPanel>
@@ -38,6 +30,7 @@ const TabComponent = ({ colecciones, icons }) => {
           </TabPanel>
           <TabPanel>
             <ReactMarkdown
+              className={clase}
               children={tab.lista}
               remarkPlugins={[remarkGfm]}
               skipHtml={true}

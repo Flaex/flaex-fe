@@ -50,14 +50,14 @@ const IndexPage = ({ data }) => {
       <Seo description={data.inicio.edges[0].node.meta[0].value} />
       <div className="inicio">
         <h1 className="hidden">Inicio</h1>
-        <section className="uno-dos">
-          <div className="perfil">
+        <section className="col">
+          <div className="hero">
             <GatsbyImage
-              className="perfil__imagen"
+              className="hero__imagen"
               image={getImage(data.inicio.edges[0].node.imagen.localFile)}
               alt="Test text"
             />
-            <div className="perfil__info">
+            <div className="hero__info">
               <h2>{data.inicio.edges[0].node.intro.titulo}</h2>
               <p>{data.inicio.edges[0].node.intro.descripcion}</p>
             </div>
@@ -117,7 +117,7 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="uno-dos">
+        <section className="col">
           <div className="blog">
             <h2>{data.inicio.edges[0].node.objetivo.titulo}</h2>
             <p>{data.inicio.edges[0].node.objetivo.descripcion}</p>

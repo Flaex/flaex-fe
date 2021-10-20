@@ -7,7 +7,8 @@
 
 body {
   font-family: "Ubuntu Condensed";
-  color: #1a1b1a;
+  color: $black-a;
+  /* color:$black; */
   @include image-background($image: "bg.jpg");
   /*   background-image: url("../images/bg.jpg");*/
   background-repeat: repeat;
@@ -41,7 +42,7 @@ section {
 }
 
 .page {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 0.7vw;
 }
 
@@ -124,16 +125,15 @@ h5 {
 // Main container
 .main {
   margin-top: 1.2rem;
+
+  & > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
-.inicio {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.perfil {
+.hero {
   display: flex;
 
   &__imagen {
@@ -143,7 +143,7 @@ h5 {
   }
 
   &__info {
-    width: 63%;
+    width: 55%;
   }
 }
 
@@ -221,6 +221,45 @@ h5 {
   }
 }
 
+.perfil {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__tablas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    table {
+      width: 48%;
+      border: 1px solid #c0c0c0;
+      padding: 0.4rem;
+      margin-bottom: 1rem;
+
+      thead {
+        color: $black;
+        font-size: 1.2rem;
+      }
+
+      em {
+        font-size: 0.9rem;
+      }      
+    }
+  }
+}
+
+.react-tabs {
+  &__tab-panel {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      li {
+        width: 50%;
+      }
+    }
+  }
+}
+
 .blog {
   &__articulos {
     display: flex;
@@ -267,11 +306,9 @@ h5 {
   }
 }
 
-.uno-dos {
+.col {
   width: 49%;
 }
-
-
 
 .galleryImage {
   cursor: zoom-in;

@@ -44,7 +44,7 @@ const PerfilPage = ({ data }) => {
               skipHtml={true}
             />
           </div>
-          <div className="portafolio">
+          <div className="habilidades">
             <h2>Habilidades</h2>
             <div className="skills">
               {data.perfil.edges[0].node.habilidades.map((skill) => (
@@ -65,10 +65,8 @@ const PerfilPage = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="col">
-          <div className="tabs">
-            <Tabs colecciones={array} icons={["align-left", "table"]} clase="perfil__tablas" />
-          </div>
+        <section className="col">          
+          <Tabs colecciones={array} icons={["align-left", "table"]} clase="perfil__tablas" />          
         </section>
       </div>
     </Layout>

@@ -37,9 +37,9 @@ const IndexPage = ({ data }) => {
 
   const randomizer = (array) => {
     positonZero(array);
-    const videoContainer = document.querySelector(".flaex__media");
+    const videoContainer = document.querySelector(".caras__media");
     videoContainer.innerHTML = `         
-      <video class="flaex__video" key=${array[0].node.media.id} autoPlay>
+      <video class="caras__video" key=${array[0].node.media.id} autoPlay>
         <source src=${array[0].node.media.url} type="video/mp4" />                           
       </video>
     `;
@@ -62,27 +62,27 @@ const IndexPage = ({ data }) => {
               <p>{data.inicio.edges[0].node.intro.descripcion}</p>
             </div>
           </div>
-          <div className="flaex">
-            <div className="flaex__media">
-              <video className="flaex__video" autoPlay>
+          <div className="caras">
+            <div className="caras__media">
+              <video className="caras__video" autoPlay>
                 <source
                   src={data.caras.edges[3].node.media.url}
                   type="video/mp4"
                 />
               </video>
             </div>
-            <div className="flaex__info">
+            <div className="caras__info">
               <h2>{data.inicio.edges[0].node.flaex.titulo}</h2>
               <p>{data.inicio.edges[0].node.flaex.descripcion}</p>
               <button
-                className="flaex__boton"
+                className="caras__boton"
                 type="button"
                 onClick={() => randomizer(data.caras.edges)}
               >
                 ¡cambiar!
                 <br />
                 <span
-                  className="flaex__boton--icono"
+                  className="caras__boton--icono"
                   aria-label="emoji"
                   role="img"
                 >
@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
               </button>
             </div>
           </div>
-          <div className="portafolio">
+          <div className="categorias">
             <h2>{data.perfil.edges[0].node.portafolio.titulo}</h2>
             <div className="skills">
               {data.perfil.edges[0].node.habilidades.map((skill) => (
@@ -118,14 +118,14 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
         <section className="col">
-          <div className="blog">
+          <div className="feed">
             <h2>{data.inicio.edges[0].node.objetivo.titulo}</h2>
             <p>{data.inicio.edges[0].node.objetivo.descripcion}</p>
-            <ul className="blog__articulos">
+            <ul className="feed__articulos">
               {data.articulos.edges.map((articulo) => (
-                <li className="blog__item"  key={articulo.node.id}>
+                <li className="feed__item" key={articulo.node.id}>
                   <Link
-                    className="blog__link"
+                    className="feed__link"
                     to={`/blog/${articulo.node.slug}`}
                     rel="noopener noreferrer"
                     aria-label={`Ir a ${articulo.node.titulo}`}
@@ -134,7 +134,7 @@ const IndexPage = ({ data }) => {
                       image={getImage(articulo.node.imagen.localFile)}
                       alt="Test text"
                     />
-                    <h3 className="blog__title">{articulo.node.titulo}</h3>
+                    <h3 className="feed__title">{articulo.node.titulo}</h3>
                   </Link>
                 </li>
               ))}
@@ -211,7 +211,11 @@ export const query = graphql`
           imagen {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 375
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }

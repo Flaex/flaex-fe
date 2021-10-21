@@ -147,7 +147,7 @@ h5 {
   }
 }
 
-.flaex {
+.caras {
   display: flex;
 
   &__media {
@@ -221,46 +221,7 @@ h5 {
   }
 }
 
-.perfil {
-  display: flex;
-  flex-wrap: wrap;
-
-  &__tablas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    table {
-      width: 48%;
-      border: 1px solid #c0c0c0;
-      padding: 0.4rem;
-      margin-bottom: 1rem;
-
-      thead {
-        color: $black;
-        font-size: 1.2rem;
-      }
-
-      em {
-        font-size: 0.9rem;
-      }      
-    }
-  }
-}
-
-.react-tabs {
-  &__tab-panel {
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      li {
-        width: 50%;
-      }
-    }
-  }
-}
-
-.blog {
+.feed {
   &__articulos {
     display: flex;
     justify-content: space-between;
@@ -282,17 +243,86 @@ h5 {
   }
 }
 
+.perfil {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__tablas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    table {
+      width: 48%;
+      border: 1px solid #c0c0c0;
+      padding: 0.4rem;
+      margin-bottom: 1rem;
+
+      thead {
+        color: $black;
+        font-size: 1.2rem;
+      }
+
+      em {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.portafolio {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > div {
+    width: 32%;
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 50;
+    &::before {
+      color: $black;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0 ;
+  }
+
+  &__categoria-link {
+    width: 100%;
+    background-color: $gray-soft;
+    text-align: right;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    
+    a {
+      font-size: 0.9rem;
+      color: $black;
+  
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
 .footer {
   display: flex;
-
   width: 100%;
 
   p {
-    font-size: 0.9rem;
-    padding: 0.5rem;
+    font-size: 1rem;
+    height: fit-content;
     color: white;
     background-color: $black;
     margin: 0;
+    padding: 0.5rem;
   }
   &__rrss {
     display: flex;
@@ -312,22 +342,6 @@ h5 {
 
 .galleryImage {
   cursor: zoom-in;
-}
-
-.slick-prev,
-.slick-next {
-  z-index: 50;
-  &::before {
-    color: $black;
-  }
-}
-
-.slick-prev {
-  left: 0;
-}
-
-.slick-next {
-  right: 0;
 }
 
 .hidden {

@@ -23,26 +23,28 @@ const PortafolioPage = ({ data }) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
   };
 
   return (
     <Layout>
       <div className="portafolio">
-        <h1>Portafolio</h1>
+        <h1 className="hidden">Portafolio</h1>
+
         <div className="portafolio-logotipos">
-          <div>
+          <h2>
             <FontAwesomeIcon
               icon={[
                 (faprefix = "fas"),
                 (faicon = logotipos[0].node.categoria.icono.replace(/'/g, "")),
               ]}
               fixedWidth
-              size="lg"
+              size="sm"
             />
-            <h2>{logotipos[0].node.categoria.titulo}</h2>
-          </div>
+            {logotipos[0].node.categoria.titulo}
+          </h2>
+
           <Slider {...settings}>
             {logotipos.map((logotipo) => (
               <div className="test" key={logotipo.node.id}>
@@ -59,19 +61,27 @@ const PortafolioPage = ({ data }) => {
               </div>
             ))}
           </Slider>
+          <div className="portafolio__categoria-link">
+            <Link
+              to="/portafolio/logotipos"
+              aria-label="Ir al portafolio de logos"
+            >
+              ver todos&nbsp;➝
+            </Link>
+          </div>
         </div>
         <div className="portafolio-branding">
-          <div>
+          <h2>
             <FontAwesomeIcon
               icon={[
                 (faprefix = "fas"),
                 (faicon = branding[0].node.categoria.icono.replace(/'/g, "")),
               ]}
               fixedWidth
-              size="lg"
+              size="sm"
             />
-            <h2>{branding[0].node.categoria.titulo}</h2>
-          </div>
+            {branding[0].node.categoria.titulo}
+          </h2>
           <Slider {...settings}>
             {branding.map((brand) => (
               <div key={brand.node.id}>
@@ -91,20 +101,28 @@ const PortafolioPage = ({ data }) => {
               </div>
             ))}
           </Slider>
+          <div className="portafolio__categoria-link">
+            <Link
+              to="/portafolio/branding"
+              aria-label="Ir al portafolio de logos"
+            >
+              ver todos&nbsp;➝
+            </Link>
+          </div>
         </div>
 
-        <div>
-          <div>
+        <div className="portafolio-web">
+          <h2>
             <FontAwesomeIcon
               icon={[
                 (faprefix = "fas"),
                 (faicon = web[0].node.categoria.icono.replace(/'/g, "")),
               ]}
               fixedWidth
-              size="lg"
+              size="sm"
             />
-            <h2>{web[0].node.categoria.titulo}</h2>
-          </div>
+            {web[0].node.categoria.titulo}
+          </h2>
           <Slider {...settings}>
             {web.map((item) => (
               <div key={item.node.id}>
@@ -124,9 +142,17 @@ const PortafolioPage = ({ data }) => {
               </div>
             ))}
           </Slider>
+          <div className="portafolio__categoria-link">
+            <Link
+              to="/portafolio/web"
+              aria-label="Ir al portafolio de logos"
+            >
+              ver todos&nbsp;➝
+            </Link>
+          </div>
         </div>
-        <div>
-          <div>
+        <div className="portafolio-letras">
+          <h2>
             <FontAwesomeIcon
               icon={[
                 (faprefix = "fas"),
@@ -136,10 +162,10 @@ const PortafolioPage = ({ data }) => {
                 )),
               ]}
               fixedWidth
-              size="lg"
+              size="sm"
             />
-            <h2>{letrasiconos[0].node.categoria.titulo}</h2>
-          </div>
+            {letrasiconos[0].node.categoria.titulo}
+          </h2>
           <Slider {...settings}>
             {letrasiconos.map((item) => (
               <div key={item.node.id}>
@@ -159,6 +185,14 @@ const PortafolioPage = ({ data }) => {
               </div>
             ))}
           </Slider>
+          <div className="portafolio__categoria-link">
+            <Link
+              to="/portafolio/letras-iconos"
+              aria-label="Ir al portafolio de logos"
+            >
+              ver todos&nbsp;➝
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>

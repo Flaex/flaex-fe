@@ -2,6 +2,7 @@
 @use "../assets/scss/mixins" as *;
 
 .inicio {
+  gap: 1%;
   &__col {
     width: 49%;
   }

@@ -2,8 +2,18 @@ import React from "react";
 import { StaticQuery, Link, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-/* eslint-disable */
+const activeStyles = {
+  backgroundColor: "#ffffff",
+  backgroundImage: "none",
+  color: "#1a1a1a",
+  border: "1px",
+  borderColor: "#1a1a1a",
+  borderStyle: "solid",
+};
 
+const linkStyles = {};
+
+/* eslint-disable */
 let faicon = null;
 let faprefix = null;
 
@@ -30,13 +40,22 @@ const NavigationCat = () => (
       }
     `}
     render={(data) => (
-      <div className="nav__cat">
+      <div className="navigation">
+        <button onClick={() => window.history.back()}>&#10229;</button>
         {data.perfil.edges[0].node.habilidades.map((habilidad) => (
-          <div key={habilidad.id}>
-            <Link
-              to={`${habilidad.descripcion}`}
-              aria-label={`Ir a ${habilidad.titulo}`}
-            >
+          <Link
+            className="navigation__category"
+            to={`${habilidad.descripcion}`}
+            key={habilidad.id}
+            activeStyle={activeStyles}
+            getProps={({ isPartiallyCurrent }) =>
+              isPartiallyCurrent
+                ? { style: { ...linkStyles, ...activeStyles } }
+                : null
+            }
+            aria-label={`Ir a ${habilidad.titulo}`}
+          >
+            <h3>
               <FontAwesomeIcon
                 icon={[
                   (faprefix = habilidad.prefix.replace(/'/g, "")),
@@ -45,9 +64,9 @@ const NavigationCat = () => (
                 fixedWidth
                 size="lg"
               />
-              <h3>{habilidad.titulo}</h3>
-            </Link>
-          </div>
+              {habilidad.titulo}
+            </h3>
+          </Link>
         ))}
       </div>
     )}

@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Seo from "../components/seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./index.scss";
 
 const IndexPage = ({ data }) => {
   /* eslint-disable */
@@ -50,7 +51,7 @@ const IndexPage = ({ data }) => {
       <Seo description={data.inicio.edges[0].node.meta[0].value} />
       <div className="inicio">
         <h1 className="hidden">Inicio</h1>
-        <section className="col">
+        <section className="inicio__col">
           <div className="hero">
             <GatsbyImage
               className="hero__imagen"
@@ -91,7 +92,7 @@ const IndexPage = ({ data }) => {
               </button>
             </div>
           </div>
-          <div className="categorias">
+          <div className="habilidades">
             <h2>{data.perfil.edges[0].node.portafolio.titulo}</h2>
             <div className="skills">
               {data.perfil.edges[0].node.habilidades.map((skill) => (
@@ -117,7 +118,7 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="col">
+        <section className="inicio__col">
           <div className="feed">
             <h2>{data.inicio.edges[0].node.objetivo.titulo}</h2>
             <p>{data.inicio.edges[0].node.objetivo.descripcion}</p>

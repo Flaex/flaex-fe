@@ -6,7 +6,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const TabComponent = ({ colecciones, icons, clase }) => {
-
   return (
     <div className="tabs">
       {colecciones.map((tab) => (

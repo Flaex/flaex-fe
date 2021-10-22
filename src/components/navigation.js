@@ -46,6 +46,11 @@ const Navigation = () => (
       className="navigation__link"
       to="/blog"
       activeStyle={activeStyles}
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent
+          ? { style: { ...linkStyles, ...activeStyles } }
+          : null
+      }
       aria-label="Ir a la información de contacto"
     >
       <span>blog</span>
@@ -54,6 +59,11 @@ const Navigation = () => (
       className="navigation__link"
       to="/contacto"
       activeStyle={activeStyles}
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent
+          ? { style: { ...linkStyles, ...activeStyles } }
+          : null
+      }
       aria-label="Ir a la información de contacto"
     >
       <span>contacto</span>

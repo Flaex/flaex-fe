@@ -4,6 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Share from "../components/share";
 import Modal from "../components/modal";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import "./proyecto.scss";
 
 const Proyecto = ({ data }) => {
   const proyecto = data.proyecto;
@@ -11,45 +14,68 @@ const Proyecto = ({ data }) => {
 
   return (
     <Layout>
-      <div>
-        <button onClick={() => window.history.back()}>&#10229;</button>
-        <h1>{proyecto.titulo}</h1>
-        <GatsbyImage
-          image={getImage(proyecto.miniatura.localFile)}
-          alt="Test text"
-        />
-        <Share
-          objeto="proyecto"
-          url={viewUrl}
-          titulo={proyecto.titulo}
-          imagen={proyecto.miniatura.url}
-        />
-        <time>{proyecto.Ano}</time>
-        <p>{proyecto.descripcion}</p>
-        <div>
-          {proyecto.imagenes.map((imagen) => (
-            <div key={imagen.id}>
-              <button
-                onClick={() => {
-                  const modal = document.getElementById(imagen.id);
-                  modal.style.display = "block";
-                }}
-              >
-                <GatsbyImage
-                  image={getImage(imagen.localFile)}
-                  alt="Test text"
+      <div className="submenu">
+        <div className="navigation">
+          <button
+            className="navigation__button"
+            onClick={() => window.history.back()}
+          >
+            &#10229;
+          </button>
+          <h1 className="proyecto__title">{proyecto.titulo}</h1>
+        </div>
+      </div>
+      <div className="proyecto">
+        <div className="proyecto__col-a">
+          <GatsbyImage
+            className="proyecto__imagen"
+            image={getImage(proyecto.miniatura.localFile)}
+            alt="Test text"
+          />
+        </div>
+        <div className="proyecto__col-b">
+          <time className="proyecto__lugar">
+            {proyecto.ciudad} - {proyecto.Ano}
+          </time>
+          <ReactMarkdown
+            className="proyecto__descripcion"
+            children={proyecto.descripcion}
+            remarkPlugins={[remarkGfm]}
+            skipHtml={true}
+          />
+
+          <div className="proyecto__galeria">
+            {proyecto.imagenes.map((imagen) => (
+              <div className="proyecto__item" key={imagen.id}>
+                <button
+                  className="proyecto__button"
+                  onClick={() => {
+                    const modal = document.getElementById(imagen.id);
+                    modal.style.display = "block";
+                  }}
+                >
+                  <GatsbyImage
+                    image={getImage(imagen.localFile)}
+                    alt="Test text"
+                  />
+                </button>
+                <Modal
+                  id={imagen.id}
+                  imagen={imagen.localFile}
+                  onClose={() => {
+                    const modal = document.getElementById(imagen.id);
+                    modal.style.display = "none";
+                  }}
                 />
-              </button>
-              <Modal
-                id={imagen.id}
-                imagen={imagen.localFile}
-                onClose={() => {
-                  const modal = document.getElementById(imagen.id);
-                  modal.style.display = "none";
-                }}
-              />
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+          <Share
+            objeto="proyecto"
+            url={viewUrl}
+            titulo={proyecto.titulo}
+            imagen={proyecto.miniatura.url}
+          />
         </div>
       </div>
     </Layout>

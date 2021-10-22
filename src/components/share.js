@@ -17,7 +17,7 @@ import {
 const Share = ({ objeto, url, titulo, imagen }) => {
   return (
     <div className="share">
-      <p>Comparte este {objeto} </p>
+      <p className="share__texto">Comparte este {objeto} </p>
       <PinterestShareButton children="a" url={url} media={imagen}>
         <PinterestIcon size={32} round={true} />
       </PinterestShareButton>

@@ -2,45 +2,37 @@ import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navcat from "../components/navigation-cat";
+import "./categoria.scss";
 
 const Categoria = ({ data }) => {
   const proyectos = data.categoria.proyectos;
   const categoria = data.categoria;
-  const faIcon = data.categoria.icono;
+
   /* eslint-disable */
   let [faicon, faprefix] = useState(0);
 
   return (
     <Layout>
-      <button onClick={() => window.history.back()}>&#10229;</button>
-      <Navcat />
-      <h1 id={data.categoria.id}>
-        <FontAwesomeIcon
-          icon={[(faprefix = "fas"), (faicon = faIcon.replace(/'/g, ""))]}
-          fixedWidth
-          size="lg"
-        />
-        {categoria.titulo}
-      </h1>
-      <ul>
+      <div className="submenu">
+        <Navcat />
+      </div>
+      <ul className="categorias">
         {proyectos.map((proyecto) => {
           return (
-            <div key={proyecto.id}>
+            <li className="categorias__item">
               <Link
                 to={`/portafolio/${categoria.slug}/${proyecto.slug}`}
+                key={proyecto.id}
                 rel="noopener noreferrer"
                 aria-label={`Ir a ${proyecto.titulo}`}
               >
-                <li>
-                  <GatsbyImage
-                    image={getImage(proyecto.miniatura.localFile)}
-                    alt="Test text"
-                  />
-                </li>
+                <GatsbyImage
+                  image={getImage(proyecto.miniatura.localFile)}
+                  alt="Test text"
+                />
               </Link>
-            </div>
+            </li>
           );
         })}
       </ul>

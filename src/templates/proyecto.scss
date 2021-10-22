@@ -1,0 +1,47 @@
+@use "../assets/scss/variables" as *;
+@use "../assets/scss/mixins" as *;
+
+.proyecto {
+    display: flex;
+    gap: 1vw;
+    margin: 1em 0 1em;
+  
+    &__col-a {
+      width: 27vw;
+    }
+  
+    &__col-b {
+      width: 72vw;
+    }
+  
+    &__title {
+      margin-bottom: 0;
+    }
+  
+    &__imagen {
+      border: 1px solid $gray-border;
+    }
+  
+    &__lugar {
+      font-weight: bold;
+    }
+  
+    &__descripcion {
+      margin-top: 0;
+    }
+  
+    &__galeria {
+      display: flex;
+      gap: 1%;
+    }
+  
+    &__item {
+      width: 25%;
+      border: 1px solid $gray-border;
+    }
+  
+    &__button {
+      padding: 0;
+      line-height: unset;
+    }
+  }

@@ -4,12 +4,12 @@ import "../layouts/default.scss";
 
 const Modal = ({ id, onClose, imagen }) => {
   return (
-    <div className="modal estilo" id={id}>
-      <div className="modal__content modal__contenido">
+    <div className="modal" id={id}>
+      <div className="modal__content">
         <button className="modal__boton" onClick={onClose}>
-          &times;
+          <span>&times;</span>
         </button>
-        <div className="modal__body modal__cuerpo">
+        <div className="modal__body">
           <GatsbyImage image={getImage(imagen)} alt="Test text" />
         </div>
       </div>

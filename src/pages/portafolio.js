@@ -4,12 +4,11 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
+import "./portafolio.scss";
 
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import "../layouts/default.scss";
 
 const PortafolioPage = ({ data }) => {
   /* eslint-disable */
@@ -63,7 +62,7 @@ const PortafolioPage = ({ data }) => {
           </Slider>
           <div className="portafolio__categoria-link">
             <Link
-              to="/portafolio/logotipos"
+              to="/portafolio/logotipos/"
               aria-label="Ir al portafolio de logos"
             >
               ver todos&nbsp;➝
@@ -103,7 +102,7 @@ const PortafolioPage = ({ data }) => {
           </Slider>
           <div className="portafolio__categoria-link">
             <Link
-              to="/portafolio/branding"
+              to="/portafolio/branding/"
               aria-label="Ir al portafolio de logos"
             >
               ver todos&nbsp;➝
@@ -143,10 +142,7 @@ const PortafolioPage = ({ data }) => {
             ))}
           </Slider>
           <div className="portafolio__categoria-link">
-            <Link
-              to="/portafolio/web"
-              aria-label="Ir al portafolio de logos"
-            >
+            <Link to="/portafolio/web/" aria-label="Ir al portafolio de logos">
               ver todos&nbsp;➝
             </Link>
           </div>
@@ -187,7 +183,7 @@ const PortafolioPage = ({ data }) => {
           </Slider>
           <div className="portafolio__categoria-link">
             <Link
-              to="/portafolio/letras-iconos"
+              to="/portafolio/letras-iconos/"
               aria-label="Ir al portafolio de logos"
             >
               ver todos&nbsp;➝

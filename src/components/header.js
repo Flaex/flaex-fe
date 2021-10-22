@@ -9,14 +9,14 @@ const HeaderPage = () => (
     <div className="header__emblem">
       <Link to="/" aria-label="Ir al inicio">
         <StaticImage src="../assets/images/logo.png" alt="Emblema del logo" />
-      </Link>      
+      </Link>
     </div>
     <div className="header__tag">
       <Link to="/" aria-label="Ir al perfil">
         <StaticImage
           src="../assets/images/tag.png"
           alt="please include an alt"
-        />        
+        />
       </Link>
     </div>
   </header>

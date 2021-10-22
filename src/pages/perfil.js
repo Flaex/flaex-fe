@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
+import "./perfil.scss";
 
 const PerfilPage = ({ data }) => {
   /* eslint-disable */
@@ -22,7 +23,7 @@ const PerfilPage = ({ data }) => {
       <Seo description={data.perfil.edges[0].node.meta[0].value} />
       <h1 className="hidden">Perfil</h1>
       <div className="perfil">
-        <section className="col">
+        <section className="perfil__col">
           <div className="intro">
             <GatsbyImage
               className="hero__imagen"
@@ -65,8 +66,12 @@ const PerfilPage = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="col">          
-          <Tabs colecciones={array} icons={["align-left", "table"]} clase="perfil__tablas" />          
+        <section className="perfil__col">
+          <Tabs
+            colecciones={array}
+            icons={["align-left", "table"]}
+            clase="perfil__tablas"
+          />
         </section>
       </div>
     </Layout>

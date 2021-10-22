@@ -2,15 +2,17 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
+import "./blog.scss";
 
 const BlogPage = ({ data }) => {
   return (
     <Layout>
       <div className="blog">
-        <h1 className="about-me">Blog</h1>
-        <ul>
+        <h1 className="hidden">Blog</h1>
+        <p className="blog__descripcion">{data.inicio.edges[0].node.objetivo.descripcion}</p>
+        <ul className="articulos">
           {data.articulos.edges.map((articulo) => (
-            <li key={articulo.node.id}>
+            <li className="articulos__item" key={articulo.node.id}>
               <Link
                 to={`/blog/${articulo.node.slug}`}
                 rel="noopener noreferrer"
@@ -20,7 +22,7 @@ const BlogPage = ({ data }) => {
                   image={getImage(articulo.node.imagen.localFile)}
                   alt="Test text"
                 />
-                <h3>{articulo.node.titulo}</h3>
+                <h3 className="articulos__titulo">{articulo.node.titulo}</h3>
               </Link>
             </li>
           ))}
@@ -44,10 +46,24 @@ export const query = graphql`
           imagen {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 438
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }
+        }
+      }
+    }
+    inicio: allStrapiInicio {
+      edges {
+        node {
+          objetivo {
+            titulo
+            descripcion
+          }         
         }
       }
     }

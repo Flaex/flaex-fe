@@ -6,7 +6,6 @@ import Share from "../components/share";
 import Modal from "../components/modal";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import "./proyecto.scss";
 
 const Proyecto = ({ data }) => {
   const proyecto = data.proyecto;
@@ -22,33 +21,33 @@ const Proyecto = ({ data }) => {
           >
             &#10229;
           </button>
-          <h1 className="proyecto__title">{proyecto.titulo}</h1>
+          <h1 className="detalle__title">{proyecto.titulo}</h1>
         </div>
       </div>
-      <div className="proyecto">
-        <div className="proyecto__col-a">
+      <div className="detalle">
+        <div className="detalle__col-a">
           <GatsbyImage
-            className="proyecto__imagen"
+            className="detalle__imagen"
             image={getImage(proyecto.miniatura.localFile)}
             alt="Test text"
           />
         </div>
-        <div className="proyecto__col-b">
-          <time className="proyecto__lugar">
+        <div className="detalle__col-b">
+          <time className="detalle__lugar">
             {proyecto.ciudad} - {proyecto.Ano}
           </time>
           <ReactMarkdown
-            className="proyecto__descripcion"
+            className="detalle__descripcion"
             children={proyecto.descripcion}
             remarkPlugins={[remarkGfm]}
             skipHtml={true}
           />
 
-          <div className="proyecto__galeria">
+          <div className="detalle__galeria">
             {proyecto.imagenes.map((imagen) => (
-              <div className="proyecto__item" key={imagen.id}>
+              <div className="detalle__item" key={imagen.id}>
                 <button
-                  className="proyecto__button"
+                  className="detalle__button"
                   onClick={() => {
                     const modal = document.getElementById(imagen.id);
                     modal.style.display = "block";
@@ -96,7 +95,11 @@ export const query = graphql`
         url
         localFile {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 500
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }
@@ -104,7 +107,11 @@ export const query = graphql`
         id
         localFile {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 675
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }

@@ -215,7 +215,11 @@ export const query = graphql`
           miniatura {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 300
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }
@@ -238,7 +242,11 @@ export const query = graphql`
           miniatura {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 300
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }
@@ -261,7 +269,11 @@ export const query = graphql`
           miniatura {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 300
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }
@@ -284,7 +296,11 @@ export const query = graphql`
           miniatura {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 300
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }

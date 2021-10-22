@@ -11,25 +11,34 @@ const Articulo = ({ data }) => {
   const viewUrl = window.location.href;
   return (
     <Layout>
-      <div>
-        <button onClick={() => window.history.back()}>&#10229;</button>
-        <h1>{articulo.titulo}</h1>
-        <GatsbyImage
-          image={getImage(articulo.imagen.localFile)}
-          alt="Test text"
-        />
-        <Share
-          objeto="articulo"
-          url={viewUrl}
-          titulo={articulo.titulo}
-          imagen={articulo.imagen.url}
-        />
-        <time>{articulo.fecha}</time>
-        <ReactMarkdown
-          children={articulo.descripcion}
-          remarkPlugins={[remarkGfm]}
-          skipHtml={true}
-        />
+      <div className="submenu">
+        <div className="navigation">
+          <button onClick={() => window.history.back()}>&#10229;</button>
+          <h1 className="detalle__title">{articulo.titulo}</h1>
+        </div>
+      </div>
+      <div className="detalle">
+        <div className="detalle__col-a">
+          <GatsbyImage
+            image={getImage(articulo.imagen.localFile)}
+            alt="Test text"
+          />
+          <Share
+            objeto="articulo"
+            url={viewUrl}
+            titulo={articulo.titulo}
+            imagen={articulo.imagen.url}
+          />
+        </div>
+
+        <div className="detalle__col-b">
+          <time>{articulo.fecha}</time>
+          <ReactMarkdown
+            children={articulo.descripcion}
+            remarkPlugins={[remarkGfm]}
+            skipHtml={true}
+          />
+        </div>
       </div>
     </Layout>
   );
@@ -47,7 +56,11 @@ export const query = graphql`
         url
         localFile {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 420
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }

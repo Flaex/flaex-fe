@@ -8,7 +8,15 @@ import remarkGfm from "remark-gfm";
 
 const Articulo = ({ data }) => {
   const articulo = data.articulo;
-  const viewUrl = window.location.href;
+  const isBrowser = typeof window !== "undefined";
+  const viewUrl = () => {
+    if (!isBrowser) {
+      return;
+    }
+    return window.location.href;
+  };
+  /*   const viewUrl = window.location.href; */
+
   return (
     <Layout>
       <div className="submenu">

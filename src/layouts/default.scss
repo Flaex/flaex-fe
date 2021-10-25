@@ -196,7 +196,7 @@ h5 {
 }
 
 .detalle {
-  display: flex;  
+  display: flex;
   margin: 1em 0 1em;
   gap: 1vw;
 
@@ -235,9 +235,15 @@ h5 {
   }
 
   &__button {
+    cursor: pointer;
     padding: 0;
     line-height: unset;
   }
+}
+
+/* 404:Not found */
+.notfound {
+  max-width: 20vw;
 }
 
 /* The Modal (background) */
@@ -263,8 +269,8 @@ h5 {
     position: relative;
     width: fit-content;
     margin: 0 auto;
-    top:8%;
-    background-color: white;  
+    top: 8%;
+    background-color: white;
   }
 
   &__cuerpo {
@@ -274,15 +280,16 @@ h5 {
 
   &__boton {
     width: 2rem;
-    height: 2rem; 
+    height: 2rem;
     position: absolute;
     z-index: 10;
     right: 0.5rem;
     top: 0.5rem;
-    color: white;   
+    color: white;
     background-color: $black;
-    span {font-size: 1.5rem;
-font-size: 1.6rem;
+    span {
+      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
   }
 }
@@ -298,6 +305,42 @@ font-size: 1.6rem;
   100% {
     opacity: 1;
   }
+}
+
+code {
+  color: #d55501;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+    "Liberation Mono", Menlo, Courier, monospace;
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+pre {
+  background-color: #e7e7e7;
+  padding: 1.5em;
+  border-radius: 1rem;
+}
+
+pre code {
+  color: $black-a;
+  line-height: 1.42;
+}
+code:before,
+code:after,
+tt:before,
+tt:after {
+  letter-spacing: -0.2em;
+  content: " ";
+}
+pre code:before,
+pre code:after,
+pre tt:before,
+pre tt:after {
+  content: "";
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
@@ -344,7 +387,6 @@ font-size: 1.6rem;
 @include responsive(80em) {
   .modal {
     &__contenido {
-
     }
   }
 }

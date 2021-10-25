@@ -19,7 +19,7 @@ const Share = ({ objeto, url, titulo, imagen }) => {
     <div className="share">
       <p className="share__texto">Comparte este {objeto} </p>
       <PinterestShareButton children="a" url={url} media={imagen}>
-        <PinterestIcon size={32} round={true} />
+        <PinterestIcon className="share__icon" round={true} />
       </PinterestShareButton>
       <TwitterShareButton
         children="a"
@@ -27,13 +27,13 @@ const Share = ({ objeto, url, titulo, imagen }) => {
         title={titulo}
         related={["@Flaex_"]}
       >
-        <TwitterIcon size={32} round={true} />
+        <TwitterIcon className="share__icon" round={true} />
       </TwitterShareButton>
       <LinkedinShareButton children="a" url={url} title={titulo}>
-        <LinkedinIcon size={32} round={true} />
+        <LinkedinIcon className="share__icon" round={true} />
       </LinkedinShareButton>
       <FacebookShareButton children="a" url={url}>
-        <FacebookIcon size={32} round={true} />
+        <FacebookIcon className="share__icon" round={true} />
       </FacebookShareButton>
       <WhatsappShareButton
         children="a"
@@ -41,10 +41,10 @@ const Share = ({ objeto, url, titulo, imagen }) => {
         title={titulo}
         separator=" | "
       >
-        <WhatsappIcon size={32} round={true} />
+        <WhatsappIcon className="share__icon" round={true} />
       </WhatsappShareButton>
       <TelegramShareButton children="a" url={url} title={titulo}>
-        <TelegramIcon size={32} round={true} />
+        <TelegramIcon className="share__icon" round={true} />
       </TelegramShareButton>
     </div>
   );

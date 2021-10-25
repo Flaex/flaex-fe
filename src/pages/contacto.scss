@@ -33,19 +33,50 @@
       background: none;
     }
     input[type="submit"] {
-      background-color: $black;
-      color: white;
+      color: $black;
+      background-color: $gray-soft;
       padding: 0.5rem;
       border: none;
     }
   }
 
   &__mensaje {
-      margin-top: 2rem;
+    margin-top: 2rem;
   }
 }
 
 .mapa,
 .formulario {
   width: 48%;
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include responsive($size: 20em) {
+  .contacto {
+    gap: unset;
+    flex-wrap: wrap;
+
+    & > div {
+      margin-bottom: 3vh;
+    }
+
+    &__form {
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      textarea {
+        font-size: 0.9rem;
+        width: 96%;
+      }
+      input[type="submit"] {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .mapa,
+  .formulario {
+    width: 100%;
+  }
 }

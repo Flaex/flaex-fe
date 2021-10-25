@@ -9,7 +9,9 @@ const BlogPage = ({ data }) => {
     <Layout>
       <div className="blog">
         <h1 className="hidden">Blog</h1>
-        <p className="blog__descripcion">{data.inicio.edges[0].node.objetivo.descripcion}</p>
+        <p className="blog__descripcion">
+          {data.inicio.edges[0].node.objetivo.descripcion}
+        </p>
         <ul className="articulos">
           {data.articulos.edges.map((articulo) => (
             <li className="articulos__item" key={articulo.node.id}>
@@ -63,7 +65,7 @@ export const query = graphql`
           objetivo {
             titulo
             descripcion
-          }         
+          }
         }
       }
     }

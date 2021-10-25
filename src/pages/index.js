@@ -59,7 +59,9 @@ const IndexPage = ({ data }) => {
               alt="Test text"
             />
             <div className="hero__info">
-              <h2>{data.inicio.edges[0].node.intro.titulo}</h2>
+              <h2 className="hero__title">
+                {data.inicio.edges[0].node.intro.titulo}
+              </h2>
               <p>{data.inicio.edges[0].node.intro.descripcion}</p>
             </div>
           </div>
@@ -80,8 +82,7 @@ const IndexPage = ({ data }) => {
                 type="button"
                 onClick={() => randomizer(data.caras.edges)}
               >
-                ¡cambiar!
-                <br />
+                ¡cambiar!{" "}
                 <span
                   className="caras__boton--icono"
                   aria-label="emoji"

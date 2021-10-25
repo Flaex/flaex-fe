@@ -40,8 +40,9 @@ const Articulo = ({ data }) => {
         </div>
 
         <div className="detalle__col-b">
-          <time>{articulo.fecha}</time>
+          <time className="detalle__lugar">{articulo.fecha}</time>
           <ReactMarkdown
+            className="detalle__descripcion"
             children={articulo.descripcion}
             remarkPlugins={[remarkGfm]}
             skipHtml={true}
@@ -57,7 +58,7 @@ export default Articulo;
 export const query = graphql`
   query Articulos($id: String!) {
     articulo: strapiArticulos(id: { eq: $id }) {
-      fecha
+      fecha(formatString: "DD MMMM YYYY", locale: "es-es")
       titulo
       descripcion
       imagen {

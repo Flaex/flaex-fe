@@ -87,17 +87,14 @@ h5 {
 // Navigation bar
 .menu {
   display: flex;
-  & > div {
-    margin-right: 0.7vw;
-  }
 }
 
 .header {
   width: 8.3vw;
-  padding-right: 0.7vw;
+  margin-right: 0.65vw;
 
   &__tag {
-    margin-top: 0.7vw;
+    margin-top: 0.6vw;
   }
 }
 
@@ -105,14 +102,13 @@ h5 {
   display: flex;
 
   & > * {
-    margin-right: 0.6rem;
+    margin-right: 0.65vw;
   }
 
   &__link {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     background-color: $black;
     font-size: 1.1rem;
     text-align: right;
@@ -122,6 +118,10 @@ h5 {
     height: 8.3vw;
     padding-right: 0.6rem;
     box-sizing: border-box;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__category {
@@ -185,6 +185,10 @@ h5 {
   &__texto {
     margin-bottom: 0.4rem;
   }
+
+  &__icon {
+    width: 32px;
+  }
 }
 
 .galleryImage {
@@ -195,6 +199,7 @@ h5 {
   display: none;
 }
 
+// Estilos para el detalle de proyectos y artículos
 .detalle {
   display: flex;
   margin: 1em 0 1em;
@@ -221,7 +226,9 @@ h5 {
   }
 
   &__descripcion {
-    margin-top: 0;
+    p {
+      margin-top: 0;
+    }
   }
 
   &__galeria {
@@ -312,23 +319,28 @@ code {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  font-size: 0.9rem;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
+  box-sizing: content-box;
+  overflow-x: scroll;
 }
 
 pre {
   background-color: #e7e7e7;
   padding: 1.5em;
   border-radius: 1rem;
+  display: flex;
 }
 
 pre code {
   color: $black-a;
   line-height: 1.42;
+  font-size: 0.8rem;
 }
+
 code:before,
 code:after,
 tt:before,
@@ -336,6 +348,7 @@ tt:after {
   letter-spacing: -0.2em;
   content: " ";
 }
+
 pre code:before,
 pre code:after,
 pre tt:before,
@@ -345,48 +358,122 @@ pre tt:after {
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-/*   @include min-media(320px, portrait) {
-    .modal {
-      &__contenido {
-        margin: 1% auto;
-        padding: 2vh;
-        top: 3%;
-        width: 90vw;
-      }
+@include responsive($size: 20em) {
+  h1 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
 
+  h2 {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+
+  h5 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  p {
+    font-size: 0.938rem;
+    line-height: 1.188rem;
+  }
+
+  section {
+    & > div {
+      margin-bottom: 3vh;
     }
-  } */
+  }
+
+  .header {
+    width: 18.85vw;
+
+    &__tag {
+      margin-top: 1.2vw;
+    }
+  }
+
+  .navigation {
+    &__link {
+      width: 18.85vw;
+      height: 18.85vw;
+      font-size: 0.9rem;
+      padding-right: 1vw;
+      margin-left: 0.5vw;
+    }
+
+    &__category {
+      h3 {
+        font-size: 0.85rem;
+        padding: 0.25rem;
+      }
+    }
+  }
+
+  .footer {
+    p {
+      font-size: 0.8rem;
+      padding: 0.4rem;
+    }
+
+    &__link {
+      font-size: 0.9rem;
+      margin-left: 1vw;
+      padding: 0.4rem;
+    }
+  }
+
+  .share {
+    &__icon {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  .detalle {
+    gap: unset;
+    flex-wrap: wrap;
+    &__col-a {
+      width: 100%;
+    }
+
+    &__col-b {
+      width: 100%;
+      margin-top: 2vh;
+    }
+
+    &__galeria {
+      justify-content: space-between;
+    }
+
+    &__item {
+      width: 49%;
+    }
+  }
+}
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-/* @include min-media(568px, landscape) {
-    .modal {
-      &__contenido {
-        margin: 1% auto; 
-        padding: 4vh;
-        top: 3%;
-        width: 85vw;
-      }
-    }
-  } */
+@include responsive($size: 568px) {
+}
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
-/*   @include min-media(768px, portrait) {
-    .modal {
-
-    }
-  } */
+@include responsive(768px) {
+}
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/
-/*   @include min-media(1024px, landscape) {
-    .modal {
-     
-    }
-  }
-   */
+@include responsive(1024px) {
+}
+
 /*-------------------------------------------- Desktop responsive --------------------------------------------*/
 @include responsive(80em) {
-  .modal {
-    &__contenido {
-    }
-  }
 }

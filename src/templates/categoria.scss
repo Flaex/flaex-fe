@@ -14,3 +14,16 @@
       border: 1px solid $gray-border;
     }
   }
+
+  /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include responsive($size: 20em) {
+
+  .categorias {
+    justify-content: space-between;
+    &__item {
+      width: 48.5%;
+      margin-bottom: 1vh;
+    }
+  }
+}

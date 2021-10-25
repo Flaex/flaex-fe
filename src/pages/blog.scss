@@ -2,33 +2,42 @@
 @use "../assets/scss/mixins" as *;
 
 .blog {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    &__descripcion {
-        width: 100%;
-    }
-
+  &__descripcion {
+    width: 100%;
+  }
 }
 
 .articulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  list-style: none;
+  padding-left: 0;
+  padding-right: 0;
+
+  &__item {
     display: flex;
     flex-wrap: wrap;
-    gap: 1%;
+    width: 24%;
+    overflow: hidden;
+  }
+
+  &__titulo {
     width: 100%;
-    list-style: none;
-    padding-left: 0;
-    padding-right: 0;
+    background-color: $gray-soft;
+    color: $black;
+  }
+}
 
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+@include responsive($size: 20em) {
+  .articulos {
     &__item {
-        display: flex;
-        flex-wrap: wrap;
-        width: 24%;
-        overflow: hidden;
-
+      width: 49%;
     }
-
-    &__titulo {
-     width: 100%;
-    }
+  }
 }

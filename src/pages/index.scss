@@ -14,7 +14,7 @@
   &__imagen {
     width: 17.2vw;
     height: 17.2vw;
-    margin-right: 0.7rem;
+    margin-right: 1vw;
   }
 
   &__info {
@@ -115,10 +115,59 @@
 
   &__title {
     width: 100%;
+    background-color: $gray-soft;
+    color: $black;
   }
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 320) {
+@include responsive($size: 20em) {
+  .inicio {
+    flex-wrap: wrap;
+    gap: unset;
 
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .hero {
+    &__imagen {
+      width: 38.7vw;
+      height: 38.7vw;
+    }
+
+    &__info {
+      width: 58vw;
+    }
+
+    &__title {
+      margin-bottom: 1vh;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 38.7vw;
+      height: 38.7vw;
+    }
+
+    &__info {
+      width: 58vw;
+    }
+  }
+
+  .skills {
+    &__link {
+      padding-top: 1rem;
+      padding-bottom: 0.25rem;
+    }
+
+    &__title {
+      font-size: 0.9rem;
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }

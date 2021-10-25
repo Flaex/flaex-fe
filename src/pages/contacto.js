@@ -50,8 +50,10 @@ const ContactoPage = ({ data }) => {
             </div>
             <input type="submit" value="Enviar mensaje ➤" />
             <input type="hidden" name="form-name" value="inicio" />
-          </form>   
-          <p className="contacto__mensaje">{data.contacto.edges[0].node.redes.descripcion}</p>
+          </form>
+          <p className="contacto__mensaje">
+            {data.contacto.edges[0].node.redes.descripcion}
+          </p>
         </div>
       </div>
     </Layout>

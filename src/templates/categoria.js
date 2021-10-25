@@ -20,10 +20,9 @@ const Categoria = ({ data }) => {
       <ul className="categorias">
         {proyectos.map((proyecto) => {
           return (
-            <li className="categorias__item">
+            <li key={proyecto.id} className="categorias__item">
               <Link
                 to={`/portafolio/${categoria.slug}/${proyecto.slug}`}
-                key={proyecto.id}
                 rel="noopener noreferrer"
                 aria-label={`Ir a ${proyecto.titulo}`}
               >

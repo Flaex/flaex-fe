@@ -4,7 +4,7 @@
 .portafolio {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.1111111%;
+    justify-content: space-between;
   
     & > div {
       width: 32%;
@@ -53,11 +53,25 @@
   }
 
   /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 20em) {
+  @include responsive($size: 26em, $orientation: "portrait") {
   .portafolio {
     & > div {
       width: 100%;
       margin-bottom: 3vh;
     }
   }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive($size: 46em, $orientation: "landscape") {
+
+  .portafolio {
+    flex-wrap: wrap;
+
+    & > div {
+      width: 49%;
+      margin-bottom: 3vh;
+    }
+  }
+
 }

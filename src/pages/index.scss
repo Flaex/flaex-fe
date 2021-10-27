@@ -51,8 +51,7 @@
     background-color: $gray-soft;
     width: fit-content;
     font-size: 0.9rem;
-    padding: 0.5rem;
-
+    
     &--icono {
       font-size: 1.2rem;
     }
@@ -121,7 +120,7 @@
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 20em) {
+@include responsive($size: 26em, $orientation: "portrait") {
   .inicio {
     flex-wrap: wrap;
     gap: unset;
@@ -170,4 +169,39 @@
       padding-right: 0;
     }
   }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive($size: 46em, $orientation: "landscape") {
+
+  .inicio {
+    flex-wrap: wrap ;
+    gap: unset;
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .hero {
+    &__imagen {
+      width: 28vw;
+      height: auto;
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 28vw;
+      height: auto;
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
 }

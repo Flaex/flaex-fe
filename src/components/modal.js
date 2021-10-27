@@ -7,7 +7,7 @@ const Modal = ({ id, onClose, imagen }) => {
     <div className="modal" id={id}>
       <div className="modal__content">
         <button className="modal__boton" onClick={onClose}>
-          <span>&times;</span>
+          &times;
         </button>
         <div className="modal__body">
           <GatsbyImage image={getImage(imagen)} alt="Test text" />

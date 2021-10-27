@@ -23,6 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 24%;
+    margin-bottom: 4vh;
     overflow: hidden;
   }
 
@@ -34,10 +35,21 @@
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 20em) {
+@include responsive($size: 26em, $orientation: "portrait") {
   .articulos {
     &__item {
       width: 49%;
     }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive($size: 46em, $orientation: "landscape") {
+
+  .articulos {
+    &__item { 
+      width: 49%;
+    }
+  
   }
 }

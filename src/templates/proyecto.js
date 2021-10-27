@@ -20,7 +20,7 @@ const Proyecto = ({ data }) => {
   return (
     <Layout>
       <div className="submenu">
-        <div className="navigation">
+        <div className="navigation navigation--secondary">
           <button
             className="navigation__button"
             onClick={() => window.history.back()}

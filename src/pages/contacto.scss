@@ -3,7 +3,7 @@
 
 .contacto {
   display: flex;
-  gap: 2%;
+  justify-content: space-between;
 
   &__mapa {
     width: 100%;
@@ -47,14 +47,13 @@
 
 .mapa,
 .formulario {
-  width: 48%;
+  width: 49%;
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive($size: 20em) {
+@include responsive($size: 26em, $orientation: "portrait") {
   .contacto {
-    gap: unset;
     flex-wrap: wrap;
 
     & > div {
@@ -78,5 +77,18 @@
   .mapa,
   .formulario {
     width: 100%;
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive($size: 46em, $orientation: "landscape") {
+  .contacto {
+    flex-wrap: wrap;
+  }
+
+  .mapa,
+  .formulario {
+    width: 100%;
+    margin-bottom: 4vh;
   }
 }

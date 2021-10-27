@@ -40,7 +40,7 @@ const NavigationCat = () => (
       }
     `}
     render={(data) => (
-      <div className="navigation">
+      <div className="navigation navigation--secondary">
         <button onClick={() => window.history.back()}>&#10229;</button>
         {data.perfil.edges[0].node.habilidades.map((habilidad) => (
           <Link

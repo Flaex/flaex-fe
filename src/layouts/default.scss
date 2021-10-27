@@ -38,6 +38,7 @@ img {
 button {
   border: 0;
   background-color: $gray-soft;
+  padding: 0.5rem;
 }
 
 section {
@@ -57,6 +58,7 @@ h5 {
   font-weight: 300;
   padding: 0.5rem;
   margin-top: 0;
+  margin-bottom: 1vh;
 }
 
 h1 {
@@ -84,6 +86,10 @@ h5 {
   line-height: 1.125rem;
 }
 
+p {
+  margin-bottom: 1vh;
+}
+
 // Navigation bar
 .menu {
   display: flex;
@@ -103,6 +109,10 @@ h5 {
 
   & > * {
     margin-right: 0.65vw;
+  }
+
+  &--secondary {
+    margin-bottom: 2vh;
   }
 
   &__link {
@@ -139,6 +149,7 @@ h5 {
 // Main container
 .main {
   margin-top: 1.2rem;
+  margin-bottom: 1vh;
 
   & > div {
     display: flex;
@@ -178,6 +189,8 @@ h5 {
 }
 
 .share {
+  margin: 1vh 0 5vh;
+
   & > * {
     margin-right: 0.4rem;
   }
@@ -188,6 +201,7 @@ h5 {
 
   &__icon {
     width: 32px;
+    height: 32px;
   }
 }
 
@@ -202,7 +216,7 @@ h5 {
 // Estilos para el detalle de proyectos y artículos
 .detalle {
   display: flex;
-  margin: 1em 0 1em;
+
   gap: 1vw;
 
   &__col-a {
@@ -228,6 +242,10 @@ h5 {
   &__descripcion {
     p {
       margin-top: 0;
+    }
+
+    h2 {
+      margin-top: 3vh;
     }
   }
 
@@ -294,10 +312,8 @@ h5 {
     top: 0.5rem;
     color: white;
     background-color: $black;
-    span {
-      font-size: 1.5rem;
-      font-size: 1.6rem;
-    }
+    font-size: 1.6rem;
+    line-height: 0.5rem;
   }
 }
 
@@ -358,7 +374,7 @@ pre tt:after {
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive($size: 20em) {
+@include responsive($size: 26em, $orientation: "portrait") {
   h1 {
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -463,7 +479,40 @@ pre tt:after {
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 568px) {
+@include responsive($size: 46em, $orientation: "landscape") {
+  .header {
+    width: 14vw;
+
+    &__tag {
+      margin-top: 1.5vh;
+    }
+  }
+
+  .navigation {
+    &__link {
+      font-size: 0.9rem;
+      width: 14vw;
+      height: 14vw;
+    }
+  }
+
+  .footer {
+    p {
+      font-size: 0.8rem;
+    }
+
+    &__link {
+      font-size: 0.8rem;
+      margin-left: 1vw;
+    }
+  }
+
+  .share {
+    &__icon {
+      width: 26px;
+      height: 26px;
+    }
+  }
 }
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/

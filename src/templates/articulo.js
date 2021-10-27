@@ -20,7 +20,7 @@ const Articulo = ({ data }) => {
   return (
     <Layout>
       <div className="submenu">
-        <div className="navigation">
+        <div className="navigation navigation--secondary">
           <button onClick={() => window.history.back()}>&#10229;</button>
           <h1 className="detalle__title">{articulo.titulo}</h1>
         </div>

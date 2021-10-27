@@ -17,7 +17,7 @@
 
   /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive($size: 20em) {
+  @include responsive($size: 26em, $orientation: "portrait") {
 
   .categorias {
     justify-content: space-between;

@@ -45,11 +45,43 @@
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @include responsive($size: 46em, $orientation: "landscape") {
-
   .articulos {
-    &__item { 
+    &__item {
       width: 49%;
     }
-  
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .articulos {
+    justify-self: unset;
+    &__item {
+      width: 32%;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 64em,
+  $max-width: 85.375em,
+  $orientation: "landscape"
+) {
+  .articulos {
+    justify-content: unset;
+    gap: 1%;
+  }
+}
+
+/*-------------------------------------------- Desktop 1280px --------------------------------------------*/
+@include responsive-min($size: 80em) {
+  .articulos {
+    justify-content: unset;
+    gap: 1%;
   }
 }

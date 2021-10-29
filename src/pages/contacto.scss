@@ -92,3 +92,49 @@
     margin-bottom: 4vh;
   }
 }
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .contacto {
+    flex-wrap: wrap;
+
+    & > div {
+      margin-bottom: 3vh;
+    }
+
+    &__mapa {
+      height: 33vh;
+    }
+  }
+
+  .mapa,
+  .formulario {
+    width: 100%;
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "landscape"
+) {
+  .contacto {
+    &__mapa {
+      height: 45vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop 1280px --------------------------------------------*/
+@include responsive-min($size: 80em) {
+  .contacto {
+    &__mapa {
+      height: 42vh;
+    }
+  }
+}

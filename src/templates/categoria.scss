@@ -2,28 +2,41 @@
 @use "../assets/scss/mixins" as *;
 
 .categorias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1%;
-  
-    list-style: none;
-    padding: 0;
-  
-    &__item {
-      width: 19%;
-      border: 1px solid $gray-border;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+
+  list-style: none;
+  padding: 0;
+
+  &__item {
+    width: 19%;
+    border: 1px solid $gray-border;
   }
+}
 
-  /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-  @include responsive($size: 26em, $orientation: "portrait") {
-
+@include responsive($size: 26em, $orientation: "portrait") {
   .categorias {
     justify-content: space-between;
     &__item {
       width: 48.5%;
       margin-bottom: 1vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "landscape"
+) {
+  .categorias {
+    justify-content: unset;
+    &__item {
+      width: 24%;
     }
   }
 }

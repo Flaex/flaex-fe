@@ -51,7 +51,7 @@
     background-color: $gray-soft;
     width: fit-content;
     font-size: 0.9rem;
-    
+
     &--icono {
       font-size: 1.2rem;
     }
@@ -173,9 +173,8 @@
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @include responsive($size: 46em, $orientation: "landscape") {
-
   .inicio {
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     gap: unset;
     &__col {
       width: 100%;
@@ -203,5 +202,80 @@
       width: 70vw;
     }
   }
+}
 
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .inicio {
+    flex-wrap: wrap;
+    gap: unset;
+
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .inicio {
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .hero {
+    &__imagen {
+      width: 26.7vw;
+      height: auto;
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 26.7vw;
+      min-height: 26.7vw;
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
+  .skills {
+    &__link {
+      padding-top: 3vh;
+      padding-bottom: 2vh;
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      margin-top: 1vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 64em,
+  $max-width: 85.375em,
+  $orientation: "landscape"
+) {
+  .skills {
+    &__link {
+      padding-top: 3vh;
+      padding-bottom: 2vh;
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+  }
 }

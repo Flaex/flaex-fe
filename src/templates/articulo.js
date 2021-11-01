@@ -16,7 +16,6 @@ const Articulo = ({ data }) => {
     }
     return window.location.href;
   };
-  /*   const viewUrl = window.location.href; */
 
   return (
     <Layout>

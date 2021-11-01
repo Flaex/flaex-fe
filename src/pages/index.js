@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
     positonZero(array);
     const videoContainer = document.querySelector(".caras__media");
     videoContainer.innerHTML = `         
-      <video class="caras__video" key=${array[0].node.media.id} autoPlay>
+      <video key=${array[0].node.media.id} autoplay muted>
         <source src=${array[0].node.media.url} type="video/mp4" />   
         Your browser does not support the video tag.                        
       </video>
@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="caras">
             <div className="caras__media">
-              <video className="caras__video" autoplay>
+              <video className="caras__video" autoPlay muted>
                 <source
                   src={data.caras.edges[3].node.media.url}
                   type="video/mp4"
@@ -136,7 +136,8 @@ const IndexPage = ({ data }) => {
                   >
                     <GatsbyImage
                       image={getImage(articulo.node.imagen.localFile)}
-                      alt={articulo.node.imagen.alternativeText}                    />
+                      alt={articulo.node.imagen.alternativeText}
+                    />
                     <h3 className="feed__title">{articulo.node.titulo}</h3>
                   </Link>
                 </li>

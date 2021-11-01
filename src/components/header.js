@@ -20,7 +20,7 @@ const HeaderPage = () => (
         <StaticImage
           width={logoWidth}
           src="../assets/images/tag.png"
-          alt="please include an alt"
+          alt="Tag del logo"
         />
       </Link>
     </div>

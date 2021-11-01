@@ -17,7 +17,7 @@
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   .categorias {
     justify-content: space-between;
     &__item {

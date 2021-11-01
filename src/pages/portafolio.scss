@@ -53,7 +53,7 @@
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   .portafolio {
     & > div {
       width: 100%;
@@ -63,7 +63,7 @@
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 46em, $orientation: "landscape") {
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
   .portafolio {
     flex-wrap: wrap;
 

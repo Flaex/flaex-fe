@@ -120,7 +120,7 @@
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   .inicio {
     flex-wrap: wrap;
     gap: unset;
@@ -172,7 +172,7 @@
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 46em, $orientation: "landscape") {
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
   .inicio {
     flex-wrap: wrap;
     gap: unset;

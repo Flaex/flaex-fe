@@ -39,7 +39,7 @@
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   .perfil {
     &__col {
       width: 100%;
@@ -53,7 +53,7 @@
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 46em, $orientation: "landscape") {
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
   .perfil {
     &__col {
       width: 100%;
@@ -101,7 +101,7 @@
 }
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
-@include responsive-min($size: 80em) {
+@include responsive-min($min-width: 80em) {
   .perfil {
     flex-wrap: nowrap;
 

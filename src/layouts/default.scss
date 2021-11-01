@@ -375,7 +375,7 @@ pre tt:after {
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   h1 {
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -480,7 +480,7 @@ pre tt:after {
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 46em, $orientation: "landscape") {
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
   .header {
     width: 14vw;
 
@@ -594,7 +594,7 @@ pre tt:after {
 }
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
-@include responsive-min($size: 80em) {
+@include responsive-min($min-width: 80em) {
   .detalle {
     &__descripcion {
       font-size: 1.125rem;

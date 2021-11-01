@@ -52,7 +52,7 @@
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   .contacto {
     flex-wrap: wrap;
 
@@ -81,7 +81,7 @@
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 46em, $orientation: "landscape") {
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
   .contacto {
     flex-wrap: wrap;
   }
@@ -131,7 +131,7 @@
 }
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
-@include responsive-min($size: 80em) {
+@include responsive-min($min-width: 80em) {
   .contacto {
     &__mapa {
       height: 42vh;

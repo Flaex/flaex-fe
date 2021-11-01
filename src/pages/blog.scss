@@ -35,7 +35,7 @@
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@include responsive($size: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
   .articulos {
     &__item {
       width: 49%;
@@ -44,7 +44,7 @@
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive($size: 46em, $orientation: "landscape") {
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
   .articulos {
     &__item {
       width: 49%;
@@ -79,7 +79,7 @@
 }
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
-@include responsive-min($size: 80em) {
+@include responsive-min($min-width: 80em) {
   .articulos {
     justify-content: unset;
     gap: 1%;

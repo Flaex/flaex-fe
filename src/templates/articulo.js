@@ -21,7 +21,7 @@ const Articulo = ({ data }) => {
     <Layout>
       <Seo
         title={articulo.titulo}
-        description="Artículos dirigidos a los interesados en aprender o conocer de diseño y tecnologías web."
+        description="Artículos dirigidos a los interesados en conocer de diseño gráfico, diseño y desarrollo web por medio de contenido relacionado a las tecnologías web."
         image={articulo.imagen.url}
       />
       <div className="submenu">

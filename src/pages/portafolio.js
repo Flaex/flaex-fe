@@ -29,9 +29,12 @@ const PortafolioPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Portafolio de Freddy Polania | @Flaex_" description="Proyectos de logotipos, branding, diseño, desarrollo web, letras e iconos" />
+      <Seo
+        title="Portafolio de Freddy Polania | @Flaex_"
+        description="Proyectos de creación de logos, branding impreso y digital en papelería comercial, catálogos, manuales de identidad gráfica, tipografía e iconografía."
+      />
       <h1 className="hidden">Portafolio</h1>
-      <div className="portafolio">        
+      <div className="portafolio">
         <div className="portafolio-logotipos">
           <h2>
             <FontAwesomeIcon

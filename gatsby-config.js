@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: "Diseñador gráfico y desarrollador web front-end",
     titleTemplate: "%s · @flaex_",
-    description: "Perfil profesional, portafolio & blog | Freddy Polanía",
+    description: "Perfil profesional, portafolio y blog | Freddy Polanía",
     author: "Freddy Polania",
     siteUrl: "https://flaex.netlify.com",
     image: "https://res.cloudinary.com/flaex/image/upload/v1635773743/brand/seo-img_dlqmb2.jpg",
@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/about-us/`, `/projects/*`],
+        precachePages: [`/perfil/`, `/portafolio/`, `/portafolio/*`, `/blog/`, `/contacto/`],
       },
     },
     {
@@ -69,22 +69,22 @@ module.exports = {
         },
       },
     },
-    /* {
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-4W17JXKS6P", // Google Analytics / GA
+          "G-S47F7WM6C7", // Google Analytics / GA
         ],
-        gtagConfig: {
+        /* gtagConfig: {
           optimize_id: "GTM-5LFLQGT",
           anonymize_ip: true,
           cookie_expires: 0,
-        },
+        }, */
         pluginConfig: {
           head: true,
         },
       },
-    }, */
+    },
   ],
 };

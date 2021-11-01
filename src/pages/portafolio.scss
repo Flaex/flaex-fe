@@ -74,17 +74,6 @@
   }
 }
 
-.perfil {
-  &__col {
-    width: 100%;
-  }
-  &__tablas {
-    table {
-      width: 100%;
-    }
-  }
-}
-
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
 @include responsive-min-max(
   $min-width: 48em,

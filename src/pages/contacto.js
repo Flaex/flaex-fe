@@ -2,13 +2,15 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../layouts/default";
 import Map from "../components/map";
+import Seo from "../components/seo";
 import "./contacto.scss";
 
 const ContactoPage = ({ data }) => {
   return (
     <Layout>
+      <Seo title="Información de contacto de Freddy Polania | @Flaex_" />
+      <h1 className="hidden">Contacto</h1>
       <div className="contacto">
-        <h1 className="hidden">Contacto</h1>
         <div className="mapa">
           <h2>{data.contacto.edges[0].node.ubicacion.titulo}</h2>
           <p>{data.contacto.edges[0].node.ubicacion.descripcion}</p>

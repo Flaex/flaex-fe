@@ -2,13 +2,18 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
+import Seo from "../components/seo";
 import "./blog.scss";
 
 const BlogPage = ({ data }) => {
   return (
     <Layout>
+      <Seo
+        title="Artículos de diseño y desarrollo web"
+        description="Artículos dirigidos a los interesados en aprender o conocer de diseño y tecnologías web."
+      />
+      <h1 className="hidden">Blog</h1>
       <div className="blog">
-        <h1 className="hidden">Blog</h1>
         <p className="blog__descripcion">
           {data.inicio.edges[0].node.objetivo.descripcion}
         </p>
@@ -22,7 +27,7 @@ const BlogPage = ({ data }) => {
               >
                 <GatsbyImage
                   image={getImage(articulo.node.imagen.localFile)}
-                  alt="Test text"
+                  alt={articulo.node.imagen.alternativeText}
                 />
                 <h3 className="articulos__titulo">{articulo.node.titulo}</h3>
               </Link>
@@ -46,6 +51,7 @@ export const query = graphql`
           descripcion
           slug
           imagen {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(

@@ -5,6 +5,7 @@ import Layout from "../layouts/default";
 import Share from "../components/share";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Seo from "../components/seo";
 
 const Articulo = ({ data }) => {
   const articulo = data.articulo;
@@ -19,6 +20,11 @@ const Articulo = ({ data }) => {
 
   return (
     <Layout>
+      <Seo
+        title={articulo.titulo}
+        description="Artículos dirigidos a los interesados en aprender o conocer de diseño y tecnologías web."
+        image={articulo.imagen.url}
+      />
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button onClick={() => window.history.back()}>&#10229;</button>
@@ -29,7 +35,7 @@ const Articulo = ({ data }) => {
         <div className="detalle__col-a">
           <GatsbyImage
             image={getImage(articulo.imagen.localFile)}
-            alt="Test text"
+            alt={articulo.imagen.alternativeText}
           />
           <Share
             objeto="articulo"
@@ -63,6 +69,7 @@ export const query = graphql`
       descripcion
       imagen {
         url
+        alternativeText
         localFile {
           childImageSharp {
             gatsbyImageData(

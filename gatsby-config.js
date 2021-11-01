@@ -4,13 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Diseñador gráfico & desarrollador web front-end",
+    title: "Diseñador gráfico y desarrollador web front-end",
     titleTemplate: "%s · @flaex_",
-    description: "Portafolio & blog | Freddy Polanía",
-    keywords: "Diseño gráfico desarrollo web front-end pwa",
+    description: "Perfil profesional, portafolio & blog | Freddy Polanía",
     author: "Freddy Polania",
     siteUrl: "https://flaex.netlify.com",
-    image: "/seo-img.jpg",
+    image: "https://res.cloudinary.com/flaex/image/upload/v1635773743/brand/seo-img_dlqmb2.jpg",
     twitterUsername: "@Flaex_",
   },
   plugins: [

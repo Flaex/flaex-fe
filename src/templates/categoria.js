@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Navcat from "../components/navigation-cat";
+import Seo from "../components/seo";
 import "./categoria.scss";
 
 const Categoria = ({ data }) => {
@@ -14,6 +15,7 @@ const Categoria = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title="Portafolio de Freddy Polania | @Flaex_" description={`Proyectos de ${ data.categoria.slug}`} />
       <div className="submenu">
         <Navcat />
       </div>
@@ -28,7 +30,7 @@ const Categoria = ({ data }) => {
               >
                 <GatsbyImage
                   image={getImage(proyecto.miniatura.localFile)}
-                  alt="Test text"
+                  alt={proyecto.miniatura.alternativeText}
                 />
               </Link>
             </li>
@@ -53,9 +55,14 @@ export const query = graphql`
         descripcion
         slug
         miniatura {
+          alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(
+                width: 300
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

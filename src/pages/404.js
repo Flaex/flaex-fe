@@ -24,6 +24,7 @@ const NotFoundPage = () => (
     <StaticImage
       className="notfound"
       width={NotFoundImage}
+      placeholder="none"
       src="../assets/images/404.png"
       alt="@flaex_ con cara de sorpresa"
     />

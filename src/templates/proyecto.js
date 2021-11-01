@@ -6,6 +6,7 @@ import Share from "../components/share";
 import Modal from "../components/modal";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Seo from "../components/seo";
 
 const Proyecto = ({ data }) => {
   const proyecto = data.proyecto;
@@ -19,6 +20,11 @@ const Proyecto = ({ data }) => {
 
   return (
     <Layout>
+       <Seo
+        title={proyecto.titulo}
+        description="Artículos dirigidos a los interesados en aprender o conocer de diseño y tecnologías web."
+        image={proyecto.miniatura.url}
+      />
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button
@@ -35,7 +41,7 @@ const Proyecto = ({ data }) => {
           <GatsbyImage
             className="detalle__imagen"
             image={getImage(proyecto.miniatura.localFile)}
-            alt="Test text"
+            alt={proyecto.miniatura.alternativeText}
           />
         </div>
         <div className="detalle__col-b">
@@ -61,7 +67,7 @@ const Proyecto = ({ data }) => {
                 >
                   <GatsbyImage
                     image={getImage(imagen.localFile)}
-                    alt="Test text"
+                    alt={imagen.alternativeText}
                   />
                 </button>
                 <Modal
@@ -99,6 +105,7 @@ export const query = graphql`
       Ano
       miniatura {
         url
+        alternativeText
         localFile {
           childImageSharp {
             gatsbyImageData(
@@ -111,6 +118,7 @@ export const query = graphql`
       }
       imagenes {
         id
+        alternativeText
         localFile {
           childImageSharp {
             gatsbyImageData(

@@ -20,7 +20,7 @@ const PerfilPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo description={data.perfil.edges[0].node.meta[0].value} />
+      <Seo title="Perfil profesional de Freddy Polania | @Flaex_ " description={data.perfil.edges[0].node.meta[0].value} />
       <h1 className="hidden">Perfil</h1>
       <div className="perfil">
         <section className="perfil__col">
@@ -28,7 +28,7 @@ const PerfilPage = ({ data }) => {
             <GatsbyImage
               className="hero__imagen"
               image={getImage(data.inicio.edges[0].node.imagen.localFile)}
-              alt="Test text"
+              alt={data.inicio.edges[0].node.imagen.alternativeText}
             />
             <h2>{data.perfil.edges[0].node.intro.titulo}</h2>
             <ReactMarkdown
@@ -86,6 +86,7 @@ export const query = graphql`
       edges {
         node {
           imagen {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(

@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
+import Seo from "../components/seo";
 import "./portafolio.scss";
 
 // Import css files
@@ -28,9 +29,9 @@ const PortafolioPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className="portafolio">
-        <h1 className="hidden">Portafolio</h1>
-
+      <Seo title="Portafolio de Freddy Polania | @Flaex_" description="Proyectos de logotipos, branding, diseño, desarrollo web, letras e iconos" />
+      <h1 className="hidden">Portafolio</h1>
+      <div className="portafolio">        
         <div className="portafolio-logotipos">
           <h2>
             <FontAwesomeIcon
@@ -54,7 +55,7 @@ const PortafolioPage = ({ data }) => {
                 >
                   <GatsbyImage
                     image={getImage(logotipo.node.miniatura.localFile)}
-                    alt="Test text"
+                    alt={logotipo.node.miniatura.alternativeText}
                   />
                 </Link>
               </div>
@@ -93,7 +94,7 @@ const PortafolioPage = ({ data }) => {
                   >
                     <GatsbyImage
                       image={getImage(brand.node.miniatura.localFile)}
-                      alt="Test text"
+                      alt={brand.node.miniatura.alternativeText}
                     />
                   </Link>
                 </div>
@@ -134,7 +135,7 @@ const PortafolioPage = ({ data }) => {
                   >
                     <GatsbyImage
                       image={getImage(item.node.miniatura.localFile)}
-                      alt="Test text"
+                      alt={item.node.miniatura.alternativeText}
                     />
                   </Link>
                 </div>
@@ -174,7 +175,7 @@ const PortafolioPage = ({ data }) => {
                   >
                     <GatsbyImage
                       image={getImage(item.node.miniatura.localFile)}
-                      alt="Test text"
+                      alt={item.node.miniatura.alternativeText}
                     />
                   </Link>
                 </div>
@@ -213,6 +214,7 @@ export const query = graphql`
             icono
           }
           miniatura {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(
@@ -240,6 +242,7 @@ export const query = graphql`
             icono
           }
           miniatura {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(
@@ -267,6 +270,7 @@ export const query = graphql`
             icono
           }
           miniatura {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(
@@ -294,6 +298,7 @@ export const query = graphql`
             icono
           }
           miniatura {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(

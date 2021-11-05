@@ -21,7 +21,6 @@ const Articulo = ({ data }) => {
     <Layout>
       <Seo
         title={articulo.titulo}
-        description="Artículos dirigidos a los interesados en conocer de diseño gráfico, diseño y desarrollo web por medio de contenido relacionado a las tecnologías web."
         image={articulo.imagen.url}
       />
       <div className="submenu">
@@ -50,7 +49,8 @@ const Articulo = ({ data }) => {
             className="detalle__descripcion"
             children={articulo.descripcion}
             remarkPlugins={[remarkGfm]}
-            skipHtml={true}
+            skipHtml={false}
+            linkTarget="_blank"
           />
         </div>
       </div>

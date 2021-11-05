@@ -10,7 +10,7 @@ const BlogPage = ({ data }) => {
     <Layout>
       <Seo
         title="Artículos de diseño y desarrollo web"
-        description="Artículos dirigidos a los interesados en conocer de diseño gráfico, diseño y desarrollo web por medio de contenido relacionado a las tecnologías web."
+        description="Artículos dirigidos a los interesados en conocer de diseño gráfico, diseño y desarrollo web por medio de contenido relacionado."
       />
       <h1 className="hidden">Blog</h1>
       <div className="blog">

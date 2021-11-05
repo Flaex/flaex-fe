@@ -59,9 +59,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL:  process.env.NODE_ENV === 'production'
-        ? process.env.API_URL
-        : 'http://localhost:1337',
+        apiURL:  process.env.API_URL,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`articulos`, `caras`, `categorias`, `proyectos`],
         singleTypes: [`contacto`, `inicio`, `perfil`],

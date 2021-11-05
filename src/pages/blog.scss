@@ -59,6 +59,7 @@
   $orientation: "portrait"
 ) {
   .articulos {
+    width: 100%;
     justify-self: unset;
     &__item {
       width: 32%;
@@ -73,6 +74,7 @@
   $orientation: "landscape"
 ) {
   .articulos {
+    width: 100%;
     justify-content: unset;
     gap: 1%;
   }

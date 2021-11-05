@@ -81,6 +81,7 @@
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {
   .articulos {
+    width: 100%;
     justify-content: unset;
     gap: 1%;
   }

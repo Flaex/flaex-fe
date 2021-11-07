@@ -20,7 +20,7 @@ module.exports = {
       options: {
         defaults: {
           layout: `fullWidth`,
-          formats: [`auto`, `webp`, `avif`], 
+          formats: [`auto`, `webp`, `avif`],
           placeholder: `dominantColor`,
           quality: 100,
           breakpoints: [416, 736, 1024, 1280, 1366],
@@ -31,6 +31,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-offline`,
       options: {
@@ -103,6 +104,18 @@ module.exports = {
         pluginConfig: {
           head: true,
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://res.cloudinary.com/flaex'],
       },
     },
   ],

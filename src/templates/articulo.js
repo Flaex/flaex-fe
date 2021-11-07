@@ -1,13 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
+import Share from "../components/share";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
-
-const renderLoader = () => <p>Cargando</p>;
-const Share = lazy(() => import("../components/share"));
 
 const Articulo = ({ data }) => {
   const articulo = data.articulo;
@@ -33,15 +31,14 @@ const Articulo = ({ data }) => {
           <GatsbyImage
             image={getImage(articulo.imagen.localFile)}
             alt={articulo.imagen.alternativeText}
-          />
-          <Suspense fallback={renderLoader()}>
+          />         
             <Share
               objeto="articulo"
               url={viewUrl}
               titulo={articulo.titulo}
               imagen={articulo.imagen.url}
             />
-          </Suspense>
+          
         </div>
 
         <div className="detalle__col-b">

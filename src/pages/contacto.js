@@ -1,11 +1,9 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../layouts/default";
+import Map from "../components/map";
 import Seo from "../components/seo";
 import "./contacto.scss";
-
-const renderLoader = () => <p>Cargando</p>;
-const Map = lazy(() => import("../components/map"));
 
 const ContactoPage = ({ data }) => {
   return (
@@ -16,14 +14,12 @@ const ContactoPage = ({ data }) => {
         <div className="mapa">
           <h2>{data.contacto.edges[0].node.ubicacion.titulo}</h2>
           <p>{data.contacto.edges[0].node.ubicacion.descripcion}</p>
-          <Suspense fallback={renderLoader()}>
-            <Map
-              lat={data.contacto.edges[0].node.latitud}
-              lng={data.contacto.edges[0].node.longitud}
-              clase="contacto__mapa"
-              zoom={12}
-            />
-          </Suspense>
+          <Map
+            lat={data.contacto.edges[0].node.latitud}
+            lng={data.contacto.edges[0].node.longitud}
+            clase="contacto__mapa"
+            zoom={12}
+          />
         </div>
 
         <div className="formulario">

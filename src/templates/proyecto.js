@@ -1,14 +1,12 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
+import Modal from "../components/modal";
 import Share from "../components/share";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
-
-const renderLoader = () => <p>Cargando</p>;
-const Modal = lazy(() => import("../components/modal"));
 
 const Proyecto = ({ data }) => {
   const proyecto = data.proyecto;
@@ -72,25 +70,23 @@ const Proyecto = ({ data }) => {
                     alt={imagen.alternativeText}
                   />
                 </button>
-                <Suspense fallback={renderLoader()}>
-                  <Modal
-                    id={imagen.id}
-                    imagen={imagen.localFile}
-                    onClose={() => {
-                      const modal = document.getElementById(imagen.id);
-                      modal.style.display = "none";
-                    }}
-                  />
-                </Suspense>
+                <Modal
+                  id={imagen.id}
+                  imagen={imagen.localFile}
+                  onClose={() => {
+                    const modal = document.getElementById(imagen.id);
+                    modal.style.display = "none";
+                  }}
+                />
               </div>
             ))}
-          </div>        
-            <Share
-              objeto="proyecto"
-              url={viewUrl}
-              titulo={proyecto.titulo}
-              imagen={proyecto.miniatura.url}
-            />         
+          </div>
+          <Share
+            objeto="proyecto"
+            url={viewUrl}
+            titulo={proyecto.titulo}
+            imagen={proyecto.miniatura.url}
+          />
         </div>
       </div>
     </Layout>

@@ -2,12 +2,12 @@ import React, { lazy, Suspense } from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
+import Share from "../components/share";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
 
 const renderLoader = () => <p>Cargando</p>;
-const Share = lazy(() => import("../components/share"));
 const Modal = lazy(() => import("../components/modal"));
 
 const Proyecto = ({ data }) => {
@@ -84,15 +84,13 @@ const Proyecto = ({ data }) => {
                 </Suspense>
               </div>
             ))}
-          </div>
-          <Suspense fallback={renderLoader()}>
+          </div>        
             <Share
               objeto="proyecto"
               url={viewUrl}
               titulo={proyecto.titulo}
               imagen={proyecto.miniatura.url}
-            />
-          </Suspense>
+            />         
         </div>
       </div>
     </Layout>

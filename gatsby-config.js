@@ -19,7 +19,6 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          layout: `fullWidth`,
           formats: [`auto`, `webp`, `avif`],
           placeholder: `dominantColor`,
           quality: 100,

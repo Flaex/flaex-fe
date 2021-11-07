@@ -1,6 +1,6 @@
 import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import "../layouts/default.scss";
+import "./modal.scss";
 
 const Modal = ({ id, onClose, imagen }) => {
   return (

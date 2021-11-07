@@ -1,9 +1,11 @@
-import * as React from "react";
+import React, { lazy, Suspense } from "react";
 import { graphql } from "gatsby";
 import Layout from "../layouts/default";
-import Map from "../components/map";
 import Seo from "../components/seo";
 import "./contacto.scss";
+
+const renderLoader = () => <p>Cargando</p>;
+const Map = lazy(() => import("../components/map"));
 
 const ContactoPage = ({ data }) => {
   return (
@@ -14,12 +16,14 @@ const ContactoPage = ({ data }) => {
         <div className="mapa">
           <h2>{data.contacto.edges[0].node.ubicacion.titulo}</h2>
           <p>{data.contacto.edges[0].node.ubicacion.descripcion}</p>
-          <Map
-            lat={data.contacto.edges[0].node.latitud}
-            lng={data.contacto.edges[0].node.longitud}
-            clase="contacto__mapa"
-            zoom={12}
-          />
+          <Suspense fallback={renderLoader()}>
+            <Map
+              lat={data.contacto.edges[0].node.latitud}
+              lng={data.contacto.edges[0].node.longitud}
+              clase="contacto__mapa"
+              zoom={12}
+            />
+          </Suspense>
         </div>
 
         <div className="formulario">
@@ -32,6 +36,7 @@ const ContactoPage = ({ data }) => {
             netlify-honeypot="bot-field"
             data-netlify="true"
             name="contact"
+            action="/gracias/"
           >
             <label>
               <input type="hidden" name="bot-field" />

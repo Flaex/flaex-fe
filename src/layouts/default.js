@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 import PropTypes from "prop-types";
 import Header from "../components/header";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
+import "./default.scss";
 
 // @fortawesome libraries
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -19,7 +20,7 @@ const Layout = ({ children }) => (
       <Header />
       <Navigation />
     </div>
-    <main className="main"> {children}</main>
+    <main className="main">{children}</main>
     <Footer />
   </div>
 );

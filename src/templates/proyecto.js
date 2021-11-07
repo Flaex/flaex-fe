@@ -1,12 +1,14 @@
-import * as React from "react";
+import React, { lazy, Suspense } from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
-import Share from "../components/share";
-import Modal from "../components/modal";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
+
+const renderLoader = () => <p>Cargando</p>;
+const Share = lazy(() => import("../components/share"));
+const Modal = lazy(() => import("../components/modal"));
 
 const Proyecto = ({ data }) => {
   const proyecto = data.proyecto;
@@ -20,7 +22,7 @@ const Proyecto = ({ data }) => {
 
   return (
     <Layout>
-       <Seo
+      <Seo
         title={proyecto.titulo}
         description="Artículos dirigidos a los interesados en aprender o conocer de diseño y tecnologías web."
         image={proyecto.miniatura.url}
@@ -70,23 +72,27 @@ const Proyecto = ({ data }) => {
                     alt={imagen.alternativeText}
                   />
                 </button>
-                <Modal
-                  id={imagen.id}
-                  imagen={imagen.localFile}
-                  onClose={() => {
-                    const modal = document.getElementById(imagen.id);
-                    modal.style.display = "none";
-                  }}
-                />
+                <Suspense fallback={renderLoader()}>
+                  <Modal
+                    id={imagen.id}
+                    imagen={imagen.localFile}
+                    onClose={() => {
+                      const modal = document.getElementById(imagen.id);
+                      modal.style.display = "none";
+                    }}
+                  />
+                </Suspense>
               </div>
             ))}
           </div>
-          <Share
-            objeto="proyecto"
-            url={viewUrl}
-            titulo={proyecto.titulo}
-            imagen={proyecto.miniatura.url}
-          />
+          <Suspense fallback={renderLoader()}>
+            <Share
+              objeto="proyecto"
+              url={viewUrl}
+              titulo={proyecto.titulo}
+              imagen={proyecto.miniatura.url}
+            />
+          </Suspense>
         </div>
       </div>
     </Layout>

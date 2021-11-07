@@ -13,6 +13,7 @@ import {
   TelegramShareButton,
   TelegramIcon,
 } from "react-share";
+import "./share.scss";
 
 const Share = ({ objeto, url, titulo, imagen }) => {
   return (

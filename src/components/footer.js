@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./footer.scss";
 
 /* eslint-disable */
 

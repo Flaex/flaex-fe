@@ -6,10 +6,10 @@
 /* ubuntu-condensed-regular - latin */
 
 body {
-  font-family: "Ubuntu Condensed";
+  font-family: "Ubuntu Condensed", 'Trebuchet MS', sans-serif;
   color: $black-a;
   /* color:$black; */
-  @include image-background($image: "bg.jpg");
+  @include image-background($image: "bg.webp");
   /*   background-image: url("../images/bg.jpg");*/
   background-repeat: repeat;
   font-family: "Ubuntu Condensed", "Lucida Sans Unicode", "Lucida Grande",
@@ -96,57 +96,6 @@ p {
   display: flex;
 }
 
-.header {
-  width: 8.3vw;
-  margin-right: 0.65vw;
-
-  &__tag {
-    margin-top: 0.6vw;
-  }
-}
-
-.navigation {
-  display: flex;
-
-  & > * {
-    margin-right: 0.65vw;
-  }
-
-  &--secondary {
-    margin-bottom: 2vh;
-  }
-
-  &__link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: $black;
-    font-size: 1.1rem;
-    text-align: right;
-    text-decoration: none;
-    color: white;
-    width: 8.3vw;
-    height: 8.3vw;
-    padding-right: 0.6rem;
-    box-sizing: border-box;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &__category {
-    background-color: $black;
-    color: white;
-
-    h3 {
-      color: unset;
-      background-color: unset;
-      margin-bottom: 0;
-    }
-  }
-}
-
 // Main container
 .main {
   margin-top: 1.2rem;
@@ -164,46 +113,6 @@ p {
   padding: 0.7vw;
   min-height: 100vh;
   box-sizing: border-box;
-}
-
-.footer {
-  display: flex;
-  margin-top: auto;
-  p {
-    font-size: 1rem;
-    height: fit-content;
-    color: white;
-    background-color: $black;
-    margin: 0;
-    padding: 0.5rem;
-  }
-  &__rrss {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  &__link {
-    padding: 0.5rem;
-    margin-left: 0.7rem;
-    background-color: $black;
-    color: white;
-  }
-}
-
-.share {
-  margin: 1vh 0 5vh;
-
-  & > * {
-    margin-right: 0.4rem;
-  }
-
-  &__texto {
-    margin-bottom: 0.4rem;
-  }
-
-  &__icon {
-    width: 32px;
-    height: 32px;
-  }
 }
 
 .galleryImage {
@@ -271,65 +180,6 @@ p {
 /* 404:Not found */
 .notfound {
   max-width: 20vw;
-}
-
-/* The Modal (background) */
-.modal {
-  display: flex; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 50; /* Sit on top */
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 200ms;
-
-  &__content {
-    position: relative;
-    width: fit-content;
-    margin: 0 auto;
-    top: 8%;
-    background-color: white;
-  }
-
-  &__cuerpo {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__boton {
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    z-index: 10;
-    right: 0.5rem;
-    top: 0.5rem;
-    color: white;
-    background-color: $black;
-    font-size: 1.6rem;
-    line-height: 0.5rem;
-  }
-}
-
-.modal {
-  display: none;
-}
-
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 code {
@@ -413,51 +263,6 @@ pre tt:after {
     }
   }
 
-  .header {
-    width: 18.85vw;
-
-    &__tag {
-      margin-top: 1.2vw;
-    }
-  }
-
-  .navigation {
-    &__link {
-      width: 18.85vw;
-      height: 18.85vw;
-      font-size: 0.9rem;
-      padding-right: 1vw;
-      margin-left: 0.5vw;
-    }
-
-    &__category {
-      h3 {
-        font-size: 0.85rem;
-        padding: 0.25rem;
-      }
-    }
-  }
-
-  .footer {
-    p {
-      font-size: 0.8rem;
-      padding: 0.4rem;
-    }
-
-    &__link {
-      font-size: 0.9rem;
-      margin-left: 1vw;
-      padding: 0.4rem;
-    }
-  }
-
-  .share {
-    &__icon {
-      width: 26px;
-      height: 26px;
-    }
-  }
-
   .detalle {
     gap: unset;
     flex-wrap: wrap;
@@ -482,39 +287,6 @@ pre tt:after {
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @include responsive-max($max-width: 46em, $orientation: "landscape") {
-  .header {
-    width: 14vw;
-
-    &__tag {
-      margin-top: 1.5vh;
-    }
-  }
-
-  .navigation {
-    &__link {
-      font-size: 0.9rem;
-      width: 14vw;
-      height: 14vw;
-    }
-  }
-
-  .footer {
-    p {
-      font-size: 0.8rem;
-    }
-
-    &__link {
-      font-size: 0.8rem;
-      margin-left: 1vw;
-    }
-  }
-
-  .share {
-    &__icon {
-      width: 26px;
-      height: 26px;
-    }
-  }
 }
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
@@ -547,52 +319,15 @@ pre tt:after {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
-
-  .header {
-    width: 13vw;
-
-    &__tag {
-      margin-top: 0.6vh;
-    }
-  }
-
-  .navigation {
-    &__link {
-      width: 13vw;
-      height: 13vw;
-      font-size: 1.2rem;
-    }
-  }
-
-  .footer {
-    p {
-      line-height: unset;
-    }
-  }
 }
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/
-@include responsive-min-max(
+/* @include responsive-min-max(
   $min-width: 64em,
   $max-width: 85.375em,
   $orientation: "landscape"
 ) {
-  .navigation {
-    &__link {
-      font-size: 1rem;
-      padding-right: 0.5vw;
-    }
-  }
-
-  .footer {
-    p {
-      font-size: 0.875rem;
-    }
-    &__link {
-      font-size: 0.875rem;
-    }
-  }
-}
+} */
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {

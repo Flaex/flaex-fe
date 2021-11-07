@@ -9,19 +9,38 @@ module.exports = {
     description: "Perfil profesional, portafolio y blog | Freddy Polanía",
     author: "Freddy Polania",
     siteUrl: "https://flaex.netlify.com",
-    image: "https://res.cloudinary.com/flaex/image/upload/v1635773743/brand/seo-img_dlqmb2.jpg",
+    image:
+      "https://res.cloudinary.com/flaex/image/upload/v1635773743/brand/seo-img_dlqmb2.jpg",
     twitterUsername: "@Flaex_",
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          layout: `fullWidth`,
+          formats: [`auto`, `webp`, `avif`], 
+          placeholder: `dominantColor`,
+          quality: 100,
+          breakpoints: [416, 736, 1024, 1280, 1366],
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/perfil/`, `/portafolio/`, `/portafolio/*`, `/blog/`, `/contacto/`],
+        precachePages: [
+          `/perfil/`,
+          `/portafolio/`,
+          `/portafolio/*`,
+          `/blog/`,
+          `/contacto/`,
+        ],
       },
     },
     {
@@ -59,7 +78,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL:  process.env.API_URL,
+        apiURL: process.env.API_URL,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`articulos`, `caras`, `categorias`, `proyectos`],
         singleTypes: [`contacto`, `inicio`, `perfil`],

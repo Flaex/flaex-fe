@@ -1,0 +1,82 @@
+@use "../assets/scss/variables" as *;
+@use "../assets/scss/mixins" as *;
+
+.footer {
+  display: flex;
+  margin-top: auto;
+  p {
+    font-size: 1rem;
+    height: fit-content;
+    color: white;
+    background-color: $black;
+    margin: 0;
+    padding: 0.5rem;
+  }
+  &__rrss {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  &__link {
+    padding: 0.5rem;
+    margin-left: 0.7rem;
+    background-color: $black;
+    color: white;
+  }
+}
+
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
+  .footer {
+    p {
+      font-size: 0.8rem;
+      padding: 0.4rem;
+    }
+
+    &__link {
+      font-size: 0.9rem;
+      margin-left: 1vw;
+      padding: 0.4rem;
+    }
+  }
+}
+
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
+  .footer {
+    p {
+      font-size: 0.8rem;
+    }
+
+    &__link {
+      font-size: 0.8rem;
+      margin-left: 1vw;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .footer {
+    p {
+      line-height: unset;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 64em,
+  $max-width: 85.375em,
+  $orientation: "landscape"
+) {
+  .footer {
+    p {
+      font-size: 0.875rem;
+    }
+    &__link {
+      font-size: 0.875rem;
+    }
+  }
+}

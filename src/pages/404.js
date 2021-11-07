@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Seo from "../components/seo";
 
-const NotFoundImage = 400;
+const NotFoundImage = 320;
 
 const NotFoundPage = () => (
   <Layout>
@@ -24,8 +24,8 @@ const NotFoundPage = () => (
     <StaticImage
       className="notfound"
       width={NotFoundImage}
-      placeholder="none"
-      src="../assets/images/404.png"
+      placeholder="dominantColor"
+      src="../assets/images/404.webp"
       alt="@flaex_ con cara de sorpresa"
     />
   </Layout>

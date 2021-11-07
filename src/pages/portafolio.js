@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
 import "./portafolio.scss";
-
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,7 +43,7 @@ const PortafolioPage = ({ data }) => {
               ]}
               fixedWidth
               size="sm"
-            />
+            />{" "}
             {logotipos[0].node.categoria.titulo}
           </h2>
 
@@ -221,9 +220,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  width: 275
                 )
               }
             }
@@ -249,9 +246,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  width: 275
                 )
               }
             }
@@ -277,9 +272,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  width: 275
                 )
               }
             }
@@ -305,9 +298,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  width: 275
                 )
               }
             }

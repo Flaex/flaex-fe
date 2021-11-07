@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const TabComponent = ({ colecciones, icons, clase }) => {
@@ -13,10 +13,22 @@ const TabComponent = ({ colecciones, icons, clase }) => {
           <h2>{tab.titulo}</h2>
           <TabList>
             <Tab>
-              <FontAwesomeIcon icon={["fas", icons[0]]} fixedWidth size="lg" />
+             
+                <FontAwesomeIcon
+                  icon={["fas", icons[0]]}
+                  fixedWidth
+                  size="lg"
+                />
+           
             </Tab>
             <Tab>
-              <FontAwesomeIcon icon={["fas", icons[1]]} fixedWidth size="lg" />
+           
+                <FontAwesomeIcon
+                  icon={["fas", icons[1]]}
+                  fixedWidth
+                  size="lg"
+                />
+        
             </Tab>
           </TabList>
           <TabPanel>

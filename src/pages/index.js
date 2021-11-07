@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
     positonZero(array);
     const videoContainer = document.querySelector(".caras__media");
     videoContainer.innerHTML = `         
-      <video key=${array[0].node.media.id} autoplay muted>
+      <video key=${array[0].node.media.id} autoplay muted playsinline>
         <source src=${array[0].node.media.url} type="video/mp4" />   
         Your browser does not support the video tag.                        
       </video>
@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="caras">
             <div className="caras__media">
-              <video className="caras__video" autoPlay muted>
+              <video className="caras__video" autoPlay muted playsinline>
                 <source
                   src={data.caras.edges[3].node.media.url}
                   type="video/mp4"
@@ -162,9 +162,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 330
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  width: 275
                 )
               }
             }
@@ -219,8 +217,6 @@ export const query = graphql`
               childImageSharp {
                 gatsbyImageData(
                   width: 495
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
                 )
               }
             }

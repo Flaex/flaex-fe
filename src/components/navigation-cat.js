@@ -62,7 +62,7 @@ const NavigationCat = () => (
                   (faicon = habilidad.icono.replace(/'/g, "")),
                 ]}
                 fixedWidth
-                size="lg"
+                size="sm"
               />
               {habilidad.titulo}
             </h3>

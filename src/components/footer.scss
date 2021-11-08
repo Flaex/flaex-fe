@@ -17,13 +17,17 @@
     flex-direction: row-reverse;
   }
   &__link {
-    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 0.7rem;
     background-color: $black;
     color: white;
+    padding: 0 0.5rem 0 0.5rem;
   }
 }
 
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .footer {
     p {
@@ -31,14 +35,13 @@
       padding: 0.4rem;
     }
 
-    &__link {
-      font-size: 0.9rem;
-      margin-left: 1vw;
-      padding: 0.4rem;
+    &__link {     
+      margin-left: 1vw;      
     }
   }
 }
 
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @include responsive-max($max-width: 46em, $orientation: "landscape") {
   .footer {
     p {
@@ -46,8 +49,8 @@
     }
 
     &__link {
-      font-size: 0.8rem;
       margin-left: 1vw;
+      padding: 0 0.65rem 0 0.65rem;
     }
   }
 }
@@ -61,7 +64,7 @@
   .footer {
     p {
       line-height: unset;
-    }
+    }    
   }
 }
 
@@ -76,7 +79,17 @@
       font-size: 0.875rem;
     }
     &__link {
-      font-size: 0.875rem;
+      padding: 0 0.7rem 0 0.7rem;
+    }
+  }  
+}
+
+/*-------------------------------------------- Desktop 1280px --------------------------------------------*/
+@include responsive-min($min-width: 80em) {
+  .footer {
+    
+    &__link {
+      padding: 0 0.7rem 0 0.7rem;
     }
   }
 }

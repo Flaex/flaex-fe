@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import "./header.scss";
 
-const logoWidth = 135;
+const logoWidth = 160;
 
 const HeaderPage = () => (
   <header className="header">

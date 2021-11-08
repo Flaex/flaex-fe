@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="caras">
             <div className="caras__media">
-              <video className="caras__video" autoPlay muted playsinline>
+              <video className="caras__video" autoPlay muted playsInline>
                 <source
                   src={data.caras.edges[3].node.media.url}
                   type="video/mp4"
@@ -135,10 +135,12 @@ const IndexPage = ({ data }) => {
                     aria-label={`Ir a ${articulo.node.titulo}`}
                   >
                     <GatsbyImage
+                      className="feed__imagen"
                       image={getImage(articulo.node.imagen.localFile)}
                       alt={articulo.node.imagen.alternativeText}
                     />
                     <h3 className="feed__title">{articulo.node.titulo}</h3>
+                    {console.log(articulo.node.imagen.url)}
                   </Link>
                 </li>
               ))}
@@ -212,6 +214,7 @@ export const query = graphql`
           descripcion
           slug
           imagen {
+            url
             alternativeText
             localFile {
               childImageSharp {

@@ -48,7 +48,7 @@ const Footer = () => (
                   (faicon = link.icono.replace(/'/g, "")),
                 ]}
                 fixedWidth
-                size="1x"
+                size="xs"
               />
             </a>
           ))}

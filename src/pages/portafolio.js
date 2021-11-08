@@ -220,7 +220,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 275
+                  width: 300
                 )
               }
             }
@@ -246,7 +246,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 275
+                  width: 300
                 )
               }
             }
@@ -272,7 +272,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 275
+                  width: 300
                 )
               }
             }
@@ -298,7 +298,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 275
+                  width: 300
                 )
               }
             }

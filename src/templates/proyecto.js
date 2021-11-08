@@ -83,7 +83,7 @@ const Proyecto = ({ data }) => {
           </div>
           <Share
             objeto="proyecto"
-            url={viewUrl}
+            url={viewUrl()}
             titulo={proyecto.titulo}
             imagen={proyecto.miniatura.url}
           />

@@ -34,11 +34,11 @@ const Articulo = ({ data }) => {
           />         
             <Share
               objeto="articulo"
-              url={viewUrl}
+              url={viewUrl()}
               titulo={articulo.titulo}
               imagen={articulo.imagen.url}
             />
-          
+          {console.log(articulo.imagen.url)}
         </div>
 
         <div className="detalle__col-b">

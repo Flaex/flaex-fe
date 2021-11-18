@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: "%s · @flaex_",
     description: "Perfil profesional, portafolio y blog | Freddy Polanía",
     author: "Freddy Polania",
-    siteUrl: "https://flaex.netlify.com",
+    siteUrl: "https://flaex.netlify.app",
     image:
       "https://res.cloudinary.com/flaex/image/upload/v1635773743/brand/seo-img_dlqmb2.jpg",
     twitterUsername: "@Flaex_",

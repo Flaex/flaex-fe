@@ -44,6 +44,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://flaex.netlify.app/',
+        sitemap: 'https://flaex.netlify.app/sitemap/sitemap-0.xml',
+        policy: [{ userAgent: '*', allow: '/', disallow: ["/gracias", "/404"], }]
+      }
+    },
+    {
       resolve: "gatsby-plugin-sass",
       otions: {
         useResolveUrlLoader: true,

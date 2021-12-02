@@ -28,17 +28,15 @@ const ContactoPage = ({ data }) => {
 
           <form
             className="contacto__form"
-            method="post"
-            netlify-honeypot="bot-field"
+            method="POST"
             data-netlify="true"
             name="contact"
             action="/gracias/"
           >
             <label>
               <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="contact" />{" "}
+              <input type="hidden" name="form-name" value="contact" />
             </label>
-
             <div>
               <input type="text" name="name" placeholder="Nombre y Apellido" />
             </div>
@@ -52,7 +50,6 @@ const ContactoPage = ({ data }) => {
               <textarea name="message" placeholder="Mensaje" />
             </div>
             <input type="submit" value="Enviar mensaje ➤" />
-            <input type="hidden" name="form-name" value="inicio" />
           </form>
           <p className="contacto__mensaje">
             {data.contacto.edges[0].node.redes.descripcion}

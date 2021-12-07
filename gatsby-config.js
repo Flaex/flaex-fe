@@ -30,7 +30,12 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: `/`
+      }
+    },
     {
       resolve: `gatsby-plugin-offline`,
       options: {

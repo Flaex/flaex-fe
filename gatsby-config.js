@@ -30,12 +30,7 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        output: `/`
-      }
-    },
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-plugin-offline`,
       options: {
@@ -49,12 +44,14 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://flaex.netlify.app/',
-        sitemap: 'https://flaex.netlify.app/sitemap/sitemap-0.xml',
-        policy: [{ userAgent: '*', allow: '/', disallow: ["/gracias", "/404"], }]
-      }
+        host: "https://flaex.netlify.app/",
+        sitemap: "https://flaex.netlify.app/sitemap/sitemap-0.xml",
+        policy: [
+          { userAgent: "*", allow: "/", disallow: ["/gracias", "/404"] },
+        ],
+      },
     },
     {
       resolve: "gatsby-plugin-sass",
@@ -119,9 +116,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-preconnect',
+      resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ['https://res.cloudinary.com/flaex'],
+        domains: ["https://res.cloudinary.com/flaex"],
       },
     },
   ],

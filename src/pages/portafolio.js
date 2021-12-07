@@ -205,6 +205,7 @@ export const query = graphql`
     logotipos: allStrapiProyectos(
       limit: 4
       filter: { categoria: { slug: { eq: "logotipos" } } }
+      sort: { fields: [createdAt], order: DESC }
     ) {
       edges {
         node {
@@ -219,9 +220,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                )
+                gatsbyImageData(width: 300)
               }
             }
           }
@@ -231,6 +230,7 @@ export const query = graphql`
     branding: allStrapiProyectos(
       limit: 4
       filter: { categoria: { slug: { eq: "branding" } } }
+      sort: { fields: [createdAt], order: DESC }
     ) {
       edges {
         node {
@@ -245,9 +245,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                )
+                gatsbyImageData(width: 300)
               }
             }
           }
@@ -257,6 +255,7 @@ export const query = graphql`
     web: allStrapiProyectos(
       limit: 4
       filter: { categoria: { slug: { eq: "web" } } }
+      sort: { fields: [createdAt], order: DESC }
     ) {
       edges {
         node {
@@ -271,9 +270,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                )
+                gatsbyImageData(width: 300)
               }
             }
           }
@@ -283,6 +280,7 @@ export const query = graphql`
     letrasiconos: allStrapiProyectos(
       limit: 4
       filter: { categoria: { slug: { eq: "letras-iconos" } } }
+      sort: { fields: [createdAt], order: DESC }
     ) {
       edges {
         node {
@@ -297,9 +295,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                )
+                gatsbyImageData(width: 300)
               }
             }
           }

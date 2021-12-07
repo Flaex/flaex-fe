@@ -20,11 +20,7 @@ const Proyecto = ({ data }) => {
 
   return (
     <Layout>
-      <Seo
-        title={proyecto.titulo}
-        description="Artículos dirigidos a los interesados en aprender o conocer de diseño y tecnologías web."
-        image={proyecto.miniatura.url}
-      />
+      <Seo title={proyecto.titulo} image={proyecto.miniatura.url} />
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button

@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Seo from "../components/seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import "./index.scss";
 
 const IndexPage = ({ data }) => {
@@ -63,7 +65,12 @@ const IndexPage = ({ data }) => {
               <h2 className="hero__title">
                 {data.inicio.edges[0].node.intro.titulo}
               </h2>
-              <p>{data.inicio.edges[0].node.intro.descripcion}</p>
+              <ReactMarkdown           
+                children={data.inicio.edges[0].node.intro.descripcion}
+                remarkPlugins={[remarkGfm]}
+                skipHtml={false}
+                linkTarget="_blank"
+              />
             </div>
           </div>
           <div className="caras">
@@ -163,9 +170,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 275
-                )
+                gatsbyImageData(width: 275)
               }
             }
           }
@@ -218,9 +223,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 495
-                )
+                gatsbyImageData(width: 495)
               }
             }
           }

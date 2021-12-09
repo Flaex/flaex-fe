@@ -8,12 +8,8 @@
 body {
   font-family: "Ubuntu Condensed", 'Trebuchet MS', sans-serif;
   color: $black-a;
-  /* color:$black; */
   @include image-background($image: "bg.webp");
-  /*   background-image: url("../images/bg.jpg");*/
   background-repeat: repeat;
-  font-family: "Ubuntu Condensed", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

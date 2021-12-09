@@ -10,7 +10,7 @@ module.exports = {
     author: "Freddy Polania",
     siteUrl: "https://flaex.netlify.app",
     image:
-      "https://res.cloudinary.com/flaex/image/upload/v1635773743/brand/seo-img_dlqmb2.jpg",
+      "https://res.cloudinary.com/flaex/image/upload/v1639075622/strapi/flaex_open_graph_minuatura_db580ae3b0.jpg",
     twitterUsername: "@Flaex_",
   },
   plugins: [
@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://flaex.netlify.app/",
+        host: "https://flaex.netlify.app",
         sitemap: "https://flaex.netlify.app/sitemap/sitemap-0.xml",
         policy: [
           { userAgent: "*", allow: "/", disallow: ["/gracias", "/404"] },

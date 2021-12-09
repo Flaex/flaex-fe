@@ -6,7 +6,7 @@
 /* ubuntu-condensed-regular - latin */
 
 body {
-  font-family: "Ubuntu Condensed", 'Trebuchet MS', sans-serif;
+  font-family: "Ubuntu Condensed", "Trebuchet MS", sans-serif;
   color: $black-a;
   @include image-background($image: "bg.webp");
   background-repeat: repeat;
@@ -148,6 +148,11 @@ p {
   &__descripcion {
     p {
       margin-top: 0;
+    }
+
+    a {
+      color: $black;
+      font-style: italic;
     }
 
     h2,

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import  Layout from '../layouts/default';
-import  Navcat from '../components/navigation-cat';
+import Layout from "../layouts/default";
+import Navcat from "../components/navigation-cat";
 import Seo from "../components/seo";
 import "./categoria.scss";
 
@@ -15,7 +15,10 @@ const Categoria = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Portafolio de Freddy Polania | @Flaex_" description={`Proyectos de ${ data.categoria.slug}`} />
+      <Seo
+        title="Portafolio de Freddy Polania | @Flaex_"
+        description={`Proyectos de ${data.categoria.slug}`}
+      />
       <div className="submenu">
         <Navcat />
       </div>
@@ -58,9 +61,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 300
-              )
+              gatsbyImageData(width: 300)
             }
           }
         }

@@ -49,6 +49,7 @@ const Proyecto = ({ data }) => {
             children={proyecto.descripcion}
             remarkPlugins={[remarkGfm]}
             skipHtml={true}
+            linkTarget="_blank"
           />
 
           <div className="detalle__galeria">
@@ -104,9 +105,7 @@ export const query = graphql`
         alternativeText
         localFile {
           childImageSharp {
-            gatsbyImageData(
-              width: 500           
-            )
+            gatsbyImageData(width: 500)
           }
         }
       }
@@ -115,9 +114,7 @@ export const query = graphql`
         alternativeText
         localFile {
           childImageSharp {
-            gatsbyImageData(
-              width: 675            
-            )
+            gatsbyImageData(width: 675)
           }
         }
       }

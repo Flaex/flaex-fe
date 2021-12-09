@@ -65,7 +65,7 @@ const IndexPage = ({ data }) => {
               <h2 className="hero__title">
                 {data.inicio.edges[0].node.intro.titulo}
               </h2>
-              <ReactMarkdown           
+              <ReactMarkdown
                 children={data.inicio.edges[0].node.intro.descripcion}
                 remarkPlugins={[remarkGfm]}
                 skipHtml={false}

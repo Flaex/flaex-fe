@@ -13,22 +13,10 @@ const TabComponent = ({ colecciones, icons, clase }) => {
           <h2>{tab.titulo}</h2>
           <TabList>
             <Tab>
-             
-                <FontAwesomeIcon
-                  icon={["fas", icons[0]]}
-                  fixedWidth
-                  size="lg"
-                />
-           
+              <FontAwesomeIcon icon={["fas", icons[0]]} fixedWidth size="lg" />
             </Tab>
             <Tab>
-           
-                <FontAwesomeIcon
-                  icon={["fas", icons[1]]}
-                  fixedWidth
-                  size="lg"
-                />
-        
+              <FontAwesomeIcon icon={["fas", icons[1]]} fixedWidth size="lg" />
             </Tab>
           </TabList>
           <TabPanel>

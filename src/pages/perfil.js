@@ -20,7 +20,10 @@ const PerfilPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Perfil profesional de Freddy Polania | @Flaex_ " description={data.perfil.edges[0].node.meta[0].value} />
+      <Seo
+        title="Perfil profesional de Freddy Polania | @Flaex_ "
+        description={data.perfil.edges[0].node.meta[0].value}
+      />
       <h1 className="hidden">Perfil</h1>
       <div className="perfil">
         <section className="perfil__col">
@@ -89,9 +92,7 @@ export const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 330
-                )
+                gatsbyImageData(width: 330)
               }
             }
           }

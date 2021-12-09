@@ -31,13 +31,13 @@ const Articulo = ({ data }) => {
           <GatsbyImage
             image={getImage(articulo.imagen.localFile)}
             alt={articulo.imagen.alternativeText}
-          />         
-            <Share
-              objeto="articulo"
-              url={viewUrl()}
-              titulo={articulo.titulo}
-              imagen={articulo.imagen.url}
-            />
+          />
+          <Share
+            objeto="articulo"
+            url={viewUrl()}
+            titulo={articulo.titulo}
+            imagen={articulo.imagen.url}
+          />
         </div>
 
         <div className="detalle__col-b">
@@ -68,9 +68,7 @@ export const query = graphql`
         alternativeText
         localFile {
           childImageSharp {
-            gatsbyImageData(
-              width: 512
-            )
+            gatsbyImageData(width: 512)
           }
         }
       }

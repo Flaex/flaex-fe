@@ -31,7 +31,7 @@ const Footer = () => (
     `}
     render={(data) => (
       <footer className="footer">
-        <p>flaex.com - {new Date().getFullYear()}</p>
+        <p>@flaex_ - {new Date().getFullYear()}</p>
         <div className="footer__rrss">
           {data.contacto.edges[0].node.plataformas.map((link) => (
             <a

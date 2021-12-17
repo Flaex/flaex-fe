@@ -55,6 +55,9 @@ const IndexPage = ({ data }) => {
       <div className="inicio">
         <h1 className="hidden">Inicio</h1>
         <section className="inicio__col">
+          <h2 className="hero__title">
+            {data.inicio.edges[0].node.intro.titulo}
+          </h2>
           <div className="hero">
             <GatsbyImage
               className="hero__imagen"
@@ -62,9 +65,6 @@ const IndexPage = ({ data }) => {
               alt={data.inicio.edges[0].node.imagen.alternativeText}
             />
             <div className="hero__info">
-              <h2 className="hero__title">
-                {data.inicio.edges[0].node.intro.titulo}
-              </h2>
               <ReactMarkdown
                 children={data.inicio.edges[0].node.intro.descripcion}
                 remarkPlugins={[remarkGfm]}
@@ -73,6 +73,7 @@ const IndexPage = ({ data }) => {
               />
             </div>
           </div>
+          <h2>{data.inicio.edges[0].node.flaex.titulo}</h2>
           <div className="caras">
             <div className="caras__media">
               <video className="caras__video" autoPlay muted playsInline>
@@ -84,7 +85,6 @@ const IndexPage = ({ data }) => {
               </video>
             </div>
             <div className="caras__info">
-              <h2>{data.inicio.edges[0].node.flaex.titulo}</h2>
               <p>{data.inicio.edges[0].node.flaex.descripcion}</p>
               <button
                 className="caras__boton"

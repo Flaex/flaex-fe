@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Modal from "../components/modal";
 import Share from "../components/share";
+import Form from "../components/innerForm";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
@@ -20,7 +21,13 @@ const Proyecto = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={proyecto.titulo} image={proyecto.miniatura.url} />
+      <Seo
+        title={proyecto.titulo}
+        image={proyecto.miniatura.url}
+        description={proyecto.descripcion
+          .replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, "$1")
+          .substring(0, 158)}
+      />
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button
@@ -38,6 +45,12 @@ const Proyecto = ({ data }) => {
             className="detalle__imagen"
             image={getImage(proyecto.miniatura.localFile)}
             alt={proyecto.miniatura.alternativeText}
+          />
+          <Share
+            objeto="proyecto"
+            url={viewUrl()}
+            titulo={proyecto.titulo}
+            imagen={proyecto.miniatura.url}
           />
         </div>
         <div className="detalle__col-b">
@@ -78,12 +91,7 @@ const Proyecto = ({ data }) => {
               </div>
             ))}
           </div>
-          <Share
-            objeto="proyecto"
-            url={viewUrl()}
-            titulo={proyecto.titulo}
-            imagen={proyecto.miniatura.url}
-          />
+          <Form titulo="¿Necesitas asesoría o quieres trabajar conmigo?" />
         </div>
       </div>
     </Layout>

@@ -6,11 +6,11 @@
 /* ubuntu-condensed-regular - latin */
 
 body {
-  font-family: "Ubuntu Condensed", "Trebuchet MS", sans-serif;
+  font-family: "Ubuntu", "Trebuchet MS", sans-serif;
   color: $black-a;
   @include image-background($image: "bg.webp");
   background-repeat: repeat;
-  font-weight: normal;
+  font-weight: 300;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -55,6 +55,14 @@ h5 {
   padding: 0.5rem;
   margin-top: 0;
   margin-bottom: 1vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Ubuntu Condensed", "Trebuchet MS", sans-serif;
 }
 
 h1 {
@@ -171,6 +179,7 @@ p {
   &__galeria {
     display: flex;
     gap: 1%;
+    margin-bottom: 2rem;
   }
 
   &__item {
@@ -342,7 +351,7 @@ pre tt:after {
   .detalle {
     &__descripcion {
       font-size: 1.125rem;
-      line-height: 1.375rem;
+      line-height: 1.438rem;
     }
   }
 }

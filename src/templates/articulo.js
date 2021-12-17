@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../layouts/default";
 import Share from "../components/share";
+import Form from "../components/innerForm";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Seo from "../components/seo";
@@ -19,7 +20,11 @@ const Articulo = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={articulo.titulo} image={articulo.imagen.url} />
+      <Seo
+        title={articulo.titulo}
+        image={articulo.imagen.url}
+        description={articulo.descripcion.replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, '$1').substring(0, 158)}
+      />
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button onClick={() => window.history.back()}>&#10229;</button>
@@ -49,6 +54,7 @@ const Articulo = ({ data }) => {
             skipHtml={false}
             linkTarget="_blank"
           />
+          <Form titulo="¿Tienes algún comentario, sugerencia o pregunta?" />
         </div>
       </div>
     </Layout>

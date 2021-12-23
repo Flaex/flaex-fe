@@ -292,6 +292,13 @@ pre tt:after {
       margin-top: 2vh;
     }
 
+    &__descripcion {      
+      ul {
+        font-size: 0.938rem;
+        line-height: 1.188rem;
+      }
+    }
+
     &__galeria {
       justify-content: space-between;
     }

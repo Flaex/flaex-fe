@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: "%s · @flaex_",
     description: "Perfil profesional, portafolio y blog | Freddy Polanía",
     author: "Freddy Polania",
-    siteUrl: "https://flaex.netlify.app",
+    siteUrl: "https://flaex.design",
     image:
       "https://res.cloudinary.com/flaex/image/upload/v1639075622/strapi/flaex_open_graph_minuatura_db580ae3b0.jpg",
     twitterUsername: "@Flaex_",
@@ -46,8 +46,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://flaex.netlify.app",
-        sitemap: "https://flaex.netlify.app/sitemap/sitemap-0.xml",
+        host: "https://flaex.design",
+        sitemap: "https://flaex.design/sitemap/sitemap-0.xml",
         policy: [
           { userAgent: "*", allow: "/", disallow: ["/gracias", "/404"] },
         ],

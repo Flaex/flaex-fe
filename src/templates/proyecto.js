@@ -91,7 +91,7 @@ const Proyecto = ({ data }) => {
               </div>
             ))}
           </div>
-          <Form titulo="¿Necesitas asesoría o quieres trabajar conmigo?" />
+          <Form titulo="¿Necesitas asesoría? ¿Quieres trabajar conmigo?" />
         </div>
       </div>
     </Layout>

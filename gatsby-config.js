@@ -47,7 +47,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://flaex.design",
-        sitemap: "https://flaex.design/sitemap/sitemap-0.xml",
+        sitemap: "https://www.flaex.design/sitemap-pages.xml",
         policy: [
           { userAgent: "*", allow: "/", disallow: ["/gracias", "/404"] },
         ],
@@ -104,6 +104,7 @@ module.exports = {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
           "G-S47F7WM6C7", // Google Analytics / GA
+          "G-ZQP8T9WP7N", // GA4
         ],
         /* gtagConfig: {
           optimize_id: "GTM-5LFLQGT",

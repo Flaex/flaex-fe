@@ -5,7 +5,7 @@ const Innerform = ({ titulo }) => {
     <div className="formulario">
       <h3 className="formulario__titulo">{titulo}</h3>
       <p>
-        Enviame un mensaje por el formulario de contacto o visita mis redes
+        Enviame un mensaje por el formulario o visita mis redes
         sociales, en el pie de página están los enlaces.
       </p>
 

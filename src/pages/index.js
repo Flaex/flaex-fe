@@ -209,7 +209,7 @@ export const query = graphql`
       }
     }
     articulos: allStrapiArticulos(
-      limit: 2
+      limit: 4
       sort: { fields: [createdAt], order: DESC }
     ) {
       edges {

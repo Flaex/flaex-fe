@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1%;
-
+  flex-direction: row-reverse; 
   list-style: none;
   padding: 0;
 
@@ -19,7 +19,7 @@
 
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .categorias {
-    justify-content: space-between;
+    justify-content: space-between;    
     &__item {
       width: 48.5%;
       margin-bottom: 1vh;

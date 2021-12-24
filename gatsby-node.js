@@ -3,42 +3,34 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
+        articulos: allStrapiArticulos {
+          edges {
+            node {
+              id
+              slug
+            }
+          }
+        }
+
+        proyectos: allStrapiProyectos {
+          edges {
+            node {
+              id
+              slug
+              categoria {
+                slug
+              }
+            }
+          }
+        }
+
         categorias: allStrapiCategorias {
           edges {
             node {
               id
               slug
-            }
-          }
-        }
-        articulos: allStrapiArticulos {
-          edges {
-            node {
-              id
-              titulo
-              descripcion
-              slug
-              imagen {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                }
-              }
-            }
-          }
-        }
-        proyectos: allStrapiProyectos {
-          edges {
-            node {
-              id
-              titulo
-              descripcion
-              Ano
-              ciudad
-              slug
-              categoria {
-                slug
+              proyectos {
+                createdAt
               }
             }
           }

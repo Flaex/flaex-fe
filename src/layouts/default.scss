@@ -149,8 +149,9 @@ p {
     border: 1px solid $gray-border;
   }
 
-  &__lugar {
-    font-weight: bold;
+  &__lugar { 
+    color: $black;
+    font-style: italic;
   }
 
   &__descripcion {

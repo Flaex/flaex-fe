@@ -1,0 +1,104 @@
+
+.navigation {
+  display: flex;
+
+  & > * {
+    margin-right: 0.65vw;
+  }
+
+  &--secondary {
+    margin-bottom: 2vh;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $black;
+    font-family: "Ubuntu Condensed", "Trebuchet MS", sans-serif;
+    font-size: 1.1rem;
+    text-align: right;
+    text-decoration: none;
+    color: white;
+    width: 8.3vw;
+    height: 8.3vw;
+    padding-right: 0.6rem;
+    box-sizing: border-box;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__category {
+    background-color: $black;
+    color: white;
+
+    h3 {
+      color: unset;
+      background-color: unset;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
+  .navigation {
+    &__link {
+      width: 18.85vw;
+      height: 18.85vw;
+      font-size: 0.9rem;
+      padding-right: 1vw;
+      margin-left: 0.5vw;
+    }
+
+    &__category {
+      h3 {
+        font-size: 0.85rem;
+        padding: 0.35rem;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
+  .navigation {
+    &__link {
+      font-size: 0.9rem;
+      width: 14vw;
+      height: 14vw;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .navigation {
+    &__link {
+      width: 13vw;
+      height: 13vw;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 64em,
+  $max-width: 85.375em,
+  $orientation: "landscape"
+) {
+  .navigation {
+    &__link {
+      font-size: 1rem;
+      padding-right: 0.5vw;
+    }
+  }
+}

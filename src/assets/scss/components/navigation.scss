@@ -1,10 +1,5 @@
-
 .navigation {
   display: flex;
-
-  & > * {
-    margin-right: 0.65vw;
-  }
 
   &--secondary {
     margin-bottom: 2vh;
@@ -14,19 +9,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 5.625vw;
+    height: 5.625vw;
     background-color: $black;
     font-family: "Ubuntu Condensed", "Trebuchet MS", sans-serif;
     font-size: 1.1rem;
     text-align: right;
     text-decoration: none;
     color: white;
-    width: 8.3vw;
-    height: 8.3vw;
     padding-right: 0.6rem;
     box-sizing: border-box;
+    margin-right: 0.4em;
 
-    &:last-child {
-      margin-right: 0;
+    &:first-child {
+      background-color: transparent;
     }
   }
 
@@ -46,6 +42,9 @@
 
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .navigation {
+    width: 100%;
+    justify-content: space-between;
+
     &__link {
       width: 18.85vw;
       height: 18.85vw;
@@ -67,9 +66,10 @@
 @include responsive-max($max-width: 46em, $orientation: "landscape") {
   .navigation {
     &__link {
+      width: 13vw;
+      height: 13vw;
       font-size: 0.9rem;
-      width: 14vw;
-      height: 14vw;
+      margin-right: .4em;
     }
   }
 }
@@ -82,9 +82,10 @@
 ) {
   .navigation {
     &__link {
-      width: 13vw;
-      height: 13vw;
+      width: 12vw;
+      height: 12vw;
       font-size: 1.2rem;
+      margin-right: .5em;
     }
   }
 }
@@ -97,7 +98,10 @@
 ) {
   .navigation {
     &__link {
+      width: 8vw;
+      height: 8vw;
       font-size: 1rem;
+      margin-right: .5em;
       padding-right: 0.5vw;
     }
   }

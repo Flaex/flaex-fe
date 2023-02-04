@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Header from "../components/header";
 import Footer from "../components/footer";
 import "../assets/scss/layouts/default.scss";
 
@@ -14,6 +15,7 @@ library.add(fab, fas);
 
 const Default = ({ children }) => (
   <div className="page">
+    <Header />
     <main className="main">{children}</main>
     <Footer />
   </div>

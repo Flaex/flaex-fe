@@ -5,7 +5,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
 
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-condensed-v16-latin-regular.eot"
+      href="/fonts/ubuntu-condensed-v16-latin/ubuntu-condensed-v16-latin-regular.ttf"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -13,7 +13,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-condensed-v16-latin-regular.svg"
+      href="/fonts/ubuntu-condensed-v16-latin/ubuntu-condensed-v16-latin-regular.woff"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -21,23 +21,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-condensed-v16-latin-regular.ttf"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="ubuntuCondensedRegular"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Montserrat/ubuntu-condensed-v16-latin-regular.woff"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="ubuntuCondensedRegular"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Montserrat/ubuntu-condensed-v16-latin-regular.woff2"
+      href="/fonts/ubuntu-condensed-v16-latin/ubuntu-condensed-v16-latin-regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -48,7 +32,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
 
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-300.eot"
+      href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-300.ttf"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -56,7 +40,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-300.svg"
+      href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-300.woff"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -64,23 +48,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-300.ttf"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="ubuntuLight"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-300.woff"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="ubuntuLight"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-300.woff2"
+      href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-300.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -91,7 +59,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
 
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-regular.eot"
+      href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-regular.ttf"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -99,7 +67,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-regular.svg"
+      href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-regular.woff"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -107,23 +75,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-regular.ttf"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="ubuntuRegular"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-regular.woff"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="ubuntuRegular"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Montserrat/ubuntu-v20-latin-regular.woff2"
+      href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"

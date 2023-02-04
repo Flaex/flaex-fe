@@ -1,34 +1,12 @@
-
-.header {
-  width: 8.3vw;
-  margin-right: 0.65vw;
-
-  &__tag {
-    margin-top: 0.6vw;
-  }
-}
+.header {}
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
-  .header {
-    width: 18.85vw;
-
-    &__tag {
-      margin-top: 1.2vw;
-    }
-  }
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @include responsive-max($max-width: 46em, $orientation: "landscape") {
-  .header {
-    width: 14vw;
-
-    &__tag {
-      margin-top: 1.5vh;
-    }
-  }
 }
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
@@ -37,11 +15,4 @@
   $max-width: 64em,
   $orientation: "portrait"
 ) {
-  .header {
-    width: 13vw;
-
-    &__tag {
-      margin-top: 0.6vh;
-    }
-  }
 }

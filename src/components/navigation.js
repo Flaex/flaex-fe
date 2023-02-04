@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import "../assets/scss/components/navigation.scss";
 
@@ -17,6 +18,13 @@ const linkStyles = {};
 
 const Navigation = () => (
   <nav className="navigation">
+    <Link to="/" aria-label="Ir al inicio">
+      <StaticImage
+        className="navigation__link"
+        src="../assets/images/logo.webp"
+        alt="Logotipo @flaex_"
+      />
+    </Link>
     <Link
       className="navigation__link"
       to="/perfil"

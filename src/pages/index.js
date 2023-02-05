@@ -50,8 +50,11 @@ const blog = {
 };
 
 const IndexPage = ({ data }) => {
-  const articulos = data.articulos.nodes;
+  /* eslint-disable */
   let [faicon, faprefix] = useState(0);
+
+  const articulos = data.articulos.nodes;
+
   return (
     <Page>
       <div className="inicio">
@@ -120,7 +123,6 @@ const IndexPage = ({ data }) => {
             </ul>
           </div>
         </section>
-        
       </div>
     </Page>
   );
@@ -132,10 +134,7 @@ export const Head = () => <Seo />;
 
 export const query = graphql`
   query Index {
-    articulos: allStrapiArticulo(
-      limit: 4
-      sort: { fields: [createdAt], order: DESC }
-    ) {
+    articulos: allStrapiArticulo(limit: 4, sort: { createdAt: DESC }) {
       nodes {
         id
         titulo

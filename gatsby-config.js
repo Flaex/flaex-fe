@@ -1,10 +1,16 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const strapiConfig = require("./data/strapiConfig");
+
 module.exports = {
   siteMetadata: {
-    title:
-      "@flaex_  | Fredy Polanía - Diseñador gráfico y desarrollador web front-end",
+    title: "Fredy Polanía - Diseñador gráfico y desarrollador web front-end",
     description:
       "Emprendedor, comunicador visual, desarrollador web. Guías, artículos y tutoriales de diseño gráfico y tecnologías web.",
     author: "Fredy Polania",
@@ -50,6 +56,10 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: strapiConfig,
     },
   ],
 };

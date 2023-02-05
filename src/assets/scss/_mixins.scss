@@ -3,7 +3,7 @@
 //Font configuration
 
 @mixin image-background($image) {
-  background-image: ("../../images/#{$image}");
+  background-image: url("../../images/#{$image}");
   background-repeat: no-repeat;
 }
 

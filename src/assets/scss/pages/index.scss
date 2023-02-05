@@ -1,0 +1,309 @@
+.inicio {
+  gap: 1%;
+  &__col {
+    width: 49%;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+}
+
+.hero {
+  display: flex;
+  width: 100%;
+  align-self: flex-start;
+
+  &__image {
+    width: 24%;
+  }
+
+  &__image img {
+    min-width: 100%;
+    height: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    background-color: $gray-soft;
+
+    a {
+      color: $black;
+      font-style: italic;
+    }
+  }
+
+  &__description {
+    font-size: 1.325rem;
+    line-height: 2rem;
+    margin-bottom: 0;
+    padding-left: 1em;
+  }
+}
+
+.caras {
+  display: flex;
+
+  &__media {
+    display: flex;
+    justify-content: center;
+    width: 17.2vw;
+    height: 17.2vw;
+    background-color: white;
+    margin-right: 1vw;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid $black;
+  }
+
+  &__video {
+    max-width: 70%;
+  }
+
+  &__info {
+    width: 63%;
+  }
+  &__boton {
+    cursor: pointer;
+    border: 0;
+    color: $black;
+    background-color: $gray-soft;
+    width: fit-content;
+    font-size: 0.9rem;
+
+    &--icono {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.skills {
+  width: 100%;
+  align-self: flex-start;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+  }
+
+  &__item {
+    width: 23%;
+    border: 1px $black;
+    border-style: solid solid solid solid;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__item-title {
+    width: 100%;
+    background-color: transparent;
+    color: unset;
+    text-transform: capitalize;
+    margin: 0.7rem 0 0 0;
+  }
+
+  &__link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $black;
+    padding: 1.35rem 0 1.35rem 0;
+
+    &:hover {
+      background: $black;
+      color: white;
+      font-weight: 100;
+      transition-timing-function: ease-in;
+      transition: 0.2s;
+    }
+  }
+
+  &__section-title {
+    align-self: flex-start;
+  }
+}
+
+.feed {
+  &__articulos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__item {
+    width: 49%;
+  }
+
+  &__link {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    width: 100%;
+    background-color: $gray-soft;
+    color: $black;
+    font-style: normal;
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
+  .inicio {
+    flex-wrap: wrap;
+    gap: unset;
+
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .hero {
+    &__imagen {
+    }
+
+    &__info {
+      width: 58vw;
+    }
+
+    &__title {
+      margin-bottom: 1vh;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 38.7vw;
+      height: 38.7vw;
+    }
+
+    &__info {
+      width: 58vw;
+    }
+  }
+
+  .skills {
+    &__link {
+      padding-top: 1rem;
+      padding-bottom: 0.25rem;
+    }
+
+    &__title {
+      font-size: 0.9rem;
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
+  .inicio {
+    flex-wrap: wrap;
+    gap: unset;
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .hero {
+    &__imagen {
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 28vw;
+      height: auto;
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .inicio {
+    flex-wrap: wrap;
+    gap: unset;
+
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .inicio {
+    &__col {
+      width: 100%;
+    }
+  }
+
+  .hero {
+    &__imagen {
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 26.7vw;
+      min-height: 26.7vw;
+    }
+
+    &__info {
+      width: 70vw;
+    }
+  }
+
+  .skills {
+    &__link {
+      padding-top: 3vh;
+      padding-bottom: 2vh;
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      margin-top: 1vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 64em,
+  $max-width: 85.375em,
+  $orientation: "landscape"
+) {
+  .skills {
+    &__link {
+      padding-top: 3vh;
+      padding-bottom: 2vh;
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+  }
+}

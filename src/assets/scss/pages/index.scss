@@ -4,6 +4,7 @@
     width: 49%;
     display: flex;
     flex-wrap: wrap;
+    align-self: flex-start;
   }
 }
 
@@ -84,16 +85,17 @@
 
   &__list {
     display: flex;
-    justify-content: space-between;
     align-self: flex-start;
+    margin-top: 1em;
   }
 
   &__item {
-    width: 23%;
-    border: 1px $black;
-    border-style: solid solid solid solid;
+    width: 7em;
+    height: 7em;
+    background: $gray-soft;
     box-sizing: border-box;
     text-align: center;
+    margin-right: 1em;
     overflow: hidden;
   }
 
@@ -102,15 +104,15 @@
     background-color: transparent;
     color: unset;
     text-transform: capitalize;
-    margin: 0.7rem 0 0 0;
   }
 
   &__link {
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: $black;
-    padding: 1.35rem 0 1.35rem 0;
+    padding-top: 1em;
 
     &:hover {
       background: $black;
@@ -130,6 +132,7 @@
   &__articulos {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: space-between;
     list-style: none;
     padding-left: 0;
@@ -189,15 +192,10 @@
 
   .skills {
     &__link {
-      padding-top: 1rem;
-      padding-bottom: 0.25rem;
     }
 
     &__item-title {
       font-size: 0.9rem;
-      margin-top: 0;
-      padding-left: 0;
-      padding-right: 0;
     }
   }
 }
@@ -276,14 +274,11 @@
 
   .skills {
     &__link {
-      padding-top: 3vh;
-      padding-bottom: 2vh;
       font-size: 1.5rem;
     }
 
     &__item-title {
       font-size: 1.5rem;
-      margin-top: 1vh;
     }
   }
 }
@@ -296,8 +291,6 @@
 ) {
   .skills {
     &__link {
-      padding-top: 3vh;
-      padding-bottom: 2vh;
       font-size: 1rem;
     }
 

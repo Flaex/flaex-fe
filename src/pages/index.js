@@ -37,7 +37,7 @@ const habilidades = [
   },
   {
     id: "3",
-    titulo: "Letras e iconos",
+    titulo: "Fonticons",
     icono: "icons",
     prefix: "fas",
     descripcion: "/portafolio/letras-iconos/",
@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => {
           </div>
 
           <div className="skills">
-            <h2 className="skills__title"> 👇 ¿Qué es lo que hago? 👇</h2>
+            <h2 className="skills__title"> ¿Qué es lo que hago?✨</h2>
             <div className="skills__list">
               {habilidades.map((skill) => (
                 <div className="skills__item" key={skill.id}>
@@ -98,6 +98,11 @@ const IndexPage = ({ data }) => {
               ))}
             </div>
           </div>
+          <div clasName="minifeed">
+          <h2 className="skills__title"> Guías y tutoriales👇</h2>
+          </div> 
+        </section>
+        <section className="inicio__col">
           <div className="feed">
             <h2>{blog.titulo}</h2>
             <p>{blog.descripcion}</p>

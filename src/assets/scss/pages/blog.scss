@@ -1,0 +1,88 @@
+
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__descripcion {
+    width: 100%;
+  }
+}
+
+.articulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  list-style: none;
+  padding-left: 0;
+  padding-right: 0;
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 24%;
+    margin-bottom: 4vh;
+    overflow: hidden;
+  }
+
+  &__titulo {
+    width: 100%;
+    background-color: $gray-soft;
+    color: $black;
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
+  .articulos {
+    &__item {
+      width: 49%;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
+  .articulos {
+    &__item {
+      width: 49%;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .articulos {
+    width: 100%;
+    justify-self: unset;
+    &__item {
+      width: 32%;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 64em,
+  $max-width: 85.375em,
+  $orientation: "landscape"
+) {
+  .articulos {
+    width: 100%;
+    justify-content: unset;
+    gap: 1%;
+  }
+}
+
+/*-------------------------------------------- Desktop 1280px --------------------------------------------*/
+@include responsive-min($min-width: 80em) {
+  .articulos {
+    width: 100%;
+    justify-content: unset;
+    gap: 1%;
+  }
+}

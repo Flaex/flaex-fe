@@ -33,6 +33,11 @@
     "gatsby-transformer-sharp": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.57.1"
+    "react-markdown": "^8.0.5",
+    "react-share": "^4.4.1",
+    "react-slick": "^0.29.0",
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.57.1",
+    "slick-carousel": "^1.8.1"
   }
 }

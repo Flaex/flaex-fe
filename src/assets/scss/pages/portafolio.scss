@@ -1,0 +1,88 @@
+
+.portafolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & > div {
+    width: 32%;
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  .slick-slider {
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: $gray-soft;
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 50;
+    &::before {
+      color: $black;
+      opacity: 0.9;
+    }
+  }
+
+  .slick-prev {
+    left: 1.5vw;
+  }
+
+  .slick-next {
+    right: 1.5vw;
+  }
+
+  &__categoria-link {
+    width: 100%;
+    background-color: $gray-soft;
+    font-family: "Ubuntu Condensed", "Trebuchet MS", sans-serif;
+    text-align: right;
+    padding: 0.2rem;
+    box-sizing: border-box;
+
+    a {
+      font-size: 0.9rem;
+      color: $black;
+
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+@include responsive-max($max-width: 26em, $orientation: "portrait") {
+  .portafolio {
+    & > div {
+      width: 100%;
+      margin-bottom: 3vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
+  .portafolio {
+    flex-wrap: wrap;
+
+    & > div {
+      width: 49%;
+      margin-bottom: 3vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include responsive-min-max(
+  $min-width: 48em,
+  $max-width: 64em,
+  $orientation: "portrait"
+) {
+  .portafolio {
+    & > div {
+      width: 49%;
+
+    }
+  }
+}

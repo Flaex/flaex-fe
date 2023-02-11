@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
 import "../assets/scss/pages/index.scss";
 
+
 const intro = {
   titulo: "¡Hola, mi nombre es Fredy!",
   alternativeText: "Fredy polania | @flaex_ perfil",
@@ -40,7 +41,7 @@ const habilidades = [
     titulo: "Fonticons",
     icono: "icons",
     prefix: "fas",
-    descripcion: "/portafolio/letras-iconos/",
+    descripcion: "/portafolio/fonticons/",
   },
 ];
 
@@ -62,7 +63,7 @@ const IndexPage = ({ data }) => {
         <section className="inicio__col">
           <div className="hero">
             <StaticImage
-              src="https://res.cloudinary.com/flaex/image/upload/v1675544334/strapi-v4/flaex_fred_polania_perfil_3c3169cb26.webp"
+              src="https://res.cloudinary.com/flaex/image/upload/v1676046070/strapi-v4/flaex_fredy_polania_perfil_2_f3eb6cedca.webp"
               alt={intro.alternativeText}
               className="hero__image"
             />
@@ -98,9 +99,9 @@ const IndexPage = ({ data }) => {
               ))}
             </div>
           </div>
-          <div clasName="minifeed">
-          <h2 className="skills__title"> Guías y tutoriales👇</h2>
-          </div> 
+          <div className="minifeed">
+            <h2 className="skills__title"> Guías y tutoriales👇</h2>
+          </div>
         </section>
         <section className="inicio__col">
           <div className="feed">
@@ -120,8 +121,7 @@ const IndexPage = ({ data }) => {
                       image={getImage(articulo.imagen.localFile)}
                       alt={articulo.imagen.alternativeText}
                     />
-                    <h3 className="feed__title">{articulo.titulo}</h3>
-                    {console.log(articulo.imagen.url)}
+                    <h3 className="feed__title">{articulo.titulo}</h3>     
                   </Link>
                 </li>
               ))}

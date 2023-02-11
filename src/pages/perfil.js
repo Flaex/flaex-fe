@@ -1,103 +1,137 @@
 import * as React from "react";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Page from "../layouts/page";
 import Seo from "../components/seo";
+import "../assets/scss/pages/perfil.scss";
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-};
+const profile = `Soy  emprendedor, diseñador gráfico y desarrollador web front-end enfocado en el diseño centrado en los usuarios.
+  
+  Me gusta diseñar logos, branding, aplicaciones web, tipografía e íconos. Desde 2019, he estado trabajando con tecnologías relacionadas con JAMStack como React, Vue, Gatsby, Gridsome, Nuxt y Astro.
+  
+  Fundador y director en [Novanet Studio](https://novanet.studio/) 🎨👨‍💻📱.
+  
+  Dirijo proyectos de creación de logos, branding impreso y digital, catálogos, manuales de identidad gráfica, aplicaciones web y campañas en redes sociales. Organizo y dirijo proyectos para sitios estáticos y dinámicos, implementación de layouts web en CMS y desarrollo de aplicaciones PWA.`;
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-];
+const flaex = `
+  Es mi identidad gráfica; el diseño está inspirado en el trabajo manual con materiales tradicionales y está complementado con series de “caras” hechas a partir de tipografía y figuras geométricas.
 
-const IndexPage = () => {
+  En el logotipo están las iniciales de mi nombre ubicadas de tal forma que semejan los ojos y la boca de una cara… 😅. La intención es mostrar un logotipo que me represente y diferente al enfoque tradicional. 
+  
+  El branding está complementado con series diseñadas con caracteres tipográficos y figuras geométricas combinadas para crear “expresiones”.
+  
+  `;
+
+const PerfilPage = ({ data }) => {
+  const caras = data.allStrapiCara.nodes;
+
+  const shuffle = (array) => {
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array[0].media.url;
+  };
+
+  let positonZero = (array) => {
+    shuffle(array);
+    let newArray = array[0];
+    return newArray;
+  };
+
+  const randomizer = (array) => {
+    positonZero(array);
+    const videoContainer = document.querySelector(".caras__media");
+    videoContainer.innerHTML = `         
+      <video key=${array[0].id} autoplay muted playsinline>
+        <source src=${array[0].media.url} type="video/mp4" />   
+        Your browser does not support the video tag.                        
+      </video>
+    `;
+  };
+
   return (
     <Page>
-      <main>
-        <h1>
-          Congratulations
-          <br />
-          <span>— you just made a Gatsby site! 🎉🎉🎉</span>
-        </h1>
-        <p>
-          Edit <code>src/pages/index.js</code> to see this page update in
-          real-time. 😎
-        </p>
-        <ul>
-          <li>
-            <a
-              href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-            >
-              {docLink.text}
-            </a>
-          </li>
-          {links.map((link) => (
-            <li key={link.url}>
-              <span>
-                <a
-                  href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
+      <div className="perfil">
+        <section className="perfil__col">
+          <h1 className="hidden">Perfil</h1>
+          <StaticImage
+            src="https://res.cloudinary.com/flaex/image/upload/v1675544334/strapi-v4/flaex_fred_polania_perfil_3c3169cb26.webp"
+            alt="Fredy polania | @flaex_ perfil"
+          />
+          <h2>Fredy Polanía</h2>
+          <ReactMarkdown
+            children={profile}
+            remarkPlugins={[remarkGfm]}
+            skipHtml={false}
+            linkTarget="_blank"
+          />
+        </section>
+        <section className="perfil__col">
+          <h2>¿Qué es @flaex_?</h2>
+          <ReactMarkdown
+            children={flaex}
+            remarkPlugins={[remarkGfm]}
+            skipHtml={false}
+            linkTarget="_blank"
+          />
+          <div className="caras">
+            <div className="caras__media">
+              <video className="caras__video" autoPlay muted playsInline>
+                <source src={caras[3].media.url} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="caras__info">
+              <button
+                className="caras__boton"
+                type="button"
+                onClick={() => randomizer(caras)}
+              >
+                ¡Cambiar expresión!{" "}
+                <span
+                  className="caras__boton--icono"
+                  aria-label="emoji"
+                  role="img"
                 >
-                  {link.text}
-                </a>
-                {link.badge && <span aria-label="New Badge">NEW!</span>}
-                <p>{link.description}</p>
-              </span>
-            </li>
-          ))}
-        </ul>
-        <img
-          alt="Gatsby G Logo"
-          src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-        />
-      </main>
+                  &#10227;
+                </span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
     </Page>
   );
 };
 
-export default IndexPage;
+export default PerfilPage;
 
-export const Head = () => <Seo />;
+export const Head = () => <Seo title="Perfil de Fredy Polania" />;
+
+export const query = graphql`
+  query Perfil {
+    allStrapiCara {
+      nodes {
+        id
+        nombre
+        media {
+          url
+        }
+      }
+    }
+  }
+`;

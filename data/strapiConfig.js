@@ -19,6 +19,62 @@ const strapiConfig = {
         },
       },
     },
+
+    {
+      singularName: "cara",
+      queryParams: {
+        populate: {
+          media: {
+            populate: {
+              url: "*",
+            },
+          },
+        },
+      },
+    },
+
+    {
+      singularName: "proyecto",
+      queryParams: {
+        populate: {
+          titulo: "*",
+          fecha: "*",
+          descripcion: "*",
+          ciudad: "*",
+          ano: "*",
+          slug: "*",
+          categoria: "*",
+          miniatura: {
+            populate: {
+              alternativeText: "*",
+              localfile: "*",
+            },
+          },
+          imagenes: {
+            populate: {
+              alternativeText: "*",
+              localfile: "*",
+            },
+          },
+        },
+      },
+    },
+
+    {
+      singularName: "categoria",
+      queryParams: {
+        populate: {
+          titulo: "*",
+          icono: "*",
+          slug: "*",
+          proyectos: {
+            populate: {
+              createdAt: "*",
+            },
+          },
+        },
+      },
+    },
   ],
 };
 

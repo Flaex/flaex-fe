@@ -42,9 +42,9 @@ const links = [
 
 const Footer = () => (
   <footer className="footer">
-    <p>@flaex_ - {new Date().getFullYear()}</p>
+    <p>@flaex.design - {new Date().getFullYear()} | Caracas 🇻🇪</p>
     <div className="footer__rrss">
-      {links.map((link) => (
+      {links.reverse().map((link) => (
         <a
           className="footer__link"
           key={link.id}

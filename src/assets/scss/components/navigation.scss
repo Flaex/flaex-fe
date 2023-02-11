@@ -3,6 +3,9 @@
 
   &--secondary {
     margin-bottom: 2vh;
+    & > * {
+      margin-right: 0.65vw;
+    }
   }
 
   &__link {
@@ -69,7 +72,7 @@
       width: 13vw;
       height: 13vw;
       font-size: 0.9rem;
-      margin-right: .4em;
+      margin-right: 0.4em;
     }
   }
 }
@@ -85,7 +88,7 @@
       width: 12vw;
       height: 12vw;
       font-size: 1.2rem;
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
   }
 }
@@ -101,7 +104,7 @@
       width: 8vw;
       height: 8vw;
       font-size: 1rem;
-      margin-right: .5em;
+      margin-right: 0.5em;
       padding-right: 0.5vw;
     }
   }

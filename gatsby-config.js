@@ -10,7 +10,7 @@ const strapiConfig = require("./data/strapiConfig");
 
 module.exports = {
   siteMetadata: {
-    title: "Fredy Polanía - Diseñador gráfico y desarrollador web front-end",
+    title: "Fredy Polanía",
     description:
       "Emprendedor, comunicador visual, desarrollador web. Guías, artículos y tutoriales de diseño gráfico y tecnologías web.",
     author: "Fredy Polania",
@@ -19,7 +19,7 @@ module.exports = {
     author: "Fredy Polania",
     type: "website",
     siteUrl: "https://flaex.design",
-    titleTemplate: "%s · @flaex_",
+    titleTemplate: " · @flaex_",
     twitterUsername: "@Flaex_",
   },
   plugins: [

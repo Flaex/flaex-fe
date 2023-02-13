@@ -1,49 +1,35 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import Page from "../layouts/page";
+import Seo from "../components/seo";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const NotFoundImage = 320;
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const NotFoundPage = () => (
+  <Page>
+    <h1>
+      Página inexistente
+      <span aria-label="emoji" role="img">
+        😔
+      </span>
+    </h1>
+    <p>Intentaste visitar una página que no existe.</p>
+    <p>
+      ¡Usa el menú para volver al sitio!
+      <span aria-label="emoji" role="img">
+        😃
+      </span>
+    </p>
+    <StaticImage
+      className="notfound"
+      width={NotFoundImage}
+      placeholder="blurred"
+      src="../assets/images/404.webp"
+      alt="@flaex_ con cara de sorpresa"
+    />
+  </Page>
+);
 
-const NotFoundPage = () => {
-  return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+export default NotFoundPage;
 
-export default NotFoundPage
-
-export const Head = () => <title>Not found</title>
+export const Head = () => <Seo title="404: No encontrado" />;

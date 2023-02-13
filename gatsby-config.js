@@ -40,6 +40,7 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-netlify",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",

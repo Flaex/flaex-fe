@@ -14,7 +14,6 @@
   align-self: flex-start;
 
   &__image {
-    width: 24%;
   }
 
   &__image img {
@@ -26,7 +25,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 75%;
+
     background-color: $gray-soft;
 
     a {
@@ -39,7 +38,7 @@
     font-size: 1.325rem;
     line-height: 2rem;
     margin-bottom: 0;
-    padding-left: 1em;
+    padding: 0 1em 0;
   }
 }
 
@@ -56,6 +55,9 @@
   &__item {
     width: 7em;
     height: 7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: $gray-soft;
     box-sizing: border-box;
     text-align: center;
@@ -71,7 +73,6 @@
   }
 
   &__link {
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -117,6 +118,19 @@
     color: $black;
     font-style: normal;
   }
+
+  &__guias {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    list-style: none;
+    padding: 0;
+  }
+
+  &__guia {
+    margin-right: 1.5em;
+  }
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
@@ -131,11 +145,12 @@
   }
 
   .hero {
-    &__imagen {
+    &__info {
     }
 
-    &__info {
-      width: 58vw;
+    &__description {
+      font-size: 1.1rem;
+      line-height: 1.4rem;
     }
 
     &__title {
@@ -144,7 +159,9 @@
   }
 
   .skills {
-    &__link {
+    &__item {
+      width: 5em;
+      height: 5em;
     }
 
     &__item-title {
@@ -168,7 +185,6 @@
     }
 
     &__info {
-      width: 70vw;
     }
   }
 }
@@ -199,7 +215,6 @@
     }
 
     &__info {
-      width: 70vw;
     }
   }
 
@@ -220,6 +235,13 @@
   $max-width: 85.375em,
   $orientation: "landscape"
 ) {
+  .hero {
+    &__imagen {
+    }
+
+    &__info {
+    }
+  }
   .skills {
     &__link {
       font-size: 1rem;

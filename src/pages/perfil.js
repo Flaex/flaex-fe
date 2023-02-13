@@ -11,9 +11,7 @@ const profile = `Soy  emprendedor, diseñador gráfico y desarrollador web front
   
   Me gusta diseñar logos, branding, aplicaciones web, tipografía e íconos. Desde 2019, he estado trabajando con tecnologías relacionadas con JAMStack como React, Vue, Gatsby, Gridsome, Nuxt y Astro.
   
-  Fundador y director en [Novanet Studio](https://novanet.studio/) 🎨👨‍💻📱.
-  
-  Dirijo proyectos de creación de logos, branding impreso y digital, catálogos, manuales de identidad gráfica, aplicaciones web y campañas en redes sociales. Organizo y dirijo proyectos para sitios estáticos y dinámicos, implementación de layouts web en CMS y desarrollo de aplicaciones PWA.`;
+  Director en [Novanet Studio](https://novanet.studio/) 🎨👨‍💻📱. Dirijo proyectos de creación de logos, branding impreso y digital, catálogos, manuales de identidad gráfica, aplicaciones web y campañas en redes sociales. Organizo y dirijo proyectos para sitios estáticos y dinámicos, implementación de layouts web en CMS y desarrollo de aplicaciones PWA.`;
 
 const flaex = `
   Es mi identidad gráfica; el diseño está inspirado en el trabajo manual con materiales tradicionales y está complementado con series de “caras” hechas a partir de tipografía y figuras geométricas.

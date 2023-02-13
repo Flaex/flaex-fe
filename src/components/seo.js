@@ -35,4 +35,4 @@ export const SEO = ({ title, description, pathname, children }) => {
   );
 };
 
-export default SEO
+export default SEO;

@@ -4,7 +4,7 @@ import Seo from "../components/seo";
 import "../assets/scss/pages/contacto.scss";
 
 const formulario = {
-  titulo: "¡Envíame un mensaje! ✉️",
+  titulo: "👉 ¡Envíame un mensaje! ✉️",
   descripcion:
     "¿Tienes algún comentario, sugerencia o pregunta? Envíame un mensaje por el formulario de contacto.",
   redes:
@@ -16,10 +16,11 @@ const ContactoPage = () => {
     <Page>
       <Seo title="Información de contacto de Freddy Polania | @Flaex_" />
       <h1 className="hidden">Contacto</h1>
+      <p>{formulario.descripcion}</p>
       <div className="contacto">
         <div className="formulario">
           <h2>{formulario.titulo}</h2>
-          <p>{formulario.descripcion}</p>
+          
 
           <form
             className="contacto__form"

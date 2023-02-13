@@ -1,4 +1,3 @@
-
 export const useHabilidades = () => {
   const habilidades = [
     {
@@ -27,7 +26,7 @@ export const useHabilidades = () => {
       titulo: "Fonticons",
       icono: "icons",
       prefix: "fas",
-      descripcion: "/portafolio/letras-iconos/",
+      descripcion: "/portafolio/fonticons/",
     },
   ];
   return habilidades;

@@ -7,8 +7,7 @@
     &__media {
       display: flex;
       justify-content: center;
-      width: 17.2vw;
-      height: 17.2vw;
+
       background-color: white;
       margin-right: 1vw;
       overflow: hidden;
@@ -23,7 +22,7 @@
       background-color: $gray-soft;
       font-size: 0.9rem;
       margin-top: 1em;
-      padding: 1em;
+      padding: 0.5em 1em 0.5em;
 
       &:hover {
         background-color: $black;
@@ -82,8 +81,8 @@
 
   .caras {
     &__media {
-      width: 38.7vw;
-      height: 38.7vw;
+      width: 13em;
+      height: 13em;
     }
 
     &__info {
@@ -107,8 +106,8 @@
 
   .caras {
     &__media {
-      width: 28vw;
-      height: auto;
+      width: 12em;
+      height: 12em;
     }
 
     &__info {
@@ -136,8 +135,8 @@
 
   .caras {
     &__media {
-      width: 26.7vw;
-      min-height: 26.7vw;
+      width: 18em;
+      height: 18em;
     }
 
     &__info {
@@ -160,6 +159,13 @@
       margin-right: 2%;
     }
   }
+
+  .caras {
+    &__media {
+      width: 18em;
+      height: 18em;
+    }
+  }
 }
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
@@ -170,6 +176,13 @@
     &__col {
       width: 48%;
       margin-right: 2%;
+    }
+  }
+
+  .caras {
+    &__media {
+      width: 18em;
+      height: 18em;
     }
   }
 }

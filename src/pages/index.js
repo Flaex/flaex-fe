@@ -4,8 +4,8 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import Page from "../layouts/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
+import { useHabilidades } from "../hooks/use-habilidades";
 import "../assets/scss/pages/index.scss";
-
 
 const intro = {
   titulo: "¡Hola, mi nombre es Fredy!",
@@ -13,37 +13,6 @@ const intro = {
   descripcion: "Soy diseñador gráfico y desarrollador web",
   emojis: "🎨👨‍💻📱",
 };
-
-const habilidades = [
-  {
-    id: "0",
-    titulo: "Logotipos",
-    icono: "pencil-ruler",
-    prefix: "fas",
-    descripcion: "/portafolio/logotipos/",
-  },
-  {
-    id: "1",
-    titulo: "Branding",
-    icono: "palette",
-    prefix: "fas",
-    descripcion: "/portafolio/branding/",
-  },
-  {
-    id: "2",
-    titulo: "Web",
-    icono: "file-code",
-    prefix: "fas",
-    descripcion: "/portafolio/web/",
-  },
-  {
-    id: "3",
-    titulo: "Fonticons",
-    icono: "icons",
-    prefix: "fas",
-    descripcion: "/portafolio/fonticons/",
-  },
-];
 
 const blog = {
   titulo: "Blog de diseño y desarrollo web",
@@ -53,8 +22,9 @@ const blog = {
 const IndexPage = ({ data }) => {
   /* eslint-disable */
   let [faicon, faprefix] = useState(0);
-
+  const habilidades = useHabilidades();
   const articulos = data.articulos.nodes;
+  const guias = data.guias.nodes;
 
   return (
     <Page>
@@ -75,7 +45,7 @@ const IndexPage = ({ data }) => {
           </div>
 
           <div className="skills">
-            <h2 className="skills__title"> ¿Qué es lo que hago?✨</h2>
+            <h2> ¿Qué es lo que hago?✨</h2>
             <div className="skills__list">
               {habilidades.map((skill) => (
                 <div className="skills__item" key={skill.id}>
@@ -99,10 +69,27 @@ const IndexPage = ({ data }) => {
               ))}
             </div>
           </div>
+
           <div className="minifeed">
-            <h2 className="skills__title"> Guías y tutoriales👇</h2>
+            <h2> Guías y tutoriales👇</h2>
+            <ul className="feed__guias">
+              {guias.map((guia) => (
+                <li className="feed__guia" key={guia.id}>
+                  <Link
+                    to={`/blog/${guia.slug}`}
+                    rel="noopener noreferrer"
+                    aria-label={`Ir a ${guia.titulo}`}
+                  >
+                    <h3 className="feed__title feed__guias-title">
+                      {guia.titulo}
+                    </h3>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
+
         <section className="inicio__col">
           <div className="feed">
             <h2>{blog.titulo}</h2>
@@ -121,7 +108,7 @@ const IndexPage = ({ data }) => {
                       image={getImage(articulo.imagen.localFile)}
                       alt={articulo.imagen.alternativeText}
                     />
-                    <h3 className="feed__title">{articulo.titulo}</h3>     
+                    <h3 className="feed__title">{articulo.titulo}</h3>
                   </Link>
                 </li>
               ))}
@@ -139,7 +126,11 @@ export const Head = () => <Seo />;
 
 export const query = graphql`
   query Index {
-    articulos: allStrapiArticulo(limit: 4, sort: { createdAt: DESC }) {
+    articulos: allStrapiArticulo(
+      limit: 4
+      sort: { createdAt: DESC }
+      filter: { guia: { eq: false } }
+    ) {
       nodes {
         id
         titulo
@@ -158,6 +149,17 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+
+    guias: allStrapiArticulo(
+      sort: { createdAt: DESC }
+      filter: { guia: { eq: true } }
+    ) {
+      nodes {
+        id
+        titulo
+        slug
       }
     }
   }

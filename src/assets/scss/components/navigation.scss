@@ -4,7 +4,7 @@
   &--secondary {
     margin-bottom: 2vh;
     & > * {
-      margin-right: 0.65vw;
+      margin-right: 0.25em;
     }
   }
 
@@ -46,7 +46,6 @@
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .navigation {
     width: 100%;
-    justify-content: space-between;
 
     &__link {
       width: 18.85vw;
@@ -58,7 +57,7 @@
 
     &__category {
       h3 {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         padding: 0.35rem;
       }
     }

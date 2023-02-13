@@ -46,7 +46,7 @@ const Articulo = ({ data }) => {
             className="detalle__descripcion"
             children={articulo.descripcion.data.descripcion}
             remarkPlugins={[remarkGfm]}
-            skipHtml={false}
+            skipHtml={true}
             linkTarget="_blank"
           />
           <Form titulo="¿Tienes algún comentario, sugerencia o pregunta?" />

@@ -10,6 +10,7 @@ const strapiConfig = {
           fecha: "*",
           descripcion: "*",
           slug: "*",
+          guia: "*",
           imagen: {
             populate: {
               alternativeText: "*",

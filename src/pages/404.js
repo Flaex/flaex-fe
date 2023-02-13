@@ -24,7 +24,7 @@ const NotFoundPage = () => (
       className="notfound"
       width={NotFoundImage}
       placeholder="blurred"
-      src="../assets/images/404.webp"
+      src="https://res.cloudinary.com/flaex/image/upload/v1676256333/strapi-v4/404_5446b441bd.webp"
       alt="@flaex_ con cara de sorpresa"
     />
   </Page>

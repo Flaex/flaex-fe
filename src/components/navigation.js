@@ -21,7 +21,7 @@ const Navigation = () => (
     <Link to="/" aria-label="Ir al inicio">
       <StaticImage
         className="navigation__link"
-        src="../assets/images/logo.webp"
+        src="https://res.cloudinary.com/flaex/image/upload/v1676256333/strapi-v4/logo_0ba8e72ea4.webp"
         alt="Logotipo @flaex_"
       />
     </Link>

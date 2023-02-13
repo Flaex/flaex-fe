@@ -14,7 +14,7 @@ const thankYouPage = () => (
         className="notfound"
         width={thankYouImage}
         placeholder="blurred"
-        src="../assets/images/ty.webp"
+        src="https://res.cloudinary.com/flaex/image/upload/v1676256333/strapi-v4/ty_c7bf8fe6d3.webp"
         alt="@flaex_ con cara de sorpresa"
       />
     </div>

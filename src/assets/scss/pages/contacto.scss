@@ -1,18 +1,10 @@
-
 .contacto {
   display: flex;
   justify-content: space-between;
 
-  &__mapa {
-    width: 100%;
-    height: 50vh;
-    background-color: #e5e3df;
+  &__imagen-wrapper {
+    width: 5;
   }
-
-  &__imagen img{
-    max-width: 18em;
-  }
-
 
   &__form {
     margin: 2rem 0 2rem 0;
@@ -53,9 +45,7 @@
   }
 }
 
-.mapa,
 .formulario {
-  width: 49%;
   margin-top: 4vh;
 }
 
@@ -82,11 +72,6 @@
       }
     }
   }
-
-  .mapa,
-  .formulario {
-    width: 100%;
-  }
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
@@ -95,9 +80,7 @@
     flex-wrap: wrap;
   }
 
-  .mapa,
   .formulario {
-    width: 100%;
     margin-bottom: 4vh;
   }
 }
@@ -114,13 +97,8 @@
     & > div {
       margin-bottom: 3vh;
     }
-
-    &__mapa {
-      height: 33vh;
-    }
   }
 
-  .mapa,
   .formulario {
     width: 100%;
   }
@@ -133,8 +111,8 @@
   $orientation: "landscape"
 ) {
   .contacto {
-    &__mapa {
-      height: 45vh;
+    &__col {
+      width: 49%;
     }
   }
 }
@@ -142,8 +120,8 @@
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {
   .contacto {
-    &__mapa {
-      height: 42vh;
+    &__col {
+      width: 49%;
     }
   }
 }

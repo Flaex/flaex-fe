@@ -35,10 +35,12 @@
   }
 
   &__description {
-    font-size: 1.325rem;
+    font-size: 1.313rem;
     line-height: 2rem;
+    background: unset;
     margin-bottom: 0;
-    padding: 0 1em 0;
+    padding: 1.5em 1.125em 1.5em 1.125em;
+    
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Page from "../layouts/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
@@ -32,15 +32,12 @@ const IndexPage = ({ data }) => {
         <h1 className="hidden">Inicio</h1>
         <section className="inicio__col">
           <div className="hero">
-            <StaticImage
-              src="https://res.cloudinary.com/flaex/image/upload/v1676046070/strapi-v4/flaex_fredy_polania_perfil_2_f3eb6cedca.webp"
-              alt={intro.alternativeText}
-              className="hero__image"
-            />
             <div className="hero__info">
-              <p className="hero__description">{intro.titulo}</p>
-              <p className="hero__description">{intro.descripcion}</p>
-              <p className="hero__description">{intro.emojis}</p>
+              <p className="hero__description">
+                {intro.titulo} <br />
+                {intro.descripcion} <br />
+                {intro.emojis}
+              </p>
             </div>
           </div>
 

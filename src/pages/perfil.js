@@ -77,6 +77,17 @@ const PerfilPage = ({ data }) => {
             skipHtml={false}
             linkTarget="_blank"
           />
+          <div className="perfil__images-wrapper">
+            <StaticImage
+              src="https://res.cloudinary.com/flaex/image/upload/v1677420394/strapi-v4/flaex_brand_expresiones_79e15fed71.webp"
+              alt="Diseño con expresiones de @flaex_"
+            />
+            <StaticImage
+              src="https://res.cloudinary.com/flaex/image/upload/v1677420394/strapi-v4/flaex_brand_expresiones_2_f3aaa9135c.webp"
+              alt="Diseño con expresiones de @flaex_"
+            />
+            
+          </div>
         </section>
         <section className="perfil__col">
           <h2>¿Qué es @flaex_?</h2>

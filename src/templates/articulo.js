@@ -6,6 +6,7 @@ import Share from "../components/share";
 import Form from "../components/innerForm";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from 'rehype-raw'
 import Seo from "../components/seo";
 
 const Articulo = ({ data }) => {
@@ -46,8 +47,8 @@ const Articulo = ({ data }) => {
             className="detalle__descripcion"
             children={articulo.descripcion.data.descripcion}
             remarkPlugins={[remarkGfm]}
-            skipHtml={true}
-            linkTarget="_blank"
+            rehypePlugins={[rehypeRaw]}
+            skipHtml={false}
           />
           <Form titulo="¿Tienes algún comentario, sugerencia o pregunta?" />
         </div>

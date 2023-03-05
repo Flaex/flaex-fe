@@ -31,7 +31,7 @@ button {
 }
 
 section {
-  & > div {
+  &>div {
     margin-bottom: 2rem;
   }
 }
@@ -89,15 +89,14 @@ p {
 }
 
 // Navigation bar
-.menu {
-}
+.menu {}
 
 // Main container
 .main {
   margin-top: 1.2rem;
   margin-bottom: 1vh;
 
-  & > div {
+  &>div {
     display: flex;
   }
 }
@@ -144,16 +143,18 @@ p {
   &__lugar {
     color: $black;
     font-style: italic;
+    line-height: 2em;
   }
 
   &__descripcion {
     p {
-      margin-top: 0;
+      margin: .75em 0 0 0;
     }
 
     a {
       color: $black;
       font-style: italic;
+      font-weight: 500;
     }
 
     h2,
@@ -163,6 +164,7 @@ p {
 
     table {
       margin: 4vh 0 4vh 0;
+
       em {
         font-size: 0.9rem;
       }
@@ -208,16 +210,17 @@ code {
 }
 
 pre {
-  background-color: #e7e7e7;
+  background-color: #333333;
   padding: 1.5em;
   border-radius: 1rem;
   display: flex;
 }
 
 pre code {
-  color: $black-a;
+  color: skyblue;
   line-height: 1.42;
-  font-size: 0.8rem;
+  font-size: .9rem;
+  overflow: hidden;
 }
 
 code:before,
@@ -233,6 +236,11 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: "";
+}
+
+blockquote {
+  background-color: whitesmoke;
+  padding: 1.75em;
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
@@ -269,7 +277,7 @@ pre tt:after {
   }
 
   section {
-    & > div {
+    &>div {
       margin-bottom: 3vh;
     }
   }
@@ -277,6 +285,7 @@ pre tt:after {
   .detalle {
     gap: unset;
     flex-wrap: wrap;
+
     &__col-a {
       width: 100%;
     }
@@ -304,14 +313,13 @@ pre tt:after {
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive-max($max-width: 46em, $orientation: "landscape") {
-}
+@include responsive-max($max-width: 46em, $orientation: "landscape") {}
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
-@include responsive-min-max(
-  $min-width: 48em,
+@include responsive-min-max($min-width: 48em,
   $max-width: 64em,
   $orientation: "portrait"
+
 ) {
   h1 {
     font-size: 1.625rem;

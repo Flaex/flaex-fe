@@ -19,6 +19,7 @@ export const SEO = ({ title, description, pathname, children }) => {
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
     type,
+    siteUrl
   };
 
   return (

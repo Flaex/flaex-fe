@@ -6,7 +6,7 @@ import Share from "../components/share";
 import Form from "../components/innerForm";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import rehypeRaw from 'rehype-raw'
+import rehypeRaw from "rehype-raw";
 import Seo from "../components/seo";
 
 const Articulo = ({ data }) => {
@@ -29,10 +29,23 @@ const Articulo = ({ data }) => {
       </div>
       <div className="detalle">
         <div className="detalle__col-a">
-          <GatsbyImage
-            image={getImage(articulo.imagen.localFile)}
-            alt={articulo.imagen.alternativeText}
-          />
+          <figure>
+            <GatsbyImage
+              image={getImage(articulo.imagen.localFile)}
+              alt={articulo.imagen.alternativeText}
+            />
+            {articulo.imagen.caption === null ? (
+              ``
+            ) : (
+              <ReactMarkdown
+                className="detalle__descripcion"
+                children={`<figcaption>${articulo.imagen.caption}</figcaption>`}
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
+                skipHtml={false}
+              />
+            )}
+          </figure>
           <Share
             objeto="articulo"
             url={viewUrl()}
@@ -82,6 +95,7 @@ export const query = graphql`
       imagen {
         url
         alternativeText
+        caption
         localFile {
           childImageSharp {
             gatsbyImageData(width: 512)

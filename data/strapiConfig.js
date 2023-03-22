@@ -14,6 +14,7 @@ const strapiConfig = {
           imagen: {
             populate: {
               alternativeText: "*",
+              caption: "*",
               localfile: "*",
             },
           },

@@ -24,6 +24,10 @@ img {
   padding-top: 0;
 }
 
+iframe {
+  width: 35%;
+}
+
 button {
   border: 0;
   background-color: $gray-soft;
@@ -31,7 +35,7 @@ button {
 }
 
 section {
-  &>div {
+  & > div {
     margin-bottom: 2rem;
   }
 }
@@ -88,15 +92,28 @@ p {
   margin-bottom: 1vh;
 }
 
+iframe {
+  margin-top: 1rem;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.85rem;
+}
+
 // Navigation bar
-.menu {}
+.menu {
+}
 
 // Main container
 .main {
   margin-top: 1.2rem;
   margin-bottom: 1vh;
 
-  &>div {
+  & > div {
     display: flex;
   }
 }
@@ -148,7 +165,7 @@ p {
 
   &__descripcion {
     p {
-      margin: .75em 0 0 0;
+      margin: 0.75em 0 0 0;
     }
 
     a {
@@ -157,7 +174,14 @@ p {
       font-weight: 500;
     }
 
-    h2,
+    &-image-link {
+      margin-top: 0 !important;
+      a {
+        font-size: 0.85rem;
+      }
+    }
+
+    &-image-link h2,
     h3 {
       margin-top: 3vh;
     }
@@ -219,7 +243,7 @@ pre {
 pre code {
   color: skyblue;
   line-height: 1.42;
-  font-size: .9rem;
+  font-size: 0.9rem;
   overflow: hidden;
 }
 
@@ -276,8 +300,13 @@ blockquote {
     line-height: 1.188rem;
   }
 
+  iframe {
+    width: 100%;
+  }
+  
+
   section {
-    &>div {
+    & > div {
       margin-bottom: 3vh;
     }
   }
@@ -313,13 +342,14 @@ blockquote {
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@include responsive-max($max-width: 46em, $orientation: "landscape") {}
+@include responsive-max($max-width: 46em, $orientation: "landscape") {
+}
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
-@include responsive-min-max($min-width: 48em,
+@include responsive-min-max(
+  $min-width: 48em,
   $max-width: 64em,
   $orientation: "portrait"
-
 ) {
   h1 {
     font-size: 1.625rem;
@@ -345,6 +375,11 @@ blockquote {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
+
+  iframe {
+    width: 50%;
+  }
+  
 }
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/

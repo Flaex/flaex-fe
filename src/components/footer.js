@@ -48,7 +48,7 @@ const Footer = () => (
         <a
           className="footer__link"
           key={link.id}
-          href={link.icon}
+          href={link.url}
           rel="noopener noreferrer"
           target="_blank"
           aria-label={`Ir a ${link.titulo}`}

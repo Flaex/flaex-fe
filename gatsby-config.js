@@ -34,7 +34,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-ZQP8T9WP7N", // Google Analytics / GA          
+          "G-ZQP8T9WP7N", // Google Analytics / GA
         ],
         /* gtagConfig: {
           optimize_id: "GTM-5LFLQGT",
@@ -47,7 +47,12 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/",
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {

@@ -27,19 +27,6 @@ const Navigation = () => (
     </Link>
     <Link
       className="navigation__link"
-      to="/perfil"
-      activeStyle={activeStyles}
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent
-          ? { style: { ...linkStyles, ...activeStyles } }
-          : null
-      }
-      aria-label="Ir al portafolio de desarrollo front-end"
-    >
-      <span>perfil</span>
-    </Link>
-    <Link
-      className="navigation__link"
       to="/portafolio"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
@@ -66,6 +53,19 @@ const Navigation = () => (
     </Link>
     <Link
       className="navigation__link"
+      to="/perfil"
+      activeStyle={activeStyles}
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent
+          ? { style: { ...linkStyles, ...activeStyles } }
+          : null
+      }
+      aria-label="Ir al portafolio de desarrollo front-end"
+    >
+      <span>perfil</span>
+    </Link>
+    {/* <Link
+      className="navigation__link"
       to="/contacto"
       activeStyle={activeStyles}
       getProps={({ isPartiallyCurrent }) =>
@@ -76,7 +76,7 @@ const Navigation = () => (
       aria-label="Ir a la información de contacto"
     >
       <span>contacto</span>
-    </Link>
+    </Link> */}
   </nav>
 );
 

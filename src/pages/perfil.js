@@ -7,9 +7,9 @@ import Page from "../layouts/page";
 import Seo from "../components/seo";
 import "../assets/scss/pages/perfil.scss";
 
-const profile = `Soy  emprendedor, diseñador gráfico y desarrollador web front-end enfocado en el diseño centrado en los usuarios.
+const profile = `Me dedico al diseño gráfico y desarrollo web front-end enfocado en los usuarios.
   
-  Me gusta diseñar logos, branding, aplicaciones web, tipografía e íconos. Desde 2019, he estado trabajando con tecnologías relacionadas con JAMStack como React, Vue, Gatsby, Gridsome, Nuxt y Astro.
+  Diseño logos, branding, aplicaciones web, tipografía e íconos. Desde 2019, he estado trabajando con tecnologías relacionadas con JAMStack como React, Vue, Gatsby, Gridsome, Nuxt y Astro.
   
   Director en [Novanet Studio](https://novanet.studio/) 🎨👨‍💻📱. Dirijo proyectos de creación de logos, branding impreso y digital, catálogos, manuales de identidad gráfica, aplicaciones web y campañas en redes sociales. Organizo y dirijo proyectos para sitios estáticos y dinámicos, implementación de layouts web en CMS y desarrollo de aplicaciones PWA.`;
 
@@ -86,10 +86,8 @@ const PerfilPage = ({ data }) => {
               src="https://res.cloudinary.com/flaex/image/upload/v1677420394/strapi-v4/flaex_brand_expresiones_2_f3aaa9135c.webp"
               alt="Diseño con expresiones de @flaex_"
             />
-            
           </div>
-        </section>
-        <section className="perfil__col">
+
           <h2>¿Qué es @flaex_?</h2>
           <ReactMarkdown
             children={flaex}

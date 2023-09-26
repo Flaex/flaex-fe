@@ -110,8 +110,7 @@ figcaption {
 
 // Main container
 .main {
-  margin-top: 1.2rem;
-  margin-bottom: 1vh;
+  
 
   & > div {
     display: flex;
@@ -121,7 +120,8 @@ figcaption {
 .page {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.9);
+
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 0.7vw;
   min-height: 100vh;
   box-sizing: border-box;
@@ -138,7 +138,6 @@ figcaption {
 // Estilos para el detalle de proyectos y artículos
 .detalle {
   display: flex;
-
   gap: 1vw;
 
   &__col-a {
@@ -164,6 +163,7 @@ figcaption {
   }
 
   &__descripcion {
+    margin-bottom: 3vh;
     p {
       margin: 0.75em 0 0 0;
     }
@@ -392,6 +392,10 @@ blockquote {
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {
+  .page {
+    width: 70%;
+    margin: 0 auto 0 auto;
+  }
   .detalle {
     &__descripcion {
       font-size: 1.125rem;

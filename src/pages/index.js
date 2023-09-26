@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import Default from "../layouts/default";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
 import { useHabilidades } from "../hooks/use-habilidades";
@@ -9,14 +9,21 @@ import "../assets/scss/pages/index.scss";
 
 const intro = {
   titulo: "¡Hola, mi nombre es Fredy!",
-  alternativeText: "Fredy polania | @flaex_ perfil",
-  descripcion: "Soy diseñador gráfico y desarrollador web",
-  emojis: "🎨👨‍💻📱",
+  alternativeText: "Fredy Polania | @flaex_ perfil",
+  descripcion:
+    "Este es mi blog de diseño gráfico, desarrollo web y videojuegos.",
+  emojis: "🎨👨‍💻🎮",
 };
 
 const blog = {
-  titulo: "Blog de diseño y desarrollo web",
+  titulo: "Artículos",
   descripcion: "Artículos de diseño gráfico, desarrollo y tecnologías web.",
+};
+
+const formulario = {
+  titulo: "👉 ¡Envíame un mensaje! ✉️",
+  descripcion: `¿Tienes algún comentario, sugerencia o pregunta?`,
+  redes: "Sígueme mis redes sociales para ver más contenido.",
 };
 
 const IndexPage = ({ data }) => {
@@ -27,11 +34,17 @@ const IndexPage = ({ data }) => {
   const guias = data.guias.nodes;
 
   return (
-    <Page>
+    <Default>
       <div className="inicio">
         <h1 className="hidden">Inicio</h1>
         <section className="inicio__col">
           <div className="hero">
+            <Link to="/perfil" aria-label="Ir a mi perfil">
+              <StaticImage
+                src="https://res.cloudinary.com/flaex/image/upload/v1676046070/strapi-v4/flaex_fredy_polania_perfil_2_f3eb6cedca.webp"
+                alt="Fredy polania | @flaex_ perfil"
+              />
+            </Link>
             <div className="hero__info">
               <p className="hero__description">
                 {intro.titulo} <br />
@@ -85,9 +98,7 @@ const IndexPage = ({ data }) => {
               ))}
             </ul>
           </div>
-        </section>
 
-        <section className="inicio__col">
           <div className="feed">
             <h2>{blog.titulo}</h2>
             <p>{blog.descripcion}</p>
@@ -111,9 +122,45 @@ const IndexPage = ({ data }) => {
               ))}
             </ul>
           </div>
+
+          <div className="formulario">
+            <h2>{formulario.titulo}</h2>
+            <p>{formulario.descripcion}</p>
+            <form
+              className="formulario__form"
+              method="POST"
+              data-netlify="true"
+              name="contact"
+              action="/gracias/"
+            >
+              <label>
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contact" />
+              </label>
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre y Apellido"
+                />
+              </div>
+              <div>
+                <input type="email" name="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="number" name="phone" placeholder="Teléfono" />
+              </div>
+              <div>
+                <textarea name="message" placeholder="Mensaje" />
+              </div>
+              <input type="submit" value="Enviar ➤" />
+            </form>
+
+            <p className="inicio__mensaje">{formulario.redes}</p>
+          </div>
         </section>
       </div>
-    </Page>
+    </Default>
   );
 };
 
@@ -124,7 +171,7 @@ export const Head = () => <Seo />;
 export const query = graphql`
   query Index {
     articulos: allStrapiArticulo(
-      limit: 4
+      limit: 6
       sort: { createdAt: DESC }
       filter: { guia: { eq: false } }
     ) {

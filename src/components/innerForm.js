@@ -9,7 +9,7 @@ const Innerform = ({ titulo }) => {
       </p>
 
       <form
-        className="contacto__form"
+        className="formulario__form"
         method="POST"
         data-netlify="true"
         name="inner-contact"

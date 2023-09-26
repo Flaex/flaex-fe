@@ -16,7 +16,7 @@ const links = [
   },
   {
     id: 1,
-    icon: "pinterest",
+    icon: "twitch",
     prefix: "fab",
     url: "https://www.pinterest.com/flaex/",
   },
@@ -32,17 +32,11 @@ const links = [
     prefix: "fab",
     url: "https://www.instagram.com/flaex_",
   },
-  {
-    id: 4,
-    icon: "github",
-    prefix: "fab",
-    url: "https://github.com/Flaex",
-  },
 ];
 
 const Footer = () => (
   <footer className="footer">
-    <p>@flaex.design - {new Date().getFullYear()} | 🇻🇪</p>
+    <p>flaex.design - {new Date().getFullYear()} | 🇻🇪</p>
     <div className="footer__rrss">
       {links.reverse().map((link) => (
         <a

@@ -1,7 +1,5 @@
 .inicio {
-  gap: 1%;
   &__col {
-    width: 49%;
     display: flex;
     flex-wrap: wrap;
     align-self: flex-start;
@@ -12,9 +10,6 @@
   display: flex;
   width: 100%;
   align-self: flex-start;
-
-  &__image {
-  }
 
   &__image img {
     min-width: 100%;
@@ -40,7 +35,6 @@
     background: unset;
     margin-bottom: 0;
     padding: 1.5em 1.125em 1.5em 1.125em;
-    
   }
 }
 
@@ -135,6 +129,46 @@
   }
 }
 
+.formulario {
+  &__form {
+    margin: 2rem 0 2rem 0;
+
+    input:required,
+    input:invalid,
+    textarea:required {
+      box-shadow: none;
+    }
+    input:invalid {
+      box-shadow: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+      font-weight: 300;
+      width: 70%;
+      border-style: solid;
+      border-color: $black;
+      border-width: 0 0 1px 0;
+      margin-bottom: 5%;
+      background: none;
+
+      &:focus {
+        outline: none !important;
+        border: 1px solid $gray-border;
+      }
+    }
+
+    input[type="submit"] {
+      color: $black;
+      background-color: $gray-soft;
+      padding: 0.5rem;
+      border: none;
+    }
+  }
+}
+
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .inicio {
@@ -168,6 +202,21 @@
 
     &__item-title {
       font-size: 0.9rem;
+    }
+  }
+
+  .formulario {
+    &__form {
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      textarea {
+        font-size: 0.9rem;
+        width: 96%;
+      }
+      input[type="submit"] {
+        font-size: 0.9rem;
+      }
     }
   }
 }
@@ -229,6 +278,10 @@
       font-size: 1.5rem;
     }
   }
+
+  .formulario {
+    width: 100%;
+  }
 }
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/
@@ -252,5 +305,12 @@
     &__item-title {
       font-size: 1rem;
     }
+  }
+}
+
+/*-------------------------------------------- Desktop 1280px --------------------------------------------*/
+@include responsive-min($min-width: 80em) {
+  .formulario {
+    width: 60%;
   }
 }

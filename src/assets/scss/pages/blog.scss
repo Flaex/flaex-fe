@@ -1,4 +1,3 @@
-
 .blog {
   display: flex;
   flex-wrap: wrap;
@@ -80,6 +79,13 @@
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {
+  .blog {
+    &__descripcion {
+      width: 100%;
+      font-size: 1.125rem;
+      line-height: 1.438rem;
+    }
+  }
   .articulos {
     width: 100%;
     justify-content: unset;

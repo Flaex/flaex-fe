@@ -1,12 +1,12 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Seo from "../components/seo";
 
 const thankYouImage = 320;
 
 const thankYouPage = () => (
-  <Page title="Gracias por contactarme">
+  <Default title="Gracias por contactarme">
     <h1>¡Mensaje enviado!</h1>
     <p>Te responderé a la brevedad posible</p>
     <div className="notfound">
@@ -18,7 +18,7 @@ const thankYouPage = () => (
         alt="@flaex_ con cara de sorpresa"
       />
     </div>
-  </Page>
+  </Default>
 );
 
 export default thankYouPage;

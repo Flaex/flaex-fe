@@ -1,11 +1,3 @@
-.inicio {
-  &__col {
-    display: flex;
-    flex-wrap: wrap;
-    align-self: flex-start;
-  }
-}
-
 .hero {
   display: flex;
   width: 100%;
@@ -172,10 +164,6 @@
   .inicio {
     flex-wrap: wrap;
     gap: unset;
-
-    &__col {
-      width: 100%;
-    }
   }
 
   .hero {
@@ -224,9 +212,6 @@
   .inicio {
     flex-wrap: wrap;
     gap: unset;
-    &__col {
-      width: 100%;
-    }
   }
 
   .hero {
@@ -244,16 +229,6 @@
   .inicio {
     flex-wrap: wrap;
     gap: unset;
-
-    &__col {
-      width: 100%;
-    }
-  }
-
-  .inicio {
-    &__col {
-      width: 100%;
-    }
   }
 
   .hero {

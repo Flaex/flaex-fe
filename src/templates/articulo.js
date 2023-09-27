@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Share from "../components/share";
 import Form from "../components/innerForm";
 import ReactMarkdown from "react-markdown";
@@ -20,7 +20,7 @@ const Articulo = ({ data }) => {
   };
 
   return (
-    <Page>
+    <Default>
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button onClick={() => window.history.back()}>&#10229;</button>
@@ -66,7 +66,7 @@ const Articulo = ({ data }) => {
           <Form titulo="¿Tienes algún comentario, sugerencia o pregunta?" />
         </div>
       </div>
-    </Page>
+    </Default>
   );
 };
 

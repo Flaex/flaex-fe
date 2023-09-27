@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
     <Default>
       <div className="inicio">
         <h1 className="hidden">Inicio</h1>
-        <section className="inicio__col">
+        <section>
           <div className="hero">
             <Link to="/perfil" aria-label="Ir a mi perfil">
               <StaticImage

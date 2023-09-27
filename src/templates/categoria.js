@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Catnav from "../components/categoria-nav";
 import Seo from "../components/seo";
 import "../assets/scss/templates/categoria.scss";
@@ -15,7 +15,7 @@ const Categoria = ({ data }) => {
   let [faicon, faprefix] = useState(0);
 
   return (
-    <Page>
+    <Default>
       <div className="submenu">
         <Catnav />
       </div>
@@ -37,7 +37,7 @@ const Categoria = ({ data }) => {
           );
         })}
       </ul>
-    </Page>
+    </Default>
   );
 };
 

@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Tabs from "../components/tabs";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Seo from "../components/seo";
 import { usePerfil } from "../hooks/use-perfil";
 import "../assets/scss/pages/perfil.scss";
@@ -14,7 +14,7 @@ const CurriculumPage = ({ data }) => {
   const experiencia = perfil.experiencia;
 
   return (
-    <Page>
+    <Default>
       <div className="perfil">
         <section className="perfil__col">
           <h1 className="hidden">Fredy Polanía | Perfil Profesional</h1>
@@ -43,7 +43,7 @@ const CurriculumPage = ({ data }) => {
           />
         </section>
       </div>
-    </Page>
+    </Default>
   );
 };
 

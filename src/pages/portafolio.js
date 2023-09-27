@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
@@ -26,7 +26,7 @@ const PortafolioPage = ({ data }) => {
   };
 
   return (
-    <Page>
+    <Default>
       <div className="portafolio">
         <h1 className="hidden">Portafolio</h1>
 
@@ -183,7 +183,7 @@ const PortafolioPage = ({ data }) => {
           </div>
         </div>
       </div>
-    </Page>
+    </Default>
   );
 };
 export default PortafolioPage;

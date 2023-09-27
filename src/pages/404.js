@@ -1,12 +1,12 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Seo from "../components/seo";
 
 const NotFoundImage = 320;
 
 const NotFoundPage = () => (
-  <Page>
+  <Default>
     <h1>
       Página inexistente
       <span aria-label="emoji" role="img">
@@ -27,7 +27,7 @@ const NotFoundPage = () => (
       src="https://res.cloudinary.com/flaex/image/upload/v1676256333/strapi-v4/404_5446b441bd.webp"
       alt="@flaex_ con cara de sorpresa"
     />
-  </Page>
+  </Default>
 );
 
 export default NotFoundPage;

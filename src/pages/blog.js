@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Seo from "../components/seo";
 import "../assets/scss/pages/blog.scss";
 
@@ -11,7 +11,7 @@ const blog =
 const BlogPage = ({ data }) => {
   const articulos = data.articulos.nodes;
   return (
-    <Page>
+    <Default>
       <div className="blog">
         <h1 className="hidden">Blog</h1>
         <p className="blog__descripcion">{blog}</p>
@@ -34,7 +34,7 @@ const BlogPage = ({ data }) => {
           ))}
         </ul>
       </div>
-    </Page>
+    </Default>
   );
 };
 

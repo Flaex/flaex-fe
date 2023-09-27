@@ -1,7 +1,6 @@
 .perfil {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   &__images-wrapper {
     display: flex;
@@ -47,10 +46,6 @@
     }
   }
 
-  &__col {
-    width: 100%;
-  }
-
   &__tablas {
     display: flex;
     flex-wrap: wrap;
@@ -76,10 +71,6 @@
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .perfil {
-    &__col {
-      width: 100%;
-    }
-
     &__images-wrapper > div {
       max-width: 49%;
     }
@@ -106,9 +97,6 @@
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @include responsive-max($max-width: 46em, $orientation: "landscape") {
   .perfil {
-    &__col {
-      width: 100%;
-    }
     &__tablas {
       table {
         width: 49%;
@@ -135,9 +123,6 @@
   $orientation: "portrait"
 ) {
   .perfil {
-    &__col {
-      width: 100%;
-    }
     &__tablas {
       table {
         width: 100%;
@@ -165,11 +150,6 @@
 ) {
   .perfil {
     flex-wrap: nowrap;
-
-    &__col {
-      width: 80%;
-      margin-right: 2%;
-    }
   }
 
   .caras {
@@ -183,15 +163,10 @@
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {
   .perfil {
-    flex-wrap: nowrap;
-
-    &__col {
-      margin-right: 2%;
-
+    flex-wrap: nowrap;   
       p {
         width: 80%;
-      }
-    }
+      }    
   }
 
   .caras {

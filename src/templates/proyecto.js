@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Share from "../components/share";
 import Form from "../components/innerForm";
 import Modal from "../components/modal";
@@ -20,7 +20,7 @@ const Proyecto = ({ data }) => {
   };
 
   return (
-    <Page>
+    <Default>
       <div className="submenu">
         <div className="navigation navigation--secondary">
           <button
@@ -87,7 +87,7 @@ const Proyecto = ({ data }) => {
           <Form titulo="¿Necesitas asesoría?" />
         </div>
       </div>
-    </Page>
+    </Default>
   );
 };
 

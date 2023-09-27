@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Page from "../layouts/page";
+import Default from "../layouts/default";
 import Seo from "../components/seo";
 import "../assets/scss/pages/perfil.scss";
 
@@ -62,9 +62,9 @@ const PerfilPage = ({ data }) => {
   };
 
   return (
-    <Page>
+    <Default>
       <div className="perfil">
-        <section className="perfil__col">
+        <section>
           <h1 className="hidden">Perfil</h1>
           <StaticImage
             src="https://res.cloudinary.com/flaex/image/upload/v1675544334/strapi-v4/flaex_fred_polania_perfil_3c3169cb26.webp"
@@ -121,7 +121,7 @@ const PerfilPage = ({ data }) => {
           </div>
         </section>
       </div>
-    </Page>
+    </Default>
   );
 };
 

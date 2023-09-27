@@ -30,8 +30,6 @@
   }
 
   &__description {
-    font-size: 1.313rem;
-    line-height: 2rem;
     background: unset;
     margin-bottom: 0;
     padding: 1.5em 1.125em 1.5em 1.125em;
@@ -185,8 +183,8 @@
     }
 
     &__description {
-      font-size: 1.1rem;
-      line-height: 1.4rem;
+      font-size: 0.9rem;
+      line-height: 1rem;
     }
 
     &__title {
@@ -232,10 +230,7 @@
   }
 
   .hero {
-    &__imagen {
-    }
-
-    &__info {
+    &__description {
     }
   }
 }
@@ -262,10 +257,9 @@
   }
 
   .hero {
-    &__imagen {
-    }
-
-    &__info {
+    &__description {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
     }
   }
 
@@ -291,10 +285,9 @@
   $orientation: "landscape"
 ) {
   .hero {
-    &__imagen {
-    }
-
-    &__info {
+    &__description {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
     }
   }
   .skills {
@@ -306,11 +299,36 @@
       font-size: 1rem;
     }
   }
+
+  .feed {
+    &__item {
+      width: 33%;
+    }
+  }
+
+  .formulario {
+    width: 60%;
+  }
 }
 
 /*-------------------------------------------- Desktop 1280px --------------------------------------------*/
 @include responsive-min($min-width: 80em) {
+  .hero {
+    &__description {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+  }
   .formulario {
     width: 60%;
+  }
+}
+
+/*-------------------------------------------- Desktop 1536px --------------------------------------------*/
+@include responsive-min($min-width: 96em) {
+  .feed {
+    &__item {
+      width: 33%;
+    }
   }
 }

@@ -20,7 +20,6 @@
     display: flex;
     flex-wrap: wrap;
     width: 24%;
-    margin-bottom: 4vh;
     overflow: hidden;
   }
 
@@ -81,9 +80,7 @@
 @include responsive-min($min-width: 80em) {
   .blog {
     &__descripcion {
-      width: 100%;
-      font-size: 1.125rem;
-      line-height: 1.438rem;
+      width: 100%;      
     }
   }
   .articulos {

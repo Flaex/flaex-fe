@@ -88,6 +88,8 @@ h5 {
 }
 
 p {
+  font-size: 1.125rem;
+  line-height: 1.438rem;
   margin-top: 0;
   margin-bottom: 1vh;
 }
@@ -162,8 +164,7 @@ figcaption {
     line-height: 2em;
   }
 
-  &__descripcion {
-    margin-bottom: 3vh;
+  &__descripcion { 
     p {
       margin: 0.75em 0 0 0;
     }
@@ -395,11 +396,5 @@ blockquote {
   .page {
     width: 70%;
     margin: 0 auto 0 auto;
-  }
-  .detalle {
-    &__descripcion {
-      font-size: 1.125rem;
-      line-height: 1.438rem;
-    }
   }
 }

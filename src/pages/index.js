@@ -17,13 +17,14 @@ const intro = {
 
 const blog = {
   titulo: "Artículos",
-  descripcion: "Artículos de diseño gráfico, desarrollo y tecnologías web.",
+  descripcion:
+    "Temas de relacionados con las actividades que hago al rededor de la tecnologías de la información: Comunicación visual, programación web y videojuegos.",
 };
 
 const formulario = {
   titulo: "👉 ¡Envíame un mensaje! ✉️",
   descripcion: `¿Tienes algún comentario, sugerencia o pregunta?`,
-  redes: "Sígueme mis redes sociales para ver más contenido.",
+  redes: "Sígueme mis redes sociales ▼ para ver más contenido.",
 };
 
 const IndexPage = ({ data }) => {

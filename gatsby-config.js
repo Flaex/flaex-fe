@@ -15,7 +15,7 @@ module.exports = {
       "Emprendedor, comunicador visual, desarrollador web. Guías, artículos y tutoriales de diseño gráfico y tecnologías web.",
     author: "Fredy Polania",
     image:
-      "https://res.cloudinary.com/flaex/image/upload/v1677437625/strapi-v4/flaex_web_incio_039d1d75c0.webp",
+      "https://res.cloudinary.com/flaex/image/upload/v1695826859/strapi-v4/flaex_seo_index_5a5072083a.webp",
     author: "Fredy Polania",
     type: "website",
     siteUrl: "https://flaex.design",

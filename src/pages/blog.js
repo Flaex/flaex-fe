@@ -6,7 +6,7 @@ import Seo from "../components/seo";
 import "../assets/scss/pages/blog.scss";
 
 const blog =
-  "Los temas que escribo en este blog se originan en las experiencias que he tenido con las diferentes personas con las que he trabajado o compartido de diseño gráfico y programación web. En algunos casos, son reflexiones que hago de conceptos que bajo mi forma de comprender, no están muy claros. Hay otros casos como en los videojuegos, tienen un aspectos que merecen la pena resaltar, por ejemplo: dirección de arte, jugabilidad, gráficos o cualquier cosa novedosa.";
+  "Los temas que escribo en este blog se originan en las experiencias que he tenido con las diferentes personas con las que he trabajado o compartido de diseño gráfico y programación web. En algunos casos, son reflexiones que hago de conceptos que bajo mi forma de comprender, no están muy claros. Hay otros casos como en los videojuegos, tienen aspectos que merecen la pena resaltar, por ejemplo: dirección de arte, jugabilidad, gráficos o cualquier cosa novedosa.";
 
 const BlogPage = ({ data }) => {
   const articulos = data.articulos.nodes;

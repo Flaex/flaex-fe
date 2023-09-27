@@ -18,7 +18,7 @@ const intro = {
 const blog = {
   titulo: "Artículos",
   descripcion:
-    "Temas de relacionados con las actividades que hago al rededor de la tecnologías de la información: Comunicación visual, programación web y videojuegos.",
+    "Temas de relacionados con comunicación visual, programación web y videojuegos.",
 };
 
 const formulario = {

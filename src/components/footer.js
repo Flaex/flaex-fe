@@ -18,7 +18,7 @@ const links = [
     id: 1,
     icon: "twitch",
     prefix: "fab",
-    url: "https://www.pinterest.com/flaex/",
+    url: "https://www.twitch.tv/flaex_ve",
   },
   {
     id: 2,

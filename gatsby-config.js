@@ -22,13 +22,7 @@ module.exports = {
     titleTemplate: " · @flaex_",
     twitterUsername: "@Flaex_",
   },
-  plugins: [
-    {
-      resolve: "gatsby-plugin-sass",
-      options: {
-        additionalData: `@import "${__dirname}/src/assets/scss/global";`,
-      },
-    },
+  plugins: [    
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -46,7 +40,25 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-twitch`,
+      options: {
+        userID: '173231338',
+        clientID: '4tsfilvt1ds143ws3zizzadjc7c0ae'
+      },
+    },
     "gatsby-plugin-image",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-netlify",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        additionalData: `@import "${__dirname}/src/assets/scss/global";`,
+      },
+    },
+    
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
@@ -58,11 +70,7 @@ module.exports = {
       options: {
         icon: "src/assets/images/favicon.png",
       },
-    },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-netlify",
-    "gatsby-transformer-sharp",
+    },   
     {
       resolve: "gatsby-source-filesystem",
       options: {

@@ -34,8 +34,8 @@
 
   &__list {
     display: flex;
-    align-self: flex-start;
-    margin-top: 1em;
+    justify-content: space-between;
+    margin-top: 1vh;
   }
 
   &__item {
@@ -47,7 +47,6 @@
     background: $gray-soft;
     box-sizing: border-box;
     text-align: center;
-    margin-right: 1em;
     overflow: hidden;
   }
 
@@ -109,9 +108,9 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
   &__guia {
@@ -159,6 +158,12 @@
   }
 }
 
+  iframe {
+    width: 100%;
+    margin-top: 0;
+  }
+
+
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 @include responsive-max($max-width: 26em, $orientation: "portrait") {
   .inicio {
@@ -182,8 +187,8 @@
 
   .skills {
     &__item {
-      width: 5em;
-      height: 5em;
+      width: 4.8em;
+      height: 4.8em;
     }
 
     &__item-title {
@@ -204,6 +209,10 @@
         font-size: 0.9rem;
       }
     }
+  } 
+
+  iframe {
+    height: 230px;
   }
 }
 
@@ -214,9 +223,18 @@
     gap: unset;
   }
 
-  .hero {
-    &__description {
+  .skills {
+    &__list {      
+      justify-content: flex-start;      
     }
+
+    &__item {
+      margin-right: 0.5em;
+    }
+  }
+
+  iframe {
+    height: 420px;
   }
 }
 
@@ -239,17 +257,30 @@
   }
 
   .skills {
+
+    &__list {      
+      justify-content: flex-start;      
+    }
+
+    &__item {
+      margin-right: 1em;
+    }
+
     &__link {
       font-size: 1.5rem;
     }
 
     &__item-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
   }
 
   .formulario {
     width: 100%;
+  }
+
+  iframe {
+    height: 424px;
   }
 }
 
@@ -266,14 +297,19 @@
     }
   }
   .skills {
+    &__list {      
+      justify-content: flex-start;      
+    }
+    &__item {
+      margin-right: 0.5em;
+    }
     &__link {
       font-size: 1rem;
     }
-
     &__item-title {
-      font-size: 1rem;
-    }
-  }
+      font-size: 1.1rem;
+    }    
+  } 
 
   .feed {
     &__item {
@@ -283,6 +319,11 @@
 
   .formulario {
     width: 60%;
+  }
+
+  iframe {
+    width: 56%;
+    height: 320px;
   }
 }
 
@@ -293,10 +334,27 @@
       font-size: 1.2rem;
       line-height: 1.6rem;
     }
+  }  
+
+  .skills {
+    &__list {      
+      justify-content: flex-start;      
+    }
+
+    &__item {
+      margin-right: 0.5em;
+    }
   }
+
   .formulario {
     width: 60%;
+  } 
+
+  iframe {
+    height:290px;
   }
+  
+  
 }
 
 /*-------------------------------------------- Desktop 1536px --------------------------------------------*/
@@ -305,5 +363,10 @@
     &__item {
       width: 33%;
     }
+  }
+
+  iframe {
+    width: 66.6%;
+    height:490px;
   }
 }

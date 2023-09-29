@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
 import { useHabilidades } from "../hooks/use-habilidades";
 import "../assets/scss/pages/index.scss";
+import { TwitchEmbed } from "react-twitch-embed";
+import { useTwitch } from "../hooks/use-twitch";
 
 const intro = {
   titulo: "¡Hola, mi nombre es Fredy!",
@@ -27,12 +29,18 @@ const formulario = {
   redes: "Sígueme mis redes sociales ▼ para ver más contenido.",
 };
 
+const vods = {
+  titulo: "Videojuegos 🎮",
+};
+
 const IndexPage = ({ data }) => {
   /* eslint-disable */
   let [faicon, faprefix] = useState(0);
   const habilidades = useHabilidades();
   const articulos = data.articulos.nodes;
   const guias = data.guias.nodes;
+  const embed = useTwitch();
+  const handleReady = useTwitch();
 
   return (
     <Default>
@@ -122,6 +130,18 @@ const IndexPage = ({ data }) => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="twitch">
+            <h2>{vods.titulo}</h2>
+            <TwitchEmbed
+              collection="8c8h9oVdfxfMLg"
+              withChat={false}
+              allowFullScreen
+              onVideoReady={handleReady}
+              width="100%"
+              height="100%"                   
+            ></TwitchEmbed>
           </div>
 
           <div className="formulario">

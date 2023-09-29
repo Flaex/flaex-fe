@@ -40,13 +40,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-source-twitch`,
-      options: {
-        userID: '173231338',
-        clientID: '4tsfilvt1ds143ws3zizzadjc7c0ae'
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",

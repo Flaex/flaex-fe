@@ -183,12 +183,13 @@ figcaption {
     }
 
     &-image-link h2,
+    h2,
     h3 {
       margin-top: 3vh;
     }
 
     table {
-      margin: 4vh 0 4vh 0;
+      margin: 2vh 0 4vh 0;
 
       em {
         font-size: 0.9rem;
@@ -198,6 +199,7 @@ figcaption {
 
   &__galeria {
     display: flex;
+    margin-top: 2vh;
     gap: 1%;
     margin-bottom: 2rem;
   }

@@ -24,10 +24,6 @@ img {
   padding-top: 0;
 }
 
-iframe {
-  width: 35%;
-}
-
 button {
   border: 0;
   background-color: $gray-soft;
@@ -95,7 +91,7 @@ p {
 }
 
 iframe {
-  margin-top: 1rem;
+  margin: 1rem 0 1rem 0;
 }
 
 figure {
@@ -106,14 +102,8 @@ figcaption {
   font-size: 0.85rem;
 }
 
-// Navigation bar
-.menu {
-}
-
 // Main container
 .main {
-  
-
   & > div {
     display: flex;
   }
@@ -164,7 +154,7 @@ figcaption {
     line-height: 2em;
   }
 
-  &__descripcion { 
+  &__descripcion {
     p {
       margin: 0.75em 0 0 0;
     }
@@ -194,6 +184,11 @@ figcaption {
       em {
         font-size: 0.9rem;
       }
+    }
+
+    .player {
+      width: 45em;
+      height: 25.313em;
     }
   }
 
@@ -306,7 +301,6 @@ blockquote {
   iframe {
     width: 100%;
   }
-  
 
   section {
     & > div {
@@ -331,6 +325,11 @@ blockquote {
       ul {
         font-size: 0.938rem;
         line-height: 1.188rem;
+      }
+
+      .player {
+        width: 100%;
+        height: 32vh;
       }
     }
 
@@ -382,7 +381,6 @@ blockquote {
   iframe {
     width: 50%;
   }
-  
 }
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/

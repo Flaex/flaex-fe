@@ -132,18 +132,6 @@ const IndexPage = ({ data }) => {
             </ul>
           </div>
 
-          <div className="twitch">
-            <h2>{vods.titulo}</h2>
-            <TwitchEmbed
-              collection="8c8h9oVdfxfMLg"
-              withChat={false}
-              allowFullScreen
-              onVideoReady={handleReady}
-              width="100%"
-              height="100%"                   
-            ></TwitchEmbed>
-          </div>
-
           <div className="formulario">
             <h2>{formulario.titulo}</h2>
             <p>{formulario.descripcion}</p>

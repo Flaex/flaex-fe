@@ -21,6 +21,8 @@ module.exports = {
     siteUrl: "https://flaex.design",
     titleTemplate: " · @flaex_",
     twitterUsername: "@Flaex_",
+    facebookDomainVerification: 'g9jzdviol952zkzk7xvwr5ieoc19uy',
+    facebookAppId: '825985592863177',
   },
   plugins: [    
     {

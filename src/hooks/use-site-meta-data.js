@@ -13,7 +13,9 @@ export const useSiteMetadata = () => {
           siteUrl
           titleTemplate
           twitterUsername
-        },
+          facebookDomainVerification
+          facebookAppId
+        }
       }
     }
   `);

@@ -40,7 +40,7 @@ export const SEO = ({ title, description, image, pathname, children }) => {
       <meta property="og:image" content={seo.image} />
       <meta property="og:type" content={seo.type} />
       <meta property="og:url" content={seo.url} />
-      <meta property="fb:app_id" content="343133101556439" />
+      <meta property="fb:app_id" content="825985592863177" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

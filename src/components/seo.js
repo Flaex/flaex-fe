@@ -2,7 +2,6 @@ import React from "react";
 import { useSiteMetadata } from "../hooks/use-site-meta-data";
 
 export const SEO = ({ title, description, image, pathname, children }) => {
-
   const isBrowser = typeof window !== "undefined";
 
   const viewUrl = () => {
@@ -11,7 +10,7 @@ export const SEO = ({ title, description, image, pathname, children }) => {
     }
     return window.location.href;
   };
-  
+
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -28,7 +27,7 @@ export const SEO = ({ title, description, image, pathname, children }) => {
     image: `${image || defaultImage}`,
     url: `${viewUrl() || defaultUrl}`,
     twitterUsername,
-    type,    
+    type,
   };
 
   return (
@@ -41,6 +40,7 @@ export const SEO = ({ title, description, image, pathname, children }) => {
       <meta property="og:image" content={seo.image} />
       <meta property="og:type" content={seo.type} />
       <meta property="og:url" content={seo.url} />
+      <meta property="fb:app_id" content="343133101556439" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

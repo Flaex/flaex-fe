@@ -6,14 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Seo from "../components/seo";
 import { useHabilidades } from "../hooks/use-habilidades";
 import "../assets/scss/pages/index.scss";
-import { TwitchEmbed } from "react-twitch-embed";
 import { useTwitch } from "../hooks/use-twitch";
 
 const intro = {
   titulo: "¡Hola, mi nombre es Fredy!",
   alternativeText: "Fredy Polania | @flaex_ perfil",
   descripcion:
-    "Este es mi blog de diseño gráfico, desarrollo web y videojuegos.",
+    "Este es mi blog de diseño gráfico, desarrollo web.",
   emojis: "🎨👨‍💻🎮",
 };
 
@@ -29,9 +28,6 @@ const formulario = {
   redes: "Sígueme mis redes sociales ▼ para ver más contenido.",
 };
 
-const vods = {
-  titulo: "Videojuegos 🎮",
-};
 
 const IndexPage = ({ data }) => {
   /* eslint-disable */

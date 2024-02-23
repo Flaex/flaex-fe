@@ -16,9 +16,9 @@ const links = [
   },
   {
     id: 1,
-    icon: "twitch",
+    icon: "github",
     prefix: "fab",
-    url: "https://www.twitch.tv/flaex_ve",
+    url: "https://github.com/Flaex/",
   },
   {
     id: 2,

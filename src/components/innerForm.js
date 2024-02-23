@@ -5,7 +5,8 @@ const Innerform = ({ titulo }) => {
     <div className="formulario">
       <h3 className="formulario__titulo">{titulo}</h3>
       <p>
-        ¡Trabajemos en tu próximo proyecto! Enviame un mensaje por el formulario o visita mis redes sociales, en el pie de página están los enlaces.
+        ¡Trabajemos en tu próximo proyecto! Enviame un mensaje por el formulario
+        o visita mis redes sociales, en el pie de página están los enlaces.
       </p>
 
       <form
@@ -15,10 +16,9 @@ const Innerform = ({ titulo }) => {
         name="inner-contact"
         action="/gracias/"
       >
-        <label>
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="inner-contact" />
-        </label>
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="inner-contact" />
+
         <div>
           <input type="text" name="name" placeholder="Nombre y Apellido" />
         </div>

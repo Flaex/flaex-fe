@@ -200,6 +200,7 @@ figcaption {
   }
 
   &__item {
+    display: flex;
     width: 24%;
     border: 1px solid $gray-border;
     background-color: white;

@@ -27,7 +27,7 @@ const Proyecto = ({ data }) => {
             className="navigation__button"
             onClick={() => window.history.back()}
           >
-            &#10229;
+            🡐
           </button>
           <h1 className="detalle__title">{proyecto.titulo}</h1>
         </div>

@@ -10,24 +10,30 @@ let faprefix = null;
 const links = [
   {
     id: 0,
+    icon: "behance",
+    prefix: "fab",
+    url: "https://www.behance.net/fredypolania",
+  },
+  {
+    id: 1,
     icon: "twitter",
     prefix: "fab",
     url: "https://twitter.com/Flaex_",
   },
   {
-    id: 1,
+    id: 2,
     icon: "github",
     prefix: "fab",
     url: "https://github.com/Flaex/",
   },
   {
-    id: 2,
+    id: 3,
     icon: "linkedin-in",
     prefix: "fab",
     url: "https://www.linkedin.com/in/freddypolania/",
   },
   {
-    id: 3,
+    id: 4,
     icon: "instagram",
     prefix: "fab",
     url: "https://www.instagram.com/flaex_",

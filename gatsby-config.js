@@ -21,10 +21,10 @@ module.exports = {
     siteUrl: "https://flaex.design",
     titleTemplate: " · @flaex_",
     twitterUsername: "@Flaex_",
-    facebookDomainVerification: 'g9jzdviol952zkzk7xvwr5ieoc19uy',
-    facebookAppId: '825985592863177',
+    facebookDomainVerification: "g9jzdviol952zkzk7xvwr5ieoc19uy",
+    facebookAppId: "825985592863177",
   },
-  plugins: [    
+  plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -59,7 +59,7 @@ module.exports = {
         additionalData: `@import "${__dirname}/src/assets/scss/global";`,
       },
     },
-    
+
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
@@ -71,7 +71,7 @@ module.exports = {
       options: {
         icon: "src/assets/images/favicon.png",
       },
-    },   
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -91,6 +91,12 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "343133101556439",
+      },
     },
   ],
 };

@@ -92,5 +92,11 @@ module.exports = {
         pixelId: "343133101556439",
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.flaex.design`,
+      },
+    },
   ],
 };

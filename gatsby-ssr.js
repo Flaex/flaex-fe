@@ -80,11 +80,5 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
       crossOrigin="anonymous"
       key="ubuntuRegular"
     />,
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1246144389550485"
-      crossOrigin="anonymous"
-      key="GoogleAds"
-    ></script>,
   ]);
 };

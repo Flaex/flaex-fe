@@ -42,12 +42,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://flaex.design/`,
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",

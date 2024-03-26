@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://flaex.design`,
+        siteUrl: `https://flaex.design/`,
       },
     },
     "gatsby-plugin-image",

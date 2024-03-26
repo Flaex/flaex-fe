@@ -18,7 +18,7 @@ module.exports = {
       "https://res.cloudinary.com/flaex/image/upload/v1695826859/strapi-v4/flaex_seo_index_5a5072083a.webp",
     author: "Fredy Polania",
     type: "website",
-    siteUrl: "https://flaex.design",
+    siteUrl: "https://flaex.design/",
     titleTemplate: " · @flaex_",
     twitterUsername: "@Flaex_",
     facebookDomainVerification: "g9jzdviol952zkzk7xvwr5ieoc19uy",

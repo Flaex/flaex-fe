@@ -96,7 +96,7 @@ export default Proyecto;
 export const Head = ({ data }) => (
   <Seo
     title={data.proyecto.titulo}
-    image={data.proyecto.miniatura.url}
+    image={data.proyecto.imagenes[0].url}
     description={data.proyecto.descripcion.data.descripcion
       .replace(/(?:__|[*#])|\[(.*?)\]\(.*?\)/gm, "$1")
       .substring(0, 158)}
@@ -125,6 +125,7 @@ export const query = graphql`
         }
       }
       imagenes {
+        url
         id
         alternativeText
         localFile {

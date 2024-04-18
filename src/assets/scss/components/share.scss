@@ -17,7 +17,7 @@
   }
 }
 
-@include responsive-max($max-width: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26.875em, $orientation: "portrait") {
   .share {
     &__icon {
       width: 26px;

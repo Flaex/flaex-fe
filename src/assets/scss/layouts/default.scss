@@ -194,8 +194,10 @@ figcaption {
 
   &__galeria {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 2vh;
-    gap: 1%;
+    column-gap: 0.25em;
+    row-gap: 0.25em;
     margin-bottom: 2rem;
   }
 
@@ -268,7 +270,7 @@ blockquote {
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 
-@include responsive-max($max-width: 26em, $orientation: "portrait") {
+@include responsive-max($max-width: 26.875em, $orientation: "portrait") {
   h1 {
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -332,10 +334,6 @@ blockquote {
         width: 100%;
         height: 32vh;
       }
-    }
-
-    &__galeria {
-      justify-content: space-between;
     }
 
     &__item {
